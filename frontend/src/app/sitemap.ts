@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://royalbusinessmachine.com";
+  const baseUrl = "https://www.royalbusinessmachine.com";
   const now = new Date();
 
   const routes = [
@@ -13,8 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/services/digital-marketing", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/services/consulting", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/projects", priority: 0.9, changeFrequency: "weekly" as const },
-    { path: "/industries", priority: 0.85, changeFrequency: "monthly" as const },
+    { path: "/portfolio", priority: 0.85, changeFrequency: "weekly" as const },
     { path: "/process", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/industries", priority: 0.85, changeFrequency: "monthly" as const },
     { path: "/achievements", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/team", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/testimonials", priority: 0.8, changeFrequency: "monthly" as const },

@@ -27,7 +27,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://royalbusinessmachine.com"),
+  metadataBase: new URL("https://www.royalbusinessmachine.com"),
+  alternates: {
+    canonical: "https://www.royalbusinessmachine.com",
+  },
   title: {
     default: "Royal Business Machine | Enterprise Technology & Infrastructure",
     template: "%s | Royal Business Machine",
@@ -49,7 +52,7 @@ export const metadata: Metadata = {
     "NyayaSetu",
     "Dairy Muneem",
   ],
-  authors: [{ name: "Royal Business Machine", url: "https://royalbusinessmachine.com" }],
+  authors: [{ name: "Royal Business Machine", url: "https://www.royalbusinessmachine.com" }],
   creator: "Pavitra Arora",
   publisher: "Royal Business Machine",
   formatDetection: {
@@ -73,7 +76,7 @@ export const metadata: Metadata = {
     title: "Royal Business Machine | Enterprise Technology & Infrastructure",
     description:
       "Integrated technology, institutional execution, and scalable digital solutions for modern enterprises and MSMEs across India.",
-    url: "https://royalbusinessmachine.com",
+    url: "https://www.royalbusinessmachine.com",
     siteName: "Royal Business Machine",
     images: [
       {
@@ -112,11 +115,11 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://royalbusinessmachine.com/#organization",
+      "@id": "https://www.royalbusinessmachine.com/#organization",
       "name": "Royal Business Machine",
       "alternateName": "RBM",
-      "url": "https://royalbusinessmachine.com",
-      "logo": "https://royalbusinessmachine.com/assets/logo/logo-horizontal.png",
+      "url": "https://www.royalbusinessmachine.com",
+      "logo": "https://www.royalbusinessmachine.com/assets/logo/logo-horizontal.png",
       "founder": {
         "@type": "Person",
         "name": "Pavitra Arora",
@@ -149,9 +152,9 @@ const jsonLd = {
     },
     {
       "@type": "LocalBusiness",
-      "@id": "https://royalbusinessmachine.com/#localbusiness",
+      "@id": "https://www.royalbusinessmachine.com/#localbusiness",
       "name": "Royal Business Machine",
-      "image": "https://royalbusinessmachine.com/assets/logo/logo-horizontal.png",
+      "image": "https://www.royalbusinessmachine.com/assets/logo/logo-horizontal.png",
       "telephone": "+91-9057287689",
       "email": "royalbusinessmachine@gmail.com",
       "address": {

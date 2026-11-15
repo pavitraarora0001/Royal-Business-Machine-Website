@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "Client Project Portal & Dashboard | Royal Business Machine",
   description:
     "Enterprise client dashboard for tracking project milestones, deliverables, invoice histories, and direct technical support.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
 };
 
 export default function ClientDashboardPage() {

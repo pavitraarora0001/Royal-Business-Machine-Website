@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "royalbusinessmachine.com",
       },
+      {
+        protocol: "https",
+        hostname: "www.royalbusinessmachine.com",
+      },
     ],
   },
   async rewrites() {

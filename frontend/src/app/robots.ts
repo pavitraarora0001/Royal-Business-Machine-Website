@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/admin/", "/client/", "/api/"],
+      disallow: ["/api/"],
     },
-    sitemap: "https://royalbusinessmachine.com/sitemap.xml",
+    sitemap: "https://www.royalbusinessmachine.com/sitemap.xml",
   };
 }
