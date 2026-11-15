@@ -25,7 +25,35 @@ const portfolioSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
+    industry: {
+        type: String,
+        trim: true
+    },
     category: {
+        type: String,
+        trim: true
+    },
+    contractValue: {
+        type: String,
+        trim: true
+    },
+    challenge: {
+        type: String,
+        trim: true
+    },
+    solution: {
+        type: String,
+        trim: true
+    },
+    results: {
+        type: String,
+        trim: true
+    },
+    seoTitle: {
+        type: String,
+        trim: true
+    },
+    seoDescription: {
         type: String,
         trim: true
     },

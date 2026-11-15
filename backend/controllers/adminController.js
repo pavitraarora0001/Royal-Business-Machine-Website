@@ -4,6 +4,10 @@ import Service from '../models/Service.js';
 import Portfolio from '../models/Portfolio.js';
 import Contact from '../models/Contact.js';
 import Payment from '../models/Payment.js';
+import Blog from '../models/Blog.js';
+import Media from '../models/Media.js';
+import ClientTestimonial from '../models/ClientTestimonial.js';
+import ActivityLog from '../models/ActivityLog.js';
 import { paginate, getPaginationMeta } from '../utils/helpers.js';
 import { NotFoundError, ValidationError } from '../middleware/errorHandler.js';
 
@@ -22,7 +26,10 @@ export const getDashboardStats = async (req, res, next) => {
             totalPayments,
             newLeads,
             newContacts,
-            successfulPayments
+            successfulPayments,
+            totalBlogs,
+            totalMedia,
+            totalClients
         ] = await Promise.all([
             User.countDocuments(),
             Lead.countDocuments(),
@@ -30,9 +37,12 @@ export const getDashboardStats = async (req, res, next) => {
             Portfolio.countDocuments(),
             Contact.countDocuments(),
             Payment.countDocuments(),
-            Lead.countDocuments({ status: 'new' }),
+            Lead.countDocuments({ status: { $in: ['new', 'contacted'] } }),
             Contact.countDocuments({ status: 'new' }),
-            Payment.countDocuments({ status: 'success' })
+            Payment.countDocuments({ status: 'success' }),
+            Blog.countDocuments(),
+            Media.countDocuments(),
+            ClientTestimonial.countDocuments()
         ]);
 
         // Get revenue
@@ -78,6 +88,9 @@ export const getDashboardStats = async (req, res, next) => {
                     newLeads,
                     newContacts,
                     successfulPayments,
+                    totalBlogs,
+                    totalMedia,
+                    totalClients,
                     totalRevenue
                 },
                 leadsByStatus,
@@ -315,6 +328,81 @@ export const getAnalytics = async (req, res, next) => {
     }
 };
 
+// @desc    Get activity logs
+// @route   GET /api/admin/activity-logs
+// @access  Private (Admin / Super Admin)
+export const getActivityLogs = async (req, res, next) => {
+    try {
+        const { page, limit, skip } = paginate(req.query.page, req.query.limit || 30);
+        const { module: moduleFilter, action } = req.query;
+
+        const query = {};
+        if (moduleFilter) query.module = moduleFilter;
+        if (action) query.action = action;
+
+        const [logs, total] = await Promise.all([
+            ActivityLog.find(query)
+                .sort({ createdAt: -1 })
+                .skip(skip)
+                .limit(limit),
+            ActivityLog.countDocuments(query)
+        ]);
+
+        const pagination = getPaginationMeta(total, page, limit || 30);
+
+        res.status(200).json({
+            success: true,
+            data: { logs },
+            pagination
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
+// @desc    Create new user / admin
+// @route   POST /api/admin/users
+// @access  Private (Super Admin)
+export const createAdminUser = async (req, res, next) => {
+    try {
+        const { name, email, password, phone, role, company } = req.body;
+
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return next(new ValidationError('User with this email already exists'));
+        }
+
+        const user = await User.create({
+            name,
+            email,
+            password: password || 'Royal@Admin2026',
+            phone: phone || '9057287689',
+            role: role || 'admin',
+            company: company || 'Royal Business Machine',
+            isVerified: true
+        });
+
+        await ActivityLog.create({
+            user: req.user?._id,
+            userName: req.user?.name || 'Super Admin',
+            userRole: req.user?.role || 'super_admin',
+            action: 'CREATE_USER',
+            module: 'User Management',
+            targetId: user._id.toString(),
+            targetName: `${user.name} (${user.role})`,
+            ipAddress: req.ip
+        });
+
+        res.status(201).json({
+            success: true,
+            message: 'User created successfully',
+            data: { user }
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
 export default {
     getDashboardStats,
     getAllUsers,
@@ -322,5 +410,7 @@ export default {
     updateUserRole,
     toggleUserStatus,
     deleteUser,
-    getAnalytics
+    getAnalytics,
+    getActivityLogs,
+    createAdminUser
 };

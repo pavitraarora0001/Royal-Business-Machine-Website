@@ -41,24 +41,24 @@ const storage = multer.diskStorage({
     }
 });
 
-// File filter - Accept only images and PDFs
+// File filter - Accept images, videos, and PDFs
 const fileFilter = (req, file, cb) => {
     const allowedImageTypes = /jpeg|jpg|png|gif|webp|svg/;
     const allowedDocTypes = /pdf/;
+    const allowedVideoTypes = /mp4|webm|mov/;
 
     const extname = path.extname(file.originalname).toLowerCase().slice(1);
     const mimetype = file.mimetype;
 
-    // Check if it's an image
-    const isImage = allowedImageTypes.test(extname) && mimetype.startsWith('image/');
-
-    // Check if it's a PDF
+    // Check if it's an image, doc, or video
+    const isImage = allowedImageTypes.test(extname) && (mimetype.startsWith('image/') || mimetype === 'image/svg+xml');
     const isPDF = allowedDocTypes.test(extname) && mimetype === 'application/pdf';
+    const isVideo = allowedVideoTypes.test(extname) && mimetype.startsWith('video/');
 
-    if (isImage || isPDF) {
+    if (isImage || isPDF || isVideo) {
         cb(null, true);
     } else {
-        cb(new Error('Invalid file type. Only images (JPEG, PNG, GIF, WebP, SVG) and PDFs are allowed.'), false);
+        cb(new Error('Invalid file type. Allowed formats: JPEG, PNG, WebP, SVG, PDF, MP4, WebM.'), false);
     }
 };
 
@@ -92,6 +92,12 @@ export const uploadDocument = multer({
     fileFilter,
     limits: { fileSize: maxFileSize }
 }).single('document');
+
+export const uploadMediaFiles = multer({
+    storage,
+    fileFilter,
+    limits: { fileSize: 25 * 1024 * 1024, files: 10 }
+}).array('files', 10);
 
 // Helper function to delete file
 export const deleteFile = (filePath) => {

@@ -26,10 +26,21 @@ const serviceSchema = new mongoose.Schema({
         type: String,
         trim: true
     }],
+    benefits: [{
+        type: String,
+        trim: true
+    }],
+    technologies: [{
+        type: String,
+        trim: true
+    }],
     image: {
         type: String,
         default: null
     },
+    galleryImages: [{
+        type: String
+    }],
     icon: {
         type: String,
         default: null
@@ -51,9 +62,21 @@ const serviceSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
+    isFeatured: {
+        type: Boolean,
+        default: false
+    },
     order: {
         type: Number,
         default: 0
+    },
+    seoTitle: {
+        type: String,
+        trim: true
+    },
+    seoDescription: {
+        type: String,
+        trim: true
     },
     metadata: {
         views: {

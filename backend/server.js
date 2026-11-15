@@ -16,6 +16,11 @@ import portfolioRoutes from './routes/portfolio.js';
 import contactRoutes from './routes/contact.js';
 import paymentRoutes from './routes/payments.js';
 import adminRoutes from './routes/admin.js';
+import cmsRoutes from './routes/cms.js';
+import blogRoutes from './routes/blogs.js';
+import settingRoutes from './routes/settings.js';
+import mediaRoutes from './routes/media.js';
+import crmRoutes from './routes/crm.js';
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './config/swagger.js';
 
@@ -95,6 +100,11 @@ app.use('/api/portfolio', portfolioRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/cms', cmsRoutes);
+app.use('/api/blogs', blogRoutes);
+app.use('/api/settings', settingRoutes);
+app.use('/api/media', mediaRoutes);
+app.use('/api/crm', crmRoutes);
 
 // API Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
