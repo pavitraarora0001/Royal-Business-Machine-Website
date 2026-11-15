@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { PORTFOLIO_PROJECTS } from "@/data/portfolio-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.royalbusinessmachine.com";
@@ -27,10 +28,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/terms", priority: 0.4, changeFrequency: "yearly" as const },
   ];
 
-  return routes.map((r) => ({
+  const staticEntries = routes.map((r) => ({
     url: `${baseUrl}${r.path}`,
     lastModified: now,
     changeFrequency: r.changeFrequency,
     priority: r.priority,
   }));
+
+  // Dynamic Case Studies
+  const caseStudyEntries = PORTFOLIO_PROJECTS.map((project) => ({
+    url: `${baseUrl}/projects/${project.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...caseStudyEntries];
 }

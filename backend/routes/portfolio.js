@@ -4,15 +4,20 @@ import {
     getPortfolioBySlug,
     createPortfolio,
     updatePortfolio,
-    deletePortfolio
+    deletePortfolio,
+    getAllCategories,
+    createCategory,
+    updateCategory,
+    deleteCategory
 } from '../controllers/portfolioController.js';
-import { portfolioValidation, objectIdValidation, paginationValidation } from '../middleware/validation.js';
+import { objectIdValidation, paginationValidation } from '../middleware/validation.js';
 import { protect, restrictTo } from '../middleware/auth.js';
 import { uploadPortfolioImages } from '../config/multer.js';
 
 const router = express.Router();
 
 // Public routes
+router.get('/categories', getAllCategories);
 router.get('/', paginationValidation, getAllPortfolio);
 router.get('/:slug', getPortfolioBySlug);
 
@@ -20,7 +25,13 @@ router.get('/:slug', getPortfolioBySlug);
 router.use(protect);
 router.use(restrictTo('admin', 'super_admin'));
 
-router.post('/', uploadPortfolioImages, portfolioValidation, createPortfolio);
+// Category management (Admin)
+router.post('/categories', createCategory);
+router.put('/categories/:id', objectIdValidation('id'), updateCategory);
+router.delete('/categories/:id', objectIdValidation('id'), deleteCategory);
+
+// Project management (Admin)
+router.post('/', uploadPortfolioImages, createPortfolio);
 router.put('/:id', uploadPortfolioImages, objectIdValidation('id'), updatePortfolio);
 router.delete('/:id', objectIdValidation('id'), deletePortfolio);
 

@@ -19,7 +19,7 @@ const portfolioSchema = new mongoose.Schema({
     shortDescription: {
         type: String,
         trim: true,
-        maxlength: 200
+        maxlength: 250
     },
     client: {
         type: String,
@@ -33,7 +33,15 @@ const portfolioSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
+    categories: [{
+        type: String,
+        trim: true
+    }],
     contractValue: {
+        type: String,
+        trim: true
+    },
+    requirements: {
         type: String,
         trim: true
     },
@@ -49,6 +57,10 @@ const portfolioSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
+    outcome: {
+        type: String,
+        trim: true
+    },
     seoTitle: {
         type: String,
         trim: true
@@ -61,12 +73,20 @@ const portfolioSchema = new mongoose.Schema({
         type: String,
         trim: true
     }],
+    coverImage: {
+        type: String,
+        trim: true
+    },
+    thumbnailImage: {
+        type: String,
+        trim: true
+    },
     images: [{
         type: String
     }],
-    thumbnailImage: {
+    gallery: [{
         type: String
-    },
+    }],
     projectUrl: {
         type: String,
         trim: true
@@ -108,25 +128,44 @@ const portfolioSchema = new mongoose.Schema({
     timestamps: true
 });
 
-// Indexes
-portfolioSchema.index({ slug: 1 });
+// Indexes (Note: slug already has unique: true)
 portfolioSchema.index({ isActive: 1 });
 portfolioSchema.index({ isFeatured: 1 });
 portfolioSchema.index({ category: 1 });
+portfolioSchema.index({ categories: 1 });
 portfolioSchema.index({ order: 1 });
 
 // Generate slug from title before saving
 portfolioSchema.pre('save', function (next) {
-    if (this.isModified('title')) {
+    if (this.isModified('title') || !this.slug) {
         this.slug = this.title
             .toLowerCase()
             .replace(/[^a-z0-9]+/g, '-')
             .replace(/^-+|-+$/g, '');
     }
 
-    // Set thumbnail to first image if not set
-    if (this.images && this.images.length > 0 && !this.thumbnailImage) {
-        this.thumbnailImage = this.images[0];
+    // Sync category & categories
+    if (Array.isArray(this.categories) && this.categories.length > 0) {
+        if (!this.category) {
+            this.category = this.categories[0];
+        }
+    } else if (this.category) {
+        this.categories = [this.category];
+    }
+
+    // Sync outcome and results
+    if (this.outcome && !this.results) {
+        this.results = this.outcome;
+    } else if (this.results && !this.outcome) {
+        this.outcome = this.results;
+    }
+
+    // Set thumbnail/cover image to first image if not set
+    if (this.images && this.images.length > 0) {
+        if (!this.thumbnailImage) this.thumbnailImage = this.images[0];
+        if (!this.coverImage) this.coverImage = this.images[0];
+    } else if (this.coverImage && !this.thumbnailImage) {
+        this.thumbnailImage = this.coverImage;
     }
 
     next();

@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import User from './models/User.js';
 import Service from './models/Service.js';
 import Portfolio from './models/Portfolio.js';
+import PortfolioCategory from './models/PortfolioCategory.js';
 import Blog from './models/Blog.js';
 import PageContent from './models/PageContent.js';
 import Setting from './models/Setting.js';
@@ -181,31 +182,96 @@ async function seed() {
     }
     console.log('✓ Services seeded');
 
-    // 4. Portfolio Projects (16 authentic deployments)
+    // 4. Portfolio Categories (5 Core Enterprise Categories)
+    const initialCategories = [
+        {
+            name: "Application Development",
+            shortLabel: "Applications",
+            slug: "application-development",
+            description: "Mobile apps, Android applications, iOS applications, SaaS, enterprise applications, ERP and CRM.",
+            subdisciplines: ["Mobile apps", "Android & iOS", "SaaS products", "Enterprise ERP & CRM", "Custom software"],
+            icon: "Smartphone",
+            order: 1
+        },
+        {
+            name: "AI & Business Automation",
+            shortLabel: "AI Automation",
+            slug: "ai-business-automation",
+            description: "AI agents, AI chatbots, workflow automation, business automation, intelligent integrations.",
+            subdisciplines: ["AI agents", "AI chatbots", "Workflow automation", "Verification engines", "API integrations"],
+            icon: "Cpu",
+            order: 2
+        },
+        {
+            name: "Digital Marketing",
+            shortLabel: "Digital Marketing",
+            slug: "digital-marketing",
+            description: "Social media marketing, Google Ads, Meta Ads, performance marketing, content marketing.",
+            subdisciplines: ["Social media campaigns", "Google & Meta Ads", "D2C growth funnels", "Brand lookbooks"],
+            icon: "Megaphone",
+            order: 3
+        },
+        {
+            name: "Web Solutions",
+            shortLabel: "Web Solutions",
+            slug: "web-solutions",
+            description: "Business websites, e-commerce, custom web applications, enterprise portals and website redesign.",
+            subdisciplines: ["High-concurrency portals", "E-commerce storefronts", "Institutional websites", "B2B portals"],
+            icon: "Globe",
+            order: 4
+        },
+        {
+            name: "SEO Solutions",
+            shortLabel: "SEO Solutions",
+            slug: "seo-solutions",
+            description: "Technical SEO, local SEO, on-page SEO, off-page SEO, AEO and GEO.",
+            subdisciplines: ["Technical SEO", "Local search domination", "On-page / Off-page SEO", "AEO / GEO"],
+            icon: "Search",
+            order: 5
+        }
+    ];
+
+    for (const c of initialCategories) {
+        const exists = await PortfolioCategory.findOne({ name: c.name });
+        if (!exists) {
+            await PortfolioCategory.create(c);
+        }
+    }
+    console.log('✓ Portfolio categories seeded');
+
+    // 5. Portfolio Projects (16 authentic deployments)
     const initialProjects = [
         {
             title: "Dairy Muneem — Milk Procurement & Logistics App",
-            category: "Mobile Apps",
+            category: "Application Development",
+            categories: ["Application Development", "AI & Business Automation"],
             client: "Regional Dairy Cooperative & Procurement Centers",
+            industry: "Dairy Logistics & Agriculture",
             contractValue: "₹2,50,000 Contract",
             description: "End-to-end mobile logistics software featuring a real-time Milk Fat and SNF computational pricing engine, automated daily farmer ledger updates, and SMS slip generation.",
+            requirements: "Rural milk pooling centers required an offline-capable mobile terminal to calculate milk payouts based on laboratory Fat/SNF ratios.",
             challenge: "Manual dairy registers led to frequent calculation disputes, ledger errors, and delayed payments to rural dairy farmers.",
             solution: "Engineered an offline-first mobile app with dynamic FAT/SNF rate charts and instant thermal receipt printing.",
             results: "Reduced procurement calculation errors by 98%; operates offline seamlessly across 40+ rural collection centers.",
-            technologies: ["React Native", "Node.js", "Express", "MongoDB", "SMS Gateway"],
+            outcome: "Reduced procurement calculation errors by 98%; operates offline seamlessly across 40+ rural collection centers.",
+            technologies: ["React Native", "Node.js", "Express", "MongoDB", "SQLite", "SMS Gateway"],
             isFeatured: true,
             isActive: true,
             order: 1
         },
         {
             title: "HMS — Multi-Specialty Hospital Management System",
-            category: "Enterprise Software",
+            category: "Application Development",
+            categories: ["Application Development"],
             client: "Private Healthcare Group & Clinical Centers",
+            industry: "Healthcare & Clinical Operations",
             contractValue: "₹3,50,000 Contract",
             description: "Centralized hospital ERP featuring electronic health records (EHR), OPD/IPD flows, doctor prescription pads, in-house pharmacy inventory, and lab report QR verification.",
+            requirements: "A regional hospital network required a unified digital infrastructure spanning patient intake, EHR, and pharmacy.",
             challenge: "Fragmented patient medical records caused long discharge delays and pharmacy stock discrepancies.",
             solution: "Deployed a centralized hospital management system with multi-role access for doctors, nurses, pharmacists, and billing desks.",
             results: "Cut patient discharge waiting times from 3 hours to under 25 minutes; eliminated paper chart losses entirely.",
+            outcome: "Cut patient discharge waiting times from 3 hours to under 25 minutes; eliminated paper chart losses entirely.",
             technologies: ["React", "Next.js", "PostgreSQL", "Docker", "HL7 Standard"],
             isFeatured: true,
             isActive: true,
@@ -213,31 +279,246 @@ async function seed() {
         },
         {
             title: "Govt College Bharatpur — Official Institutional Portal",
-            category: "Government & Education",
+            category: "Web Solutions",
+            categories: ["Web Solutions", "SEO Solutions"],
             client: "Government College, Bharatpur (Higher Education Dept)",
+            industry: "Higher Education & Public Sector",
             contractValue: "₹50,000 Contract",
             description: "High-security institutional web portal featuring automated student noticeboard PDF dispatches, faculty directories, and admissions inquiry workflows.",
+            requirements: "High-concurrency bilingual portal to serve 15,000+ students without downtime during result seasons.",
             challenge: "High traffic during examination result announcements frequently crashed legacy college websites.",
             solution: "Architected a Next.js static and dynamic portal with CDN caching and WCAG 2.1 accessibility compliance.",
             results: "Handled over 100,000 concurrent page requests during annual examination cycles with 100% server uptime.",
+            outcome: "Handled over 100,000 concurrent page requests during annual examination cycles with 100% server uptime.",
             technologies: ["Next.js", "TypeScript", "Tailwind CSS", "WCAG 2.1 Accessibility", "Cloud CDN"],
             isFeatured: true,
             isActive: true,
             order: 3
         },
         {
-            title: "NyayaSetu — AI Legal Awareness & FIR Assistant",
-            category: "Enterprise Software",
-            client: "E-Governance Pilot & Legal Aid Platforms",
-            contractValue: "Proprietary IP",
-            description: "AI-powered, SaaS e-governance platform mapping citizen incident narratives into verified IPC/BNS sections with structured FIR drafting assistance for police.",
-            challenge: "Citizens struggle to formulate clear incident reports with relevant legal sections, burdening local police desks.",
-            solution: "Built a deterministic legal rule engine combining embeddings with human-in-the-loop explainable FIR drafts.",
-            results: "Significantly reduces FIR preparation times while maintaining strict human-in-the-loop legal explainability.",
-            technologies: ["Python", "FastEmbed", "Next.js", "PostgreSQL", "Deterministic Rule Engine"],
+            title: "Govt College Karauli — Official Institutional Portal",
+            category: "Web Solutions",
+            categories: ["Web Solutions", "SEO Solutions"],
+            client: "Government College, Karauli (Higher Education Dept)",
+            industry: "Higher Education & Public Sector",
+            contractValue: "₹50,000 Contract",
+            description: "Bilingual (Hindi/English) institutional portal hosting academic syllabus archives, public tenders, and mobile-optimized access for rural students.",
+            requirements: "Transparent administrative website for state tender notifications and circulars.",
+            challenge: "Circular distribution was delayed by reliance on physical campus noticeboards.",
+            solution: "Developed an optimized Next.js portal with document vault and mobile-first design.",
+            results: "Accelerated circular and notice distribution by 75%; eliminated reliance on physical campus bulletin boards.",
+            outcome: "Accelerated circular and notice distribution by 75%; eliminated reliance on physical campus bulletin boards.",
+            technologies: ["Next.js", "React", "Node.js", "Tailwind CSS", "CDN Caching"],
             isFeatured: true,
             isActive: true,
             order: 4
+        },
+        {
+            title: "Jaivik Desh — Organic Agriculture E-Commerce Platform",
+            category: "Web Solutions",
+            categories: ["Web Solutions", "Digital Marketing"],
+            client: "Jaivik Desh Natural Farming & Commodity Enterprise",
+            industry: "Organic Agriculture & Direct-to-Consumer",
+            contractValue: "₹75,000 Contract",
+            description: "High-conversion direct-to-consumer online storefront for certified organic farm produce with automated shipping label generation and farm-to-table traceability.",
+            requirements: "D2C online store eliminating wholesale intermediaries with integrated online payments.",
+            challenge: "High cart abandonment and complex postal shipping rates for bulky organic goods.",
+            solution: "Built a tailored Next.js storefront with Razorpay checkout, automated shipping, and farm batch traceability QR codes.",
+            results: "240% increase in direct-to-consumer online sales within the first 90 days following platform launch.",
+            outcome: "240% increase in direct-to-consumer online sales within the first 90 days following platform launch.",
+            technologies: ["Next.js", "Tailwind CSS", "Razorpay API", "Automated Cart", "Logistics API"],
+            isFeatured: true,
+            isActive: true,
+            order: 5
+        },
+        {
+            title: "Jim Corbett — Wildlife Safari & Resort Booking Portal",
+            category: "Web Solutions",
+            categories: ["Web Solutions", "SEO Solutions", "Digital Marketing"],
+            client: "Luxury Jungle Safari & Resort Operator (Jim Corbett)",
+            industry: "Tourism & Luxury Hospitality",
+            contractValue: "₹50,000 Contract",
+            description: "High-resolution eco-tourism portal featuring automated jeep safari permit reservation, cottage booking calendar, and instant WhatsApp booking confirmation.",
+            requirements: "Direct booking engine for wildlife safari packages avoiding OTA commission cuts.",
+            challenge: "Severe organic search competition from online travel aggregators.",
+            solution: "Targeted localized SEO schema, date-range booking calendar, and WhatsApp booking integration.",
+            results: "Achieved #1 organic search visibility for luxury private safaris in the district; direct bookings rose 180%.",
+            outcome: "Achieved #1 organic search visibility for luxury private safaris in the district; direct bookings rose 180%.",
+            technologies: ["React / Next.js", "Tailwind CSS", "Date-Range Engine", "Payment Gateway"],
+            isFeatured: true,
+            isActive: true,
+            order: 6
+        },
+        {
+            title: "NyayaSetu — AI Legal Awareness & FIR Assistant",
+            category: "AI & Business Automation",
+            categories: ["AI & Business Automation", "Application Development"],
+            client: "E-Governance Pilot & Legal Aid Platforms",
+            industry: "Applied AI & Civic Technology",
+            contractValue: "Proprietary IP",
+            description: "AI-powered, SaaS e-governance platform mapping citizen incident narratives into verified IPC/BNS sections with structured FIR drafting assistance for police.",
+            requirements: "Deterministic legal incident mapping adhering strictly to Bharatiya Nyaya Sanhita (BNS) statutes.",
+            challenge: "Standard LLM hallucination makes unvetted generative AI unacceptable in formal legal contexts.",
+            solution: "Built a deterministic legal rule engine combining embeddings with human-in-the-loop explainable FIR drafts.",
+            results: "Significantly reduces FIR preparation times while maintaining strict human-in-the-loop legal explainability.",
+            outcome: "Significantly reduces FIR preparation times while maintaining strict human-in-the-loop legal explainability.",
+            technologies: ["Python", "FastEmbed", "Next.js", "PostgreSQL", "Deterministic Rule Engine"],
+            isFeatured: true,
+            isActive: true,
+            order: 7
+        },
+        {
+            title: "Anti-Paper Leak Secure Examination Software",
+            category: "Application Development",
+            categories: ["Application Development", "AI & Business Automation"],
+            client: "Educational Examination Authorities",
+            industry: "Information Security & Public Sector",
+            contractValue: "Proprietary Security IP",
+            description: "Multi-layered digital workflow preventing confidential paper leaks via dynamic candidate-specific watermarking and GPS-locked document distribution.",
+            requirements: "Tamper-proof digital question paper delivery to regional examination centers.",
+            challenge: "Unauthorized smartphone photography at test centers with untraceable sources.",
+            solution: "Engineered dynamic steganographic watermarking encoding candidate & center IDs with GPS geofencing.",
+            results: "Eliminates unauthorized photographic reproduction with traceable forensic watermarks.",
+            outcome: "Eliminates unauthorized photographic reproduction with traceable forensic watermarks.",
+            technologies: ["Node.js", "Dynamic Watermark Engine", "Biometric Auth", "AES-256"],
+            isActive: true,
+            order: 8
+        },
+        {
+            title: "Apex College of D-Pharma Institutional Portal",
+            category: "Web Solutions",
+            categories: ["Web Solutions", "SEO Solutions"],
+            client: "Apex Pharmacy College",
+            industry: "Pharmacy & Higher Education",
+            contractValue: "₹45,000 Contract",
+            description: "Accreditation-compliant portal displaying laboratory facilities, PCI regulatory disclosures, student enrollment portals, and syllabus archives.",
+            requirements: "Official Pharmacy Council of India (PCI) mandatory disclosure web portal.",
+            challenge: "Regulatory compliance scrutiny and district-level student admission outreach.",
+            solution: "Developed an accreditation document vault and district-targeted SEO meta architecture.",
+            results: "Streamlined PCI compliance verification audits and boosted direct student enrollment inquiries.",
+            outcome: "Streamlined PCI compliance verification audits and boosted direct student enrollment inquiries.",
+            technologies: ["Next.js", "Tailwind CSS", "Document Vault", "SEO Meta Suite"],
+            isActive: true,
+            order: 9
+        },
+        {
+            title: "Luxe Mumbai Lifestyle & Hospitality Portal",
+            category: "Web Solutions",
+            categories: ["Web Solutions", "Digital Marketing"],
+            client: "Luxury Boutique Hospitality Concierge",
+            industry: "Luxury Hospitality & Lifestyle",
+            contractValue: "₹65,000 Contract",
+            description: "Ultra-luxury visual digital presentation featuring smooth editorial page transitions, private suite galleries, and VIP concierge inquiry workflows.",
+            requirements: "High-net-worth concierge and luxury penthouse reservation portal.",
+            challenge: "Standard booking engines degraded high-end brand perception.",
+            solution: "Built an editorial digital experience with cinematic transitions and VIP concierge modal.",
+            results: "Positioned the property among Mumbai's premier elite concierge destinations with high booking conversion.",
+            outcome: "Positioned the property among Mumbai's premier elite concierge destinations with high booking conversion.",
+            technologies: ["React", "GSAP", "Tailwind CSS", "High-Res Image CDN"],
+            isActive: true,
+            order: 10
+        },
+        {
+            title: "Flash Batteries Industrial Website & Distributor Portal",
+            category: "Web Solutions",
+            categories: ["Web Solutions", "AI & Business Automation"],
+            client: "Automotive & Industrial Battery Manufacturer",
+            industry: "Automotive & Manufacturing",
+            contractValue: "₹60,000 Contract",
+            description: "Industrial B2B portal featuring an interactive serial-number battery warranty lookup, dealer locator, and wholesale distributor inquiry funnel.",
+            requirements: "Automated end-customer warranty lookup engine via serial numbers.",
+            challenge: "Call centers bogged down by thousands of manual warranty status requests.",
+            solution: "Implemented an automated serial-number query engine and GPS dealer locator.",
+            results: "Automated over 1,500 monthly warranty verifications without requiring manual customer care calls.",
+            outcome: "Automated over 1,500 monthly warranty verifications without requiring manual customer care calls.",
+            technologies: ["Next.js", "Node.js", "Warranty Verification DB", "Google Maps API"],
+            isActive: true,
+            order: 11
+        },
+        {
+            title: "Shri Haridutt Ayurvedic Medical College & Hospital",
+            category: "Web Solutions",
+            categories: ["Web Solutions", "SEO Solutions"],
+            client: "Ayurvedic Medical Institution & Hospital",
+            industry: "Healthcare & Ayurveda",
+            contractValue: "₹45,000 Contract",
+            description: "Complete institutional and hospital portal integrating botanical herbal garden archives, doctor appointment scheduling, and NCISM regulatory compliance.",
+            requirements: "NCISM-compliant institutional website with public patient clinic scheduling.",
+            challenge: "Underutilized Ayurvedic specialty OPDs due to lack of verified clinic information.",
+            solution: "Mobile-optimized medical portal with OPD scheduling engine and botanical plant archives.",
+            results: "Centralized student admission notices and public patient healthcare clinic schedules.",
+            outcome: "Centralized student admission notices and public patient healthcare clinic schedules.",
+            technologies: ["React", "Next.js", "Tailwind CSS", "Appointment Engine"],
+            isActive: true,
+            order: 12
+        },
+        {
+            title: "Pavitra Enterprise Multi-Commodity Platform",
+            category: "Application Development",
+            categories: ["Application Development", "AI & Business Automation"],
+            client: "Commercial Trading & Distribution Group",
+            industry: "Wholesale Commodity Trading & Logistics",
+            contractValue: "₹85,000 Contract",
+            description: "B2B commercial trading portal providing digital product catalogs, wholesale quotation requests, automated GST invoice dispatch, and delivery tracking.",
+            requirements: "B2B bulk quotation and automated proforma invoice dispatch system.",
+            challenge: "48-hour order cycle lag caused by manual price sheets and phone confirmations.",
+            solution: "Developed an automated wholesale catalog and instantaneous GST invoice generator.",
+            results: "Digitized commercial order workflows, reducing sales cycle from 48 hours to under 4 hours.",
+            outcome: "Digitized commercial order workflows, reducing sales cycle from 48 hours to under 4 hours.",
+            technologies: ["Next.js", "Express", "MongoDB", "PDF Invoice Engine"],
+            isActive: true,
+            order: 13
+        },
+        {
+            title: "Grand Palace Heritage Banquet & Tourism Portal",
+            category: "Web Solutions",
+            categories: ["Web Solutions", "Digital Marketing"],
+            client: "Heritage Tourism & Royal Banquet Venue",
+            industry: "Event Venues & Heritage Tourism",
+            contractValue: "₹55,000 Contract",
+            description: "Visual storytelling portal showcasing heritage banquet halls, royal wedding packages, seasonal dining menus, and digital booking request workflows.",
+            requirements: "High-resolution digital showcase for destination wedding banquets.",
+            challenge: "Out-of-district wedding planners could not evaluate venue scale without on-site visits.",
+            solution: "Architected a visual storytelling portal with interactive floorplans and wedding packages.",
+            results: "Generated over 45 high-ticket royal wedding event bookings in its first operating season.",
+            outcome: "Generated over 45 high-ticket royal wedding event bookings in its first operating season.",
+            technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "Booking Modals"],
+            isActive: true,
+            order: 14
+        },
+        {
+            title: "Diya Creation Fashion Label & Apparel Hangtag Suite",
+            category: "Digital Marketing",
+            categories: ["Digital Marketing", "Web Solutions"],
+            client: "Designer Fashion & Apparel House",
+            industry: "Fashion Apparel & Physical Branding",
+            contractValue: "₹40,000 Contract",
+            description: "Turnkey brand identity project delivering physical metallic clothing tags, woven care labels, custom packaging boxes, and digital lookbooks.",
+            requirements: "Unified identity bridging physical apparel packaging with digital distributor lookbooks.",
+            challenge: "Inconsistent showroom branding diluted luxury tier pricing power.",
+            solution: "Executed custom embossed gold foil tags, packaging boxes, and an online lookbook.",
+            results: "Established prestige retail shelf presence across regional multi-brand apparel showrooms.",
+            outcome: "Established prestige retail shelf presence across regional multi-brand apparel showrooms.",
+            technologies: ["Custom Die-Cutting", "Embossed Gold Foil", "Illustrator Vector Suite"],
+            isActive: true,
+            order: 15
+        },
+        {
+            title: "Fintech Mobile Wallet & Micro-Transactions Engine",
+            category: "Application Development",
+            categories: ["Application Development", "AI & Business Automation"],
+            client: "Regional Microfinance & Payments Client",
+            industry: "Financial Technology & Digital Payments",
+            contractValue: "₹1,80,000 Contract",
+            description: "High-speed mobile payment application prototype featuring QR-code merchant settlements, peer-to-peer wallet transfers, and instant transaction receipts.",
+            requirements: "Sub-second peer-to-peer payments prototype with biometric authorization.",
+            challenge: "High transaction latency during peak merchant checkout hours.",
+            solution: "Engineered a Flutter mobile interface with double-entry ledger database.",
+            results: "Demonstrated sub-second transaction latency with bank-grade biometric authorization.",
+            outcome: "Demonstrated sub-second transaction latency with bank-grade biometric authorization.",
+            technologies: ["Flutter", "Node.js", "Biometric Auth", "Ledger Database"],
+            isActive: true,
+            order: 16
         }
     ];
 
@@ -245,6 +526,14 @@ async function seed() {
         const exists = await Portfolio.findOne({ title: p.title });
         if (!exists) {
             await Portfolio.create(p);
+        } else {
+            // Update categories and fields if existing record needs sync
+            exists.categories = p.categories;
+            exists.category = p.category;
+            exists.requirements = p.requirements;
+            exists.outcome = p.outcome;
+            exists.results = p.results;
+            await exists.save();
         }
     }
     console.log('✓ Portfolio projects seeded');

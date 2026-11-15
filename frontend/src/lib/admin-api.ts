@@ -243,6 +243,30 @@ export const adminApi = {
     return this.deletePortfolio(id);
   },
 
+  async getPortfolioCategories() {
+    return apiRequest("/api/portfolio/categories");
+  },
+
+  async createPortfolioCategory(data: unknown) {
+    return apiRequest("/api/portfolio/categories", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  },
+
+  async updatePortfolioCategory(id: string, data: unknown) {
+    return apiRequest(`/api/portfolio/categories/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(data),
+    });
+  },
+
+  async deletePortfolioCategory(id: string) {
+    return apiRequest(`/api/portfolio/categories/${id}`, {
+      method: "DELETE",
+    });
+  },
+
   // 5. Media Library
   async getMedia(params?: { folder?: string; type?: string; search?: string }) {
     const q = new URLSearchParams();
@@ -508,6 +532,10 @@ export const getPortfolios = (category?: string) => adminApi.getProjects(categor
 export const createPortfolio = (data: unknown) => adminApi.createProject(data);
 export const updatePortfolio = (id: string, data: unknown) => adminApi.updateProject(id, data);
 export const deletePortfolio = (id: string) => adminApi.deleteProject(id);
+export const getPortfolioCategories = () => adminApi.getPortfolioCategories();
+export const createPortfolioCategory = (data: unknown) => adminApi.createPortfolioCategory(data);
+export const updatePortfolioCategory = (id: string, data: unknown) => adminApi.updatePortfolioCategory(id, data);
+export const deletePortfolioCategory = (id: string) => adminApi.deletePortfolioCategory(id);
 
 export const getMediaFiles = (folder?: string, mimeType?: string) => adminApi.getMedia({ folder, type: mimeType });
 export const uploadMediaFile = (formData: FormData) => adminApi.uploadMedia(formData);
