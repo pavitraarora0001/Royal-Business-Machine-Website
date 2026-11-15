@@ -1,0 +1,24 @@
+{
+  "https://royalbusinessmachine.com/logo.png": {
+    "status": "failed",
+    "error": "HTTP Error 404: Not Found"
+  },
+  "https://royalbusinessmachine.com/favicon.ico": {
+    "local_path": "frontend/public/assets/logo/favicon.ico",
+    "size_bytes": 25931,
+    "status": "downloaded"
+  },
+  "https://royalbusinessmachine.com/logo.svg": {
+    "status": "failed",
+    "error": "HTTP Error 404: Not Found"
+  },
+  "https://royalbusinessmachine.com/assets/logo.png": {
+    "status": "failed",
+    "error": "HTTP Error 404: Not Found"
+  },
+  "https://royalbusinessmachine.com/images/logo.png": {
+    "local_path": "frontend/public/assets/logo/logo.png",
+    "size_bytes": 84700,
+    "status": "downloaded"
+  }
+}

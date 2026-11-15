@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-warm-white: #F7F7F5;
+  --color-pure-white: #FFFFFF;
+  --color-charcoal: #20252B;
+  --color-charcoal-light: #2A3038;
+  --color-graphite: #303640;
+  --color-slate-muted: #64748B;
+  --color-slate-light: #94A3B8;
+  --color-gold: #B69A69;
+  --color-gold-light: #C9B288;
+  --color-gold-dark: #9A7E50;
+  --color-gold-soft: rgba(182, 154, 105, 0.12);
+  --color-border-light: #E5E7EB;
+  --color-border-dark: #2F3642;
+
+  --color-primary: #20252B;
+  --color-primary-foreground: #F7F7F5;
+  --color-secondary: #F7F7F5;
+  --color-secondary-foreground: #20252B;
+  --color-accent: #B69A69;
+  --color-accent-foreground: #FFFFFF;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-manrope), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --background: #F7F7F5;
+  --foreground: #20252B;
+  --card: #FFFFFF;
+  --card-foreground: #20252B;
+  --border: #E5E7EB;
+}
+
+.dark {
+  --background: #181C21;
+  --foreground: #F7F7F5;
+  --card: #20252B;
+  --card-foreground: #F7F7F5;
+  --border: #2F3642;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Luxury Card & Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.dark .glass-panel {
+  background: rgba(32, 37, 43, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #B69A69 0%, #D8C39B 50%, #9A7E50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.charcoal-gradient-text {
+  background: linear-gradient(135deg, #20252B 0%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .charcoal-gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B69A69;
+}

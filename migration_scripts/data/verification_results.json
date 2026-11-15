@@ -1,0 +1,162 @@
+{
+  "all_passed": true,
+  "total": 26,
+  "results": [
+    {
+      "route": "/",
+      "status": 200,
+      "length": 146448,
+      "ok": true
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "length": 87780,
+      "ok": true
+    },
+    {
+      "route": "/team",
+      "status": 200,
+      "length": 94734,
+      "ok": true
+    },
+    {
+      "route": "/achievements",
+      "status": 200,
+      "length": 80611,
+      "ok": true
+    },
+    {
+      "route": "/services",
+      "status": 200,
+      "length": 74465,
+      "ok": true
+    },
+    {
+      "route": "/services/web-development",
+      "status": 200,
+      "length": 67308,
+      "ok": true
+    },
+    {
+      "route": "/services/mobile-apps",
+      "status": 200,
+      "length": 64289,
+      "ok": true
+    },
+    {
+      "route": "/services/digital-marketing",
+      "status": 200,
+      "length": 66055,
+      "ok": true
+    },
+    {
+      "route": "/services/consulting",
+      "status": 200,
+      "length": 59941,
+      "ok": true
+    },
+    {
+      "route": "/projects",
+      "status": 200,
+      "length": 90884,
+      "ok": true
+    },
+    {
+      "route": "/portfolio",
+      "status": 200,
+      "length": 90884,
+      "ok": true
+    },
+    {
+      "route": "/industries",
+      "status": 200,
+      "length": 126200,
+      "ok": true
+    },
+    {
+      "route": "/process",
+      "status": 200,
+      "length": 104626,
+      "ok": true
+    },
+    {
+      "route": "/testimonials",
+      "status": 200,
+      "length": 76727,
+      "ok": true
+    },
+    {
+      "route": "/blog",
+      "status": 200,
+      "length": 77770,
+      "ok": true
+    },
+    {
+      "route": "/faq",
+      "status": 200,
+      "length": 53675,
+      "ok": true
+    },
+    {
+      "route": "/careers",
+      "status": 200,
+      "length": 100990,
+      "ok": true
+    },
+    {
+      "route": "/contact",
+      "status": 200,
+      "length": 50808,
+      "ok": true
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "length": 50436,
+      "ok": true
+    },
+    {
+      "route": "/terms",
+      "status": 200,
+      "length": 49084,
+      "ok": true
+    },
+    {
+      "route": "/login",
+      "status": 200,
+      "length": 41482,
+      "ok": true
+    },
+    {
+      "route": "/register",
+      "status": 200,
+      "length": 43180,
+      "ok": true
+    },
+    {
+      "route": "/client/dashboard",
+      "status": 200,
+      "length": 46901,
+      "ok": true
+    },
+    {
+      "route": "/admin/dashboard",
+      "status": 200,
+      "length": 50701,
+      "ok": true
+    },
+    {
+      "route": "/sitemap.xml",
+      "status": 200,
+      "length": 3334,
+      "ok": true
+    },
+    {
+      "route": "/robots.txt",
+      "status": 200,
+      "length": 131,
+      "ok": true
+    }
+  ]
+}

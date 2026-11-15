@@ -1,0 +1,47 @@
+{
+  "pages": {
+    "https://royalbusinessmachine.com/": {
+      "url": "https://royalbusinessmachine.com/",
+      "title": "Royal Business Machine - Premium Business Solutions",
+      "meta_description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "images": [],
+      "html_length": 9806
+    },
+    "https://royalbusinessmachine.com/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2": {
+      "url": "https://royalbusinessmachine.com/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "title": "",
+      "meta_description": "",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "images": [],
+      "html_length": 25766
+    },
+    "https://royalbusinessmachine.com/favicon.ico": {
+      "url": "https://royalbusinessmachine.com/favicon.ico",
+      "title": "",
+      "meta_description": "",
+      "h1": [],
+      "h2": [],
+      "h3": [],
+      "images": [],
+      "html_length": 18741
+    }
+  },
+  "assets": {
+    "images": [],
+    "videos": [],
+    "documents": [],
+    "scripts": [],
+    "stylesheets": [],
+    "links": [
+      "/_next/static/chunks/c6a1bf2a9b3e6992.js",
+      "/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "/favicon.ico?favicon.0b3bf435.ico",
+      "/_next/static/chunks/fd8fd8f3ba583112.css"
+    ]
+  }
+}

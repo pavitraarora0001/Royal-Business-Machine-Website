@@ -1,0 +1,137 @@
+{
+  "inventory_metadata": {
+    "project": "Royal Business Machine Website Rebuild",
+    "total_assets": 12,
+    "last_updated": "2026-11-15T14:00:00+05:30",
+    "base_directory": "/public/assets/"
+  },
+  "assets": [
+    {
+      "id": "asset-logo-001",
+      "original_url": "https://royalbusinessmachine.com/images/logo.png",
+      "local_path": "/assets/logo/logo.png",
+      "mirror_paths": [
+        "/assets/company/logo.png",
+        "/images/logo.png"
+      ],
+      "category": "logo",
+      "format": "png",
+      "size_bytes": 84700,
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "alt_text": "Royal Business Machine Official Corporate Logo Emblem",
+      "status": "migrated_and_verified"
+    },
+    {
+      "id": "asset-logo-002",
+      "original_url": "https://royalbusinessmachine.com/favicon.ico",
+      "local_path": "/assets/logo/favicon.ico",
+      "mirror_paths": [
+        "/favicon.ico"
+      ],
+      "category": "logo",
+      "format": "ico",
+      "size_bytes": 25931,
+      "dimensions": {
+        "width": 48,
+        "height": 48
+      },
+      "alt_text": "Royal Business Machine Favicon",
+      "status": "migrated_and_verified"
+    },
+    {
+      "id": "asset-doc-001",
+      "original_url": "local://Documents/Udyam Registration Certificate-RBM.pdf",
+      "local_path": "/assets/documents/Udyam_Registration_Certificate_RBM.pdf",
+      "category": "documents",
+      "format": "pdf",
+      "size_bytes": 389072,
+      "description": "Government of India Udyam MSME Registration Certificate for Royal Business Machine",
+      "status": "migrated_and_verified"
+    },
+    {
+      "id": "asset-doc-002",
+      "original_url": "local://Documents/Business_Growth_Launch_Pack.pdf",
+      "local_path": "/assets/documents/Business_Growth_Launch_Pack.pdf",
+      "category": "documents",
+      "format": "pdf",
+      "size_bytes": 1962,
+      "description": "Royal Business Machine Startup Business Growth Launchpack Overview",
+      "status": "migrated_and_verified"
+    },
+    {
+      "id": "asset-icon-001",
+      "original_url": "https://royalbusinessmachine.com/file.svg",
+      "local_path": "/file.svg",
+      "category": "icons",
+      "format": "svg",
+      "size_bytes": 391,
+      "status": "migrated_and_verified"
+    },
+    {
+      "id": "asset-icon-002",
+      "original_url": "https://royalbusinessmachine.com/globe.svg",
+      "local_path": "/globe.svg",
+      "category": "icons",
+      "format": "svg",
+      "size_bytes": 1035,
+      "status": "migrated_and_verified"
+    },
+    {
+      "id": "asset-icon-003",
+      "original_url": "https://royalbusinessmachine.com/next.svg",
+      "local_path": "/next.svg",
+      "category": "icons",
+      "format": "svg",
+      "size_bytes": 1375,
+      "status": "migrated_and_verified"
+    },
+    {
+      "id": "asset-icon-004",
+      "original_url": "https://royalbusinessmachine.com/vercel.svg",
+      "local_path": "/vercel.svg",
+      "category": "icons",
+      "format": "svg",
+      "size_bytes": 128,
+      "status": "migrated_and_verified"
+    },
+    {
+      "id": "asset-icon-005",
+      "original_url": "https://royalbusinessmachine.com/window.svg",
+      "local_path": "/window.svg",
+      "category": "icons",
+      "format": "svg",
+      "size_bytes": 385,
+      "status": "migrated_and_verified"
+    },
+    {
+      "id": "asset-font-001",
+      "original_url": "https://royalbusinessmachine.com/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "local_path": "/assets/fonts/inter-latin.woff2",
+      "category": "fonts",
+      "format": "woff2",
+      "size_bytes": 48200,
+      "status": "migrated_and_verified"
+    },
+    {
+      "id": "asset-font-002",
+      "original_url": "https://royalbusinessmachine.com/_next/static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
+      "local_path": "/assets/fonts/inter-latin-ext.woff2",
+      "category": "fonts",
+      "format": "woff2",
+      "size_bytes": 32100,
+      "status": "migrated_and_verified"
+    },
+    {
+      "id": "asset-font-003",
+      "original_url": "https://royalbusinessmachine.com/_next/static/media/8e6fa89aa22d24ec-s.p.3aec397d.woff2",
+      "local_path": "/assets/fonts/poppins-latin.woff2",
+      "category": "fonts",
+      "format": "woff2",
+      "size_bytes": 51400,
+      "status": "migrated_and_verified"
+    }
+  ]
+}

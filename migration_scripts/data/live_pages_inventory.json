@@ -1,0 +1,196 @@
+{
+  "/": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/",
+    "length": 9806,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\home.html"
+  },
+  "/about": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/about",
+    "length": 10026,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\about.html"
+  },
+  "/services": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/services",
+    "length": 10033,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\services.html"
+  },
+  "/services/web-development": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/services/web-development",
+    "length": 10203,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\services_web-development.html"
+  },
+  "/services/mobile-apps": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/services/digital-marketing": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/services/digital-marketing",
+    "length": 10207,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\services_digital-marketing.html"
+  },
+  "/services/consulting": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/portfolio": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/portfolio",
+    "length": 10035,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\portfolio.html"
+  },
+  "/contact": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/contact",
+    "length": 10031,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\contact.html"
+  },
+  "/login": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/login",
+    "length": 11783,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\login.html"
+  },
+  "/register": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/register",
+    "length": 11789,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\register.html"
+  },
+  "/privacy": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/privacy",
+    "length": 10031,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\privacy.html"
+  },
+  "/terms": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/terms",
+    "length": 10027,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\terms.html"
+  },
+  "/client/dashboard": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/client/dashboard",
+    "length": 11147,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\client_dashboard.html"
+  },
+  "/admin/dashboard": {
+    "status": 200,
+    "url": "https://royalbusinessmachine.com/admin/dashboard",
+    "length": 11145,
+    "title": "Royal Business Machine - Premium Business Solutions",
+    "description": "Royal Business Machine provides comprehensive business solutions including IT services, web development, digital marketing, and business consulting.",
+    "og_title": "",
+    "og_description": "",
+    "saved_file": "live_site_pages\\admin_dashboard.html"
+  },
+  "/auth/forgot-password": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/auth/verify-otp": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/careers": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/faq": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/blog": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/industries": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/process": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/team": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/testimonials": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/achievements": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/pricing": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/sitemap": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/robots.txt": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  },
+  "/sitemap.xml": {
+    "status": 404,
+    "error": "HTTP Error 404: Not Found"
+  }
+}
