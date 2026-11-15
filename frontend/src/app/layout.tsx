@@ -19,6 +19,8 @@ const manrope = Manrope({
   display: "swap",
 });
 
+import { PageTransition } from "@/components/motion";
+
 export const viewport: Viewport = {
   themeColor: "#20252B",
   width: "device-width",
@@ -191,7 +193,7 @@ export default function RootLayout({
         >
           <Navbar />
           <main className="flex-grow pt-20">
-            {children}
+            <PageTransition>{children}</PageTransition>
           </main>
           <Footer />
           <WhatsAppFloatingButton />

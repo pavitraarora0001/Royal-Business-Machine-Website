@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { RevealOnScroll, TiltCard } from "@/components/motion";
 import {
   Phone,
   Mail,
@@ -81,20 +82,27 @@ export function ContactClient() {
     <div className="flex flex-col w-full overflow-hidden">
       
       {/* 1. Header */}
-      <section className="py-20 lg:py-28 bg-white dark:bg-charcoal border-b border-border text-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Direct Operations Channel</span>
-          </div>
+      <section className="py-20 lg:py-28 bg-white dark:bg-charcoal border-b border-border text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-6 relative z-10">
+          <RevealOnScroll direction="down" distance={20}>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Direct Operations Channel</span>
+            </div>
+          </RevealOnScroll>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading">
-            Contact <span className="gold-gradient-text">Royal Business Machine</span>
-          </h1>
+          <RevealOnScroll direction="up" delay={0.1}>
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading">
+              Contact <span className="gold-gradient-text">Royal Business Machine</span>
+            </h1>
+          </RevealOnScroll>
 
-          <p className="text-base sm:text-xl text-slate-muted dark:text-slate-light leading-relaxed max-w-3xl mx-auto font-normal">
-            Whether you require enterprise custom software, mobile app logistics, high-volume physical printing, or startup consulting, our team is ready to scope your project.
-          </p>
+          <RevealOnScroll direction="up" delay={0.2}>
+            <p className="text-base sm:text-xl text-slate-muted dark:text-slate-light leading-relaxed max-w-3xl mx-auto font-normal">
+              Whether you require enterprise custom software, mobile app logistics, high-volume physical printing, or startup consulting, our team is ready to scope your project.
+            </p>
+          </RevealOnScroll>
         </div>
       </section>
 
@@ -105,103 +113,116 @@ export function ContactClient() {
             
             {/* Left Column: Direct Channels & Information */}
             <div className="lg:col-span-5 space-y-8">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-gold block mb-2">Direct Contact Channels</span>
-                <h2 className="text-3xl font-extrabold text-charcoal dark:text-warm-white font-heading mb-4">
-                  Let&apos;s Build Your Digital Infrastructure
-                </h2>
-                <p className="text-sm text-slate-muted leading-relaxed font-normal">
-                  Connect directly with our headquarters operations desk in Bharatpur, Rajasthan, or schedule an in-person discovery meeting.
-                </p>
-              </div>
+              <RevealOnScroll direction="left">
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-gold block mb-2">Direct Contact Channels</span>
+                  <h2 className="text-3xl font-extrabold text-charcoal dark:text-warm-white font-heading mb-4">
+                    Let&apos;s Build Your Digital Infrastructure
+                  </h2>
+                  <p className="text-sm text-slate-muted leading-relaxed font-normal">
+                    Connect directly with our headquarters operations desk in Bharatpur, Rajasthan, or schedule an in-person discovery meeting.
+                  </p>
+                </div>
+              </RevealOnScroll>
 
               {/* Direct Info Cards */}
               <div className="space-y-4">
-                <div className="p-6 rounded-2xl bg-white dark:bg-charcoal border border-border flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-gold/10 text-gold flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5" />
+                <TiltCard tiltIntensity={5} glareOpacity={0.1}>
+                  <div className="p-6 rounded-2xl bg-white dark:bg-charcoal border border-border flex items-start gap-4 hover:border-gold/40 transition-colors">
+                    <div className="w-11 h-11 rounded-xl bg-gold/10 text-gold flex items-center justify-center shrink-0">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-muted mb-1">Direct Phone Lines</h3>
+                      <div className="flex flex-col">
+                        <a href="tel:+919057287689" className="text-base font-bold text-charcoal dark:text-warm-white hover:text-gold transition-colors font-heading">
+                          +91 9057287689
+                        </a>
+                        <a href="tel:+917727887850" className="text-sm text-slate-muted hover:text-gold transition-colors">
+                          +91 7727887850
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-muted mb-1">Direct Phone Lines</h3>
-                    <div className="flex flex-col">
-                      <a href="tel:+919057287689" className="text-base font-bold text-charcoal dark:text-warm-white hover:text-gold transition-colors font-heading">
-                        +91 9057287689
+                </TiltCard>
+
+                <TiltCard tiltIntensity={5} glareOpacity={0.1}>
+                  <div className="p-6 rounded-2xl bg-white dark:bg-charcoal border border-border flex items-start gap-4 hover:border-[#25D366]/40 transition-colors">
+                    <div className="w-11 h-11 rounded-xl bg-[#25D366]/10 text-[#25D366] flex items-center justify-center shrink-0">
+                      <MessageSquare className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-muted mb-1">WhatsApp Direct Support</h3>
+                      <a
+                        href="https://wa.me/919057287689"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base font-bold text-charcoal dark:text-warm-white hover:text-[#25D366] transition-colors font-heading block"
+                      >
+                        Chat on WhatsApp (+91 9057287689)
                       </a>
-                      <a href="tel:+917727887850" className="text-sm text-slate-muted hover:text-gold transition-colors">
-                        +91 7727887850
+                      <span className="text-xs text-slate-muted">Average response time: &lt; 15 minutes</span>
+                    </div>
+                  </div>
+                </TiltCard>
+
+                <TiltCard tiltIntensity={5} glareOpacity={0.1}>
+                  <div className="p-6 rounded-2xl bg-white dark:bg-charcoal border border-border flex items-start gap-4 hover:border-gold/40 transition-colors">
+                    <div className="w-11 h-11 rounded-xl bg-gold/10 text-gold flex items-center justify-center shrink-0">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-muted mb-1">Official Email Desk</h3>
+                      <a href="mailto:royalbusinessmachine@gmail.com" className="text-base font-bold text-charcoal dark:text-warm-white hover:text-gold transition-colors font-heading block truncate max-w-[260px]">
+                        royalbusinessmachine@gmail.com
+                      </a>
+                      <a href="mailto:contact@royalbusiness.com" className="text-xs text-slate-muted hover:text-gold transition-colors">
+                        contact@royalbusiness.com
                       </a>
                     </div>
                   </div>
-                </div>
+                </TiltCard>
 
-                <div className="p-6 rounded-2xl bg-white dark:bg-charcoal border border-border flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-[#25D366]/10 text-[#25D366] flex items-center justify-center shrink-0">
-                    <MessageSquare className="w-5 h-5" />
+                <TiltCard tiltIntensity={5} glareOpacity={0.1}>
+                  <div className="p-6 rounded-2xl bg-white dark:bg-charcoal border border-border flex items-start gap-4 hover:border-gold/40 transition-colors">
+                    <div className="w-11 h-11 rounded-xl bg-gold/10 text-gold flex items-center justify-center shrink-0">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-muted mb-1">Registered Headquarters</h3>
+                      <p className="text-sm font-bold text-charcoal dark:text-warm-white font-heading">
+                        Bharatpur, Rajasthan, India
+                      </p>
+                      <p className="text-xs text-slate-muted">
+                        Regional Centers: Bharatpur, Karauli, Alwar, Dholpur, Jaipur & National Deployments
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-muted mb-1">WhatsApp Direct Support</h3>
-                    <a
-                      href="https://wa.me/919057287689"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-base font-bold text-charcoal dark:text-warm-white hover:text-[#25D366] transition-colors font-heading block"
-                    >
-                      Chat on WhatsApp (+91 9057287689)
-                    </a>
-                    <span className="text-xs text-slate-muted">Average response time: &lt; 15 minutes</span>
-                  </div>
-                </div>
+                </TiltCard>
 
-                <div className="p-6 rounded-2xl bg-white dark:bg-charcoal border border-border flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-gold/10 text-gold flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5" />
+                <TiltCard tiltIntensity={5} glareOpacity={0.1}>
+                  <div className="p-6 rounded-2xl bg-white dark:bg-charcoal border border-border flex items-start gap-4 hover:border-gold/40 transition-colors">
+                    <div className="w-11 h-11 rounded-xl bg-gold/10 text-gold flex items-center justify-center shrink-0">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-muted mb-1">Operational Hours & SLA</h3>
+                      <p className="text-sm text-charcoal dark:text-warm-white font-medium">
+                        Monday – Saturday: 09:00 AM – 07:00 PM IST
+                      </p>
+                      <p className="text-xs text-slate-muted">
+                        24/7 Monitoring for Active Enterprise Server Deployments
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-muted mb-1">Official Email Desk</h3>
-                    <a href="mailto:royalbusinessmachine@gmail.com" className="text-base font-bold text-charcoal dark:text-warm-white hover:text-gold transition-colors font-heading block truncate max-w-[260px]">
-                      royalbusinessmachine@gmail.com
-                    </a>
-                    <a href="mailto:contact@royalbusiness.com" className="text-xs text-slate-muted hover:text-gold transition-colors">
-                      contact@royalbusiness.com
-                    </a>
-                  </div>
-                </div>
-
-                <div className="p-6 rounded-2xl bg-white dark:bg-charcoal border border-border flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-gold/10 text-gold flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-muted mb-1">Registered Headquarters</h3>
-                    <p className="text-sm font-bold text-charcoal dark:text-warm-white font-heading">
-                      Bharatpur, Rajasthan, India
-                    </p>
-                    <p className="text-xs text-slate-muted">
-                      Regional Centers: Bharatpur, Karauli, Alwar, Dholpur, Jaipur & National Deployments
-                    </p>
-                  </div>
-                </div>
-
-                <div className="p-6 rounded-2xl bg-white dark:bg-charcoal border border-border flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-gold/10 text-gold flex items-center justify-center shrink-0">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-muted mb-1">Operational Hours & SLA</h3>
-                    <p className="text-sm text-charcoal dark:text-warm-white font-medium">
-                      Monday – Saturday: 09:00 AM – 07:00 PM IST
-                    </p>
-                    <p className="text-xs text-slate-muted">
-                      24/7 Monitoring for Active Enterprise Server Deployments
-                    </p>
-                  </div>
-                </div>
+                </TiltCard>
               </div>
             </div>
 
             {/* Right Column: Interactive Consultation & Scoping Form */}
             <div className="lg:col-span-7">
-              <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-charcoal border border-border shadow-lg">
+              <RevealOnScroll direction="right">
+                <div className="p-8 sm:p-12 rounded-3xl bg-white dark:bg-charcoal border border-border shadow-lg">
                 <div className="mb-8">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-gold bg-gold/10 border border-gold/20 mb-2">
                     <ShieldCheck className="w-3.5 h-3.5" />
@@ -389,6 +410,7 @@ export function ContactClient() {
                   </form>
                 )}
               </div>
+              </RevealOnScroll>
             </div>
 
           </div>

@@ -5,6 +5,7 @@ import { Timeline } from "@/components/about/timeline";
 import { StatsSection } from "@/components/stats-section";
 import { CtaBanner } from "@/components/cta-banner";
 import { SectionHeader } from "@/components/section-header";
+import { RevealOnScroll, TiltCard } from "@/components/motion";
 import {
   Target,
   Eye,
@@ -13,7 +14,7 @@ import {
   Award,
   Layers,
   ArrowRight,
-  Sparkles
+  Sparkles,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -51,19 +52,28 @@ export default function AboutPage() {
       
       {/* 1. Header / Hero */}
       <section className="py-20 lg:py-28 bg-white dark:bg-charcoal border-b border-border relative overflow-hidden">
+        {/* Subtle background ambient glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-gold/5 blur-3xl pointer-events-none" />
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-4xl text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Corporate Background</span>
-          </div>
+          <RevealOnScroll direction="down">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Corporate Background</span>
+            </div>
+          </RevealOnScroll>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading">
-            About <span className="gold-gradient-text">Royal Business Machine</span>
-          </h1>
+          <RevealOnScroll direction="up" delay={0.1}>
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading">
+              About <span className="gold-gradient-text">Royal Business Machine</span>
+            </h1>
+          </RevealOnScroll>
 
-          <p className="text-base sm:text-xl text-slate-muted dark:text-slate-light leading-relaxed font-normal max-w-3xl mx-auto">
-            A multi-service technology and business infrastructure platform delivering custom enterprise software, mobile apps, ERP systems, digital marketing, in-house printing, and institutional solutions.
-          </p>
+          <RevealOnScroll direction="up" delay={0.2}>
+            <p className="text-base sm:text-xl text-slate-muted dark:text-slate-light leading-relaxed font-normal max-w-3xl mx-auto">
+              A multi-service technology and business infrastructure platform delivering custom enterprise software, mobile apps, ERP systems, digital marketing, in-house printing, and institutional solutions.
+            </p>
+          </RevealOnScroll>
         </div>
       </section>
 
@@ -71,45 +81,47 @@ export default function AboutPage() {
       <StatsSection />
 
       {/* 3. Founder & Leadership Spotlight */}
-      <section className="py-24 bg-warm-white dark:bg-charcoal/50 border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-warm-white dark:bg-charcoal/50 border-b border-border relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="relative w-72 h-88 sm:w-80 sm:h-96 rounded-3xl overflow-hidden border-2 border-gold/40 shadow-xl bg-charcoal p-8 flex flex-col justify-between text-warm-white">
-                <div className="space-y-3">
-                  <div className="w-16 h-16 rounded-2xl bg-white/10 border border-gold/30 flex items-center justify-center p-2.5 shadow-sm">
-                    <Image
-                      src="/assets/logo/logo-symbol.png"
-                      alt="Royal Business Machine Emblem"
-                      width={48}
-                      height={48}
-                      className="object-contain"
-                    />
+            <RevealOnScroll direction="left" className="lg:col-span-5 flex justify-center">
+              <TiltCard maxTilt={5}>
+                <div className="relative w-72 h-88 sm:w-80 sm:h-96 rounded-3xl overflow-hidden border-2 border-gold/40 shadow-2xl bg-charcoal p-8 flex flex-col justify-between text-warm-white group">
+                  <div className="space-y-3">
+                    <div className="w-16 h-16 rounded-2xl bg-white/10 border border-gold/30 flex items-center justify-center p-2.5 shadow-sm group-hover:scale-105 transition-transform">
+                      <Image
+                        src="/assets/logo/logo-symbol.png"
+                        alt="Royal Business Machine Emblem"
+                        width={48}
+                        height={48}
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="text-xs font-bold tracking-widest uppercase text-gold">Executive Leadership</div>
+                    <h3 className="text-2xl font-extrabold text-white font-heading">Pavitra Arora</h3>
+                    <p className="text-xs text-slate-light">Founder & Chief Executive Officer</p>
                   </div>
-                  <div className="text-xs font-bold tracking-widest uppercase text-gold">Executive Leadership</div>
-                  <h3 className="text-2xl font-extrabold text-white font-heading">Pavitra Arora</h3>
-                  <p className="text-xs text-slate-light">Founder & Chief Executive Officer</p>
-                </div>
 
-                <div className="pt-6 border-t border-white/10 space-y-2 text-xs text-slate-light">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
-                    <span>Scaled ₹1.8 Cr revenue base</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
-                    <span>Creator of NyayaSetu & Dairy Muneem</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
-                    <span>Bharatpur, Rajasthan HQ</span>
+                  <div className="pt-6 border-t border-white/10 space-y-2 text-xs text-slate-light">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                      <span>Scaled ₹1.8 Cr revenue base</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                      <span>Creator of NyayaSetu & Dairy Muneem</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                      <span>Bharatpur, Rajasthan HQ</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </TiltCard>
+            </RevealOnScroll>
 
-            <div className="lg:col-span-7 space-y-6">
+            <RevealOnScroll direction="right" className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
                 <span>Founder Narrative</span>
               </div>
@@ -129,13 +141,13 @@ export default function AboutPage() {
               <div className="pt-2">
                 <Link
                   href="/team"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-charcoal dark:bg-gold text-warm-white dark:text-charcoal font-semibold text-xs uppercase tracking-wider hover:bg-gold transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-charcoal dark:bg-gold text-warm-white dark:text-charcoal font-semibold text-xs uppercase tracking-wider hover:bg-gold transition-all shadow-md group"
                 >
                   <span>Meet Our Engineering & Strategy Team</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
-            </div>
+            </RevealOnScroll>
 
           </div>
         </div>
@@ -146,29 +158,37 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            <div className="p-8 sm:p-10 rounded-3xl bg-warm-white/70 dark:bg-graphite/40 border border-border space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-gold/10 text-gold flex items-center justify-center">
-                <Eye className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-charcoal dark:text-warm-white font-heading">
-                Our Vision
-              </h3>
-              <p className="text-sm text-slate-muted leading-relaxed font-normal">
-                To become a premier nationally recognized integrated technology and infrastructure partner for MSMEs, modern enterprises, and public sector institutions across emerging Indian markets, driving sustainable automation and digital transformation.
-              </p>
-            </div>
+            <RevealOnScroll direction="up" delay={0.1}>
+              <TiltCard maxTilt={4} className="h-full">
+                <div className="h-full p-8 sm:p-10 rounded-3xl bg-warm-white/70 dark:bg-graphite/40 border border-border hover:border-gold/50 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                  <div className="w-12 h-12 rounded-2xl bg-gold/10 text-gold flex items-center justify-center">
+                    <Eye className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-charcoal dark:text-warm-white font-heading">
+                    Our Vision
+                  </h3>
+                  <p className="text-sm text-slate-muted leading-relaxed font-normal">
+                    To become a premier nationally recognized integrated technology and infrastructure partner for MSMEs, modern enterprises, and public sector institutions across emerging Indian markets, driving sustainable automation and digital transformation.
+                  </p>
+                </div>
+              </TiltCard>
+            </RevealOnScroll>
 
-            <div className="p-8 sm:p-10 rounded-3xl bg-warm-white/70 dark:bg-graphite/40 border border-border space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-gold/10 text-gold flex items-center justify-center">
-                <Target className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-bold text-charcoal dark:text-warm-white font-heading">
-                Our Mission
-              </h3>
-              <p className="text-sm text-slate-muted leading-relaxed font-normal">
-                To empower organizations with robust digital infrastructure, human-centered software architectures, and turnkey execution that minimizes operational friction, expands market reach, and maximizes measurable business ROI.
-              </p>
-            </div>
+            <RevealOnScroll direction="up" delay={0.2}>
+              <TiltCard maxTilt={4} className="h-full">
+                <div className="h-full p-8 sm:p-10 rounded-3xl bg-warm-white/70 dark:bg-graphite/40 border border-border hover:border-gold/50 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+                  <div className="w-12 h-12 rounded-2xl bg-gold/10 text-gold flex items-center justify-center">
+                    <Target className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-charcoal dark:text-warm-white font-heading">
+                    Our Mission
+                  </h3>
+                  <p className="text-sm text-slate-muted leading-relaxed font-normal">
+                    To empower organizations with robust digital infrastructure, human-centered software architectures, and turnkey execution that minimizes operational friction, expands market reach, and maximizes measurable business ROI.
+                  </p>
+                </div>
+              </TiltCard>
+            </RevealOnScroll>
 
           </div>
         </div>
@@ -186,22 +206,23 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {coreValues.map((val, idx) => (
-              <div
-                key={idx}
-                className="p-7 rounded-2xl bg-white dark:bg-charcoal border border-border hover:border-gold/50 transition-all flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-4">
-                    <val.icon className="w-5 h-5" />
+              <RevealOnScroll key={idx} delay={idx * 0.08} direction="up" className="h-full">
+                <TiltCard maxTilt={5} className="h-full">
+                  <div className="h-full p-7 rounded-2xl bg-white dark:bg-charcoal border border-border hover:border-gold/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                      <div className="w-10 h-10 rounded-xl bg-gold/10 text-gold flex items-center justify-center mb-4 group-hover:bg-gold group-hover:text-white group-hover:scale-110 transition-all">
+                        <val.icon className="w-5 h-5" />
+                      </div>
+                      <h4 className="text-lg font-bold text-charcoal dark:text-warm-white mb-2 font-heading group-hover:text-gold transition-colors">
+                        {val.title}
+                      </h4>
+                      <p className="text-xs text-slate-muted leading-relaxed font-normal">
+                        {val.desc}
+                      </p>
+                    </div>
                   </div>
-                  <h4 className="text-lg font-bold text-charcoal dark:text-warm-white mb-2 font-heading">
-                    {val.title}
-                  </h4>
-                  <p className="text-xs text-slate-muted leading-relaxed font-normal">
-                    {val.desc}
-                  </p>
-                </div>
-              </div>
+                </TiltCard>
+              </RevealOnScroll>
             ))}
           </div>
 

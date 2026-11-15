@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { SectionHeader } from "@/components/section-header";
+import { TiltCard } from "@/components/motion";
 import {
   Code2,
   Globe2,
@@ -12,7 +13,7 @@ import {
   Rocket,
   GraduationCap,
   Cpu,
-  ArrowRight
+  ArrowRight,
 } from "lucide-react";
 
 const previewServices = [
@@ -91,10 +92,17 @@ const previewServices = [
 ];
 
 export function ServicesPreview() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <section className="py-24 bg-warm-white dark:bg-charcoal/50 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <section className="py-24 bg-warm-white dark:bg-charcoal/50 relative overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute inset-0 pointer-events-none opacity-40">
+        <div className="absolute top-1/3 -right-32 w-80 h-80 bg-gold/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -left-32 w-80 h-80 bg-gold/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           badge="What We Deliver"
           title="Integrated Business Infrastructure"
@@ -105,47 +113,54 @@ export function ServicesPreview() {
           {previewServices.map((service, index) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="group relative rounded-2xl bg-white dark:bg-charcoal border border-border p-7 flex flex-col justify-between hover:border-gold/50 hover:shadow-lg transition-all duration-300"
+              transition={{ duration: 0.6, delay: index * 0.06 }}
+              className="h-full"
             >
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-white transition-colors">
-                    <service.icon className="w-6 h-6" />
+              <TiltCard maxTilt={6} className="h-full">
+                <div className="group relative h-full rounded-2xl bg-white dark:bg-charcoal border border-border p-7 flex flex-col justify-between hover:border-gold/60 hover:shadow-2xl transition-all duration-300">
+                  <div>
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-white group-hover:scale-110 group-hover:rotate-2 transition-all duration-300">
+                        <service.icon className="w-6 h-6" />
+                      </div>
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-slate-muted bg-warm-white dark:bg-graphite px-2.5 py-1 rounded-full border border-border group-hover:border-gold/30 transition-colors">
+                        {service.badge}
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-charcoal dark:text-warm-white mb-2 group-hover:text-gold transition-colors font-heading">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-xs text-slate-muted leading-relaxed mb-6 font-normal">
+                      {service.desc}
+                    </p>
+
+                    <ul className="space-y-2 mb-6 border-t border-border/60 pt-4">
+                      {service.features.map((feat, idx) => (
+                        <li
+                          key={idx}
+                          className="text-xs text-charcoal/80 dark:text-warm-white/80 flex items-center gap-2"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 group-hover:scale-125 transition-transform" />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-muted bg-warm-white dark:bg-graphite px-2.5 py-1 rounded-full border border-border">
-                    {service.badge}
-                  </span>
+
+                  <Link
+                    href={service.href}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-dark transition-colors pt-2 group-hover:translate-x-1.5 transition-transform"
+                  >
+                    <span>Learn Details</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
-
-                <h3 className="text-xl font-bold text-charcoal dark:text-warm-white mb-2 group-hover:text-gold transition-colors font-heading">
-                  {service.title}
-                </h3>
-
-                <p className="text-xs text-slate-muted leading-relaxed mb-6 font-normal">
-                  {service.desc}
-                </p>
-
-                <ul className="space-y-2 mb-6 border-t border-border/60 pt-4">
-                  {service.features.map((feat, idx) => (
-                    <li key={idx} className="text-xs text-charcoal/80 dark:text-warm-white/80 flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-gold" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <Link
-                href={service.href}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-dark transition-colors pt-2 group-hover:translate-x-1 transition-transform"
-              >
-                <span>Learn Details</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+              </TiltCard>
             </motion.div>
           ))}
         </div>
@@ -153,13 +168,12 @@ export function ServicesPreview() {
         <div className="mt-14 text-center">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white dark:bg-graphite border border-border text-charcoal dark:text-warm-white hover:border-gold hover:text-gold text-sm font-semibold transition-all shadow-sm"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white dark:bg-graphite border border-border text-charcoal dark:text-warm-white hover:border-gold hover:text-gold text-sm font-semibold transition-all shadow-sm hover:shadow-md group"
           >
             <span>View All 8 Categories & 40+ Sub-Services</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
-
       </div>
     </section>
   );

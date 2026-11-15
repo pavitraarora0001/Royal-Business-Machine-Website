@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   MapPin,
   Phone,
@@ -12,16 +13,31 @@ import {
   Linkedin,
   Twitter,
   Instagram,
-  Facebook
+  Facebook,
+  ArrowUp,
 } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const shouldReduceMotion = useReducedMotion();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <footer className="bg-charcoal text-warm-white border-t border-border-dark pt-20 pb-10 mt-auto relative overflow-hidden">
       {/* Subtle gold ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-gold/5 blur-3xl pointer-events-none" />
+
+      {/* Animated Gold Separator Line */}
+      <motion.div
+        initial={shouldReduceMotion ? false : { scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent origin-center"
+      />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
@@ -34,15 +50,15 @@ export function Footer() {
                 alt="Royal Business Machine"
                 width={642}
                 height={163}
-                className="w-[240px] sm:w-[280px] md:w-[310px] h-auto object-contain object-left transition-transform duration-200 group-hover:scale-[1.02]"
+                className="w-[240px] sm:w-[280px] md:w-[310px] h-auto object-contain object-left transition-transform duration-300 group-hover:scale-[1.02]"
               />
             </Link>
 
-            <p className="text-sm text-slate-light leading-relaxed max-w-md">
+            <p className="text-sm text-slate-light leading-relaxed max-w-md font-normal">
               A multi-sector technology and business infrastructure platform delivering enterprise software development, mobile apps, ERP systems, digital marketing, institutional execution, and in-house physical printing collateral.
             </p>
 
-            <div className="flex items-center gap-2 text-xs text-gold-light bg-graphite/60 border border-gold/20 px-3.5 py-2 rounded-xl inline-flex">
+            <div className="flex items-center gap-2 text-xs text-gold-light bg-graphite/60 border border-gold/20 px-3.5 py-2 rounded-xl inline-flex hover:border-gold/50 transition-colors">
               <ShieldCheck className="w-4 h-4 text-gold shrink-0" />
               <span>Government Recognized Udyam MSME Platform</span>
             </div>
@@ -123,14 +139,24 @@ export function Footer() {
               </li>
             </ul>
 
-            <div className="mt-6 pt-5 border-t border-border-dark">
+            <div className="mt-6 pt-5 border-t border-border-dark flex items-center justify-between">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 text-xs font-bold text-gold hover:text-white transition-colors group"
               >
-                <span>Request Enterprise Consultation</span>
+                <span>Request Consultation</span>
                 <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
+
+              {/* Back to top button */}
+              <button
+                onClick={scrollToTop}
+                className="w-8 h-8 rounded-lg bg-graphite border border-border-dark flex items-center justify-center text-slate-light hover:text-gold hover:border-gold transition-all"
+                aria-label="Back to top"
+                title="Back to top"
+              >
+                <ArrowUp className="w-4 h-4" />
+              </button>
             </div>
           </div>
 
@@ -156,8 +182,9 @@ export function Footer() {
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <li>
-      <Link href={href} className="text-xs text-slate-light hover:text-gold transition-colors">
-        {children}
+      <Link href={href} className="text-xs text-slate-light hover:text-gold transition-colors flex items-center gap-1 group">
+        <span className="w-1 h-1 rounded-full bg-gold/40 group-hover:bg-gold group-hover:scale-125 transition-all" />
+        <span>{children}</span>
       </Link>
     </li>
   );
@@ -170,7 +197,7 @@ function SocialIcon({ href, label, icon }: { href: string; label: string; icon: 
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="w-8 h-8 rounded-lg bg-graphite border border-border-dark flex items-center justify-center text-slate-light hover:bg-gold hover:text-charcoal hover:border-gold transition-all"
+      className="w-8 h-8 rounded-lg bg-graphite border border-border-dark flex items-center justify-center text-slate-light hover:bg-gold hover:text-charcoal hover:border-gold hover:scale-110 transition-all duration-200"
     >
       {icon}
     </a>

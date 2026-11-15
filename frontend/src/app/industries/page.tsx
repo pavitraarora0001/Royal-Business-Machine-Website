@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBanner } from "@/components/cta-banner";
+import { RevealOnScroll, TiltCard } from "@/components/motion";
 import {
   GraduationCap,
   Activity,
@@ -14,7 +15,7 @@ import {
   Landmark,
   ArrowRight,
   CheckCircle2,
-  Sparkles
+  Sparkles,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -91,69 +92,79 @@ export default function IndustriesPage() {
     <div className="flex flex-col w-full overflow-hidden">
       
       {/* 1. Header */}
-      <section className="py-20 lg:py-28 bg-white dark:bg-charcoal border-b border-border text-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Vertical Specialization</span>
-          </div>
+      <section className="py-20 lg:py-28 bg-white dark:bg-charcoal border-b border-border text-center relative overflow-hidden">
+        {/* Subtle gold ambient glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-gold/5 blur-3xl pointer-events-none" />
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading">
-            Industries <span className="gold-gradient-text">We Empower</span>
-          </h1>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-6 relative z-10">
+          <RevealOnScroll direction="down">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Vertical Specialization</span>
+            </div>
+          </RevealOnScroll>
 
-          <p className="text-base sm:text-xl text-slate-muted dark:text-slate-light leading-relaxed max-w-3xl mx-auto font-normal">
-            Custom-engineered digital technology, enterprise automation, and on-ground execution tailored to the operational realities of 10 key economic sectors.
-          </p>
+          <RevealOnScroll direction="up" delay={0.1}>
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading">
+              Industries <span className="gold-gradient-text">We Empower</span>
+            </h1>
+          </RevealOnScroll>
+
+          <RevealOnScroll direction="up" delay={0.2}>
+            <p className="text-base sm:text-xl text-slate-muted dark:text-slate-light leading-relaxed max-w-3xl mx-auto font-normal">
+              Custom-engineered digital technology, enterprise automation, and on-ground execution tailored to the operational realities of 10 key economic sectors.
+            </p>
+          </RevealOnScroll>
         </div>
       </section>
 
       {/* 2. Industries Grid */}
-      <section className="py-24 bg-warm-white dark:bg-charcoal/50 border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <section className="py-24 bg-warm-white dark:bg-charcoal/50 border-b border-border relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((ind, idx) => (
-              <div
-                key={idx}
-                className="p-8 rounded-3xl bg-white dark:bg-charcoal border border-border hover:border-gold/50 shadow-sm transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-gold/10 text-gold flex items-center justify-center mb-6">
-                    <ind.icon className="w-6 h-6" />
+              <RevealOnScroll key={idx} delay={idx * 0.06} direction="up" className="h-full">
+                <TiltCard maxTilt={5} className="h-full">
+                  <div className="h-full p-8 rounded-3xl bg-white dark:bg-charcoal border border-border hover:border-gold/60 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                      <div className="w-12 h-12 rounded-2xl bg-gold/10 text-gold flex items-center justify-center mb-6 group-hover:bg-gold group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                        <ind.icon className="w-6 h-6" />
+                      </div>
+
+                      <h3 className="text-2xl font-bold text-charcoal dark:text-warm-white mb-3 font-heading group-hover:text-gold transition-colors">
+                        {ind.name}
+                      </h3>
+
+                      <p className="text-xs sm:text-sm text-slate-muted leading-relaxed mb-6 font-normal">
+                        {ind.desc}
+                      </p>
+
+                      <div className="space-y-2 mb-6 border-t border-border/60 pt-4">
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-slate-muted">Tailored Modules</div>
+                        <ul className="space-y-1.5">
+                          {ind.deliverables.map((item, dIdx) => (
+                            <li key={dIdx} className="text-xs text-charcoal/80 dark:text-warm-white/80 flex items-center gap-2">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0 group-hover:scale-110 transition-transform" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="pt-4 border-t border-border">
+                      <Link
+                        href={`/contact?industry=${encodeURIComponent(ind.name)}`}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-dark transition-colors group/link"
+                      >
+                        <span>Inquire for {ind.name}</span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
-
-                  <h3 className="text-2xl font-bold text-charcoal dark:text-warm-white mb-3 font-heading">
-                    {ind.name}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-slate-muted leading-relaxed mb-6 font-normal">
-                    {ind.desc}
-                  </p>
-
-                  <div className="space-y-2 mb-6 border-t border-border/60 pt-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-slate-muted">Tailored Modules</div>
-                    <ul className="space-y-1.5">
-                      {ind.deliverables.map((item, dIdx) => (
-                        <li key={dIdx} className="text-xs text-charcoal/80 dark:text-warm-white/80 flex items-center gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-border">
-                  <Link
-                    href={`/contact?industry=${encodeURIComponent(ind.name)}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-dark transition-colors"
-                  >
-                    <span>Inquire for {ind.name}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
+                </TiltCard>
+              </RevealOnScroll>
             ))}
           </div>
 

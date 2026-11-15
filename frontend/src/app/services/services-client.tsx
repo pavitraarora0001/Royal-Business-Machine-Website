@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { TiltCard } from "@/components/motion";
 import { SectionHeader } from "@/components/section-header";
 import { CtaBanner } from "@/components/cta-banner";
 import {
@@ -399,56 +401,64 @@ export function ServicesDirectoryClient() {
             )}
           </div>
 
-          {/* Granular Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {currentCategory.services.map((sub, idx) => (
-              <div
-                key={idx}
-                className="rounded-2xl bg-white dark:bg-charcoal border border-border p-7 flex flex-col justify-between hover:border-gold/50 shadow-sm transition-all"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-bold text-gold font-mono">
-                      #{String(idx + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-[10px] uppercase font-bold text-slate-muted bg-warm-white dark:bg-graphite px-2 py-0.5 rounded border border-border">
-                      Full Turnkey
-                    </span>
+          {/* Granular Services Grid with Animation */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selectedCategory}
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            >
+              {currentCategory.services.map((sub, idx) => (
+                <TiltCard key={idx} maxTilt={4} className="h-full">
+                  <div className="h-full rounded-2xl bg-white dark:bg-charcoal border border-border p-7 flex flex-col justify-between hover:border-gold/60 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-bold text-gold font-mono">
+                          #{String(idx + 1).padStart(2, "0")}
+                        </span>
+                        <span className="text-[10px] uppercase font-bold text-slate-muted bg-warm-white dark:bg-graphite px-2 py-0.5 rounded border border-border">
+                          Full Turnkey
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-charcoal dark:text-warm-white mb-2 font-heading">
+                        {sub.name}
+                      </h3>
+
+                      <p className="text-xs sm:text-sm text-slate-muted leading-relaxed mb-6 font-normal">
+                        {sub.description}
+                      </p>
+
+                      <div className="space-y-2 mb-6 border-t border-border/60 pt-4">
+                        <div className="text-[11px] font-bold uppercase tracking-wider text-slate-muted">Standard Deliverables</div>
+                        <ul className="space-y-1.5">
+                          {sub.deliverables.map((item, dIdx) => (
+                            <li key={dIdx} className="text-xs text-charcoal/80 dark:text-warm-white/80 flex items-center gap-2">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="pt-4 border-t border-border flex items-center justify-between">
+                      <Link
+                        href={`/contact?service=${encodeURIComponent(sub.name)}`}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-dark transition-colors group"
+                      >
+                        <span>Request Custom Scope & Quote</span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
-
-                  <h3 className="text-xl font-bold text-charcoal dark:text-warm-white mb-2 font-heading">
-                    {sub.name}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-slate-muted leading-relaxed mb-6 font-normal">
-                    {sub.description}
-                  </p>
-
-                  <div className="space-y-2 mb-6 border-t border-border/60 pt-4">
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-slate-muted">Standard Deliverables</div>
-                    <ul className="space-y-1.5">
-                      {sub.deliverables.map((item, dIdx) => (
-                        <li key={dIdx} className="text-xs text-charcoal/80 dark:text-warm-white/80 flex items-center gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-border flex items-center justify-between">
-                  <Link
-                    href={`/contact?service=${encodeURIComponent(sub.name)}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-dark transition-colors"
-                  >
-                    <span>Request Custom Scope & Quote</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+                </TiltCard>
+              ))}
+            </motion.div>
+          </AnimatePresence>
 
         </div>
       </section>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { CtaBanner } from "@/components/cta-banner";
+import { RevealOnScroll } from "@/components/motion";
 import {
   HelpCircle,
   Plus,
@@ -75,20 +76,27 @@ export function FaqClient() {
     <div className="flex flex-col w-full overflow-hidden">
       
       {/* 1. Header */}
-      <section className="py-20 lg:py-28 bg-white dark:bg-charcoal border-b border-border text-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Transparency & Guidance</span>
-          </div>
+      <section className="py-20 lg:py-28 bg-white dark:bg-charcoal border-b border-border text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-6 relative z-10">
+          <RevealOnScroll direction="down" distance={20}>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Transparency & Guidance</span>
+            </div>
+          </RevealOnScroll>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading">
-            Frequently Asked <span className="gold-gradient-text">Questions</span>
-          </h1>
+          <RevealOnScroll direction="up" delay={0.1}>
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading">
+              Frequently Asked <span className="gold-gradient-text">Questions</span>
+            </h1>
+          </RevealOnScroll>
 
-          <p className="text-base sm:text-xl text-slate-muted dark:text-slate-light leading-relaxed max-w-3xl mx-auto font-normal">
-            Clear, transparent answers about our custom software delivery process, milestone pricing, source code ownership, and in-house printing services.
-          </p>
+          <RevealOnScroll direction="up" delay={0.2}>
+            <p className="text-base sm:text-xl text-slate-muted dark:text-slate-light leading-relaxed max-w-3xl mx-auto font-normal">
+              Clear, transparent answers about our custom software delivery process, milestone pricing, source code ownership, and in-house printing services.
+            </p>
+          </RevealOnScroll>
         </div>
       </section>
 
@@ -103,10 +111,10 @@ export function FaqClient() {
                   setActiveCategory(cat);
                   setOpenIndex(null);
                 }}
-                className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
+                className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 ${
                   activeCategory === cat
-                    ? "bg-charcoal text-warm-white dark:bg-gold dark:text-charcoal shadow-sm"
-                    : "bg-white dark:bg-graphite text-slate-muted hover:text-charcoal dark:hover:text-white border border-border"
+                    ? "bg-charcoal text-warm-white dark:bg-gold dark:text-charcoal shadow-md shadow-gold/10 scale-105"
+                    : "bg-white dark:bg-graphite text-slate-muted hover:text-charcoal dark:hover:text-white border border-border hover:border-gold/30"
                 }`}
               >
                 {cat}
@@ -126,7 +134,9 @@ export function FaqClient() {
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl bg-white dark:bg-charcoal border border-border overflow-hidden transition-all shadow-sm"
+                  className={`rounded-2xl bg-white dark:bg-charcoal border ${
+                    isOpen ? "border-gold/50 shadow-md ring-1 ring-gold/20" : "border-border shadow-sm hover:border-gold/30"
+                  } overflow-hidden transition-all duration-300`}
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : idx)}
@@ -142,9 +152,9 @@ export function FaqClient() {
                     </div>
 
                     <div
-                      className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                      className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 ${
                         isOpen
-                          ? "bg-gold text-charcoal"
+                          ? "bg-gold text-charcoal rotate-180"
                           : "bg-warm-white dark:bg-graphite text-slate-muted"
                       }`}
                     >
@@ -158,7 +168,7 @@ export function FaqClient() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.2 }}
+                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                       >
                         <div className="px-6 sm:px-7 pb-6 text-xs sm:text-sm text-slate-muted leading-relaxed border-t border-border/60 pt-4 font-normal">
                           {faq.a}
@@ -171,32 +181,34 @@ export function FaqClient() {
             })}
           </div>
 
-          <div className="mt-16 p-8 rounded-3xl bg-warm-white dark:bg-charcoal/50 border border-border text-center max-w-xl mx-auto space-y-4">
-            <h3 className="text-xl font-bold text-charcoal dark:text-warm-white font-heading">
-              Have a Specific Technical Question?
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-muted leading-relaxed">
-              Connect directly with our engineering and operations desk via phone or WhatsApp.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-              <a
-                href="https://wa.me/919057287689"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] text-white font-semibold text-xs shadow-sm hover:scale-105 transition-all"
-              >
-                <MessageSquare className="w-3.5 h-3.5" />
-                <span>WhatsApp: +91 9057287689</span>
-              </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-charcoal dark:bg-gold text-warm-white dark:text-charcoal font-semibold text-xs transition-colors"
-              >
-                <span>Submit Inquiry Form</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+          <RevealOnScroll direction="up" delay={0.1}>
+            <div className="mt-16 p-8 rounded-3xl bg-warm-white dark:bg-charcoal/50 border border-border text-center max-w-xl mx-auto space-y-4">
+              <h3 className="text-xl font-bold text-charcoal dark:text-warm-white font-heading">
+                Have a Specific Technical Question?
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-muted leading-relaxed">
+                Connect directly with our engineering and operations desk via phone or WhatsApp.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+                <a
+                  href="https://wa.me/919057287689"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] text-white font-semibold text-xs shadow-sm hover:scale-105 transition-all"
+                >
+                  <MessageSquare className="w-3.5 h-3.5" />
+                  <span>WhatsApp: +91 9057287689</span>
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-charcoal dark:bg-gold text-warm-white dark:text-charcoal font-semibold text-xs transition-colors"
+                >
+                  <span>Submit Inquiry Form</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
             </div>
-          </div>
+          </RevealOnScroll>
 
         </div>
       </section>

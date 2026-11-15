@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { CtaBanner } from "@/components/cta-banner";
+import { RevealOnScroll, TiltCard } from "@/components/motion";
 import {
   FolderGit2,
   ArrowRight,
@@ -213,20 +214,27 @@ export function ProjectsClient() {
     <div className="flex flex-col w-full overflow-hidden">
       
       {/* 1. Header */}
-      <section className="py-20 lg:py-28 bg-white dark:bg-charcoal border-b border-border text-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
-            <FolderGit2 className="w-3.5 h-3.5" />
-            <span>Proven Deployments (50+)</span>
-          </div>
+      <section className="py-20 lg:py-28 bg-white dark:bg-charcoal border-b border-border text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-6 relative z-10">
+          <RevealOnScroll direction="down" distance={20}>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
+              <FolderGit2 className="w-3.5 h-3.5" />
+              <span>Proven Deployments (50+)</span>
+            </div>
+          </RevealOnScroll>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading">
-            Enterprise Portfolio & <span className="gold-gradient-text">Case Studies</span>
-          </h1>
+          <RevealOnScroll direction="up" delay={0.1}>
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading">
+              Enterprise Portfolio & <span className="gold-gradient-text">Case Studies</span>
+            </h1>
+          </RevealOnScroll>
 
-          <p className="text-base sm:text-xl text-slate-muted dark:text-slate-light leading-relaxed max-w-3xl mx-auto font-normal">
-            Explore authentic, high-impact software architectures, mobile apps, government college portals, and branding suites delivered across India&apos;s emerging markets.
-          </p>
+          <RevealOnScroll direction="up" delay={0.2}>
+            <p className="text-base sm:text-xl text-slate-muted dark:text-slate-light leading-relaxed max-w-3xl mx-auto font-normal">
+              Explore authentic, high-impact software architectures, mobile apps, government college portals, and branding suites delivered across India&apos;s emerging markets.
+            </p>
+          </RevealOnScroll>
         </div>
       </section>
 
@@ -241,10 +249,10 @@ export function ProjectsClient() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
+                className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 ${
                   selectedCategory === cat
-                    ? "bg-charcoal text-warm-white dark:bg-gold dark:text-charcoal shadow-sm"
-                    : "bg-white dark:bg-graphite text-slate-muted hover:text-charcoal dark:hover:text-white border border-border"
+                    ? "bg-charcoal text-warm-white dark:bg-gold dark:text-charcoal shadow-md shadow-gold/10 scale-105"
+                    : "bg-white dark:bg-graphite text-slate-muted hover:text-charcoal dark:hover:text-white border border-border hover:border-gold/30"
                 }`}
               >
                 {cat}
@@ -255,7 +263,7 @@ export function ProjectsClient() {
       </section>
 
       {/* 3. Projects Showcase Grid */}
-      <section className="py-20 bg-background border-b border-border">
+      <section className="py-20 bg-background border-b border-border relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -267,68 +275,78 @@ export function ProjectsClient() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                  className={`rounded-3xl bg-white dark:bg-charcoal border ${
-                    project.featured ? "border-gold/50 shadow-md ring-1 ring-gold/20" : "border-border shadow-sm hover:border-gold/40"
-                  } p-8 flex flex-col justify-between transition-all group`}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  className="h-full"
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/20">
-                        {project.category}
-                      </span>
-                      {project.contractValue && (
-                        <span className="text-xs font-semibold text-slate-muted">
-                          {project.contractValue}
-                        </span>
-                      )}
-                    </div>
-
-                    <h3 className="text-2xl font-bold text-charcoal dark:text-warm-white mb-2 font-heading group-hover:text-gold transition-colors">
-                      {project.title}
-                    </h3>
-
-                    <div className="text-xs font-semibold text-gold mb-3">
-                      Client: {project.client}
-                    </div>
-
-                    <p className="text-xs sm:text-sm text-slate-muted leading-relaxed mb-4 font-normal">
-                      {project.description}
-                    </p>
-
-                    <div className="p-3.5 rounded-xl bg-warm-white dark:bg-graphite/60 border border-border mb-6">
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-charcoal dark:text-warm-white mb-1">
-                        Verified Outcome:
-                      </div>
-                      <p className="text-xs text-slate-muted leading-relaxed">
-                        {project.outcome}
-                      </p>
-                    </div>
-
-                    <div className="space-y-1.5 mb-6">
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-muted">Tech Stack</div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {project.technologies.map((t, idx) => (
-                          <span
-                            key={idx}
-                            className="text-[11px] px-2.5 py-1 rounded-lg bg-warm-white dark:bg-graphite border border-border text-charcoal/80 dark:text-warm-white/80"
-                          >
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-border flex items-center justify-between">
-                    <Link
-                      href={`/contact?project=${encodeURIComponent(project.title)}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-dark transition-colors"
+                  <TiltCard
+                    tiltIntensity={6}
+                    glareOpacity={0.15}
+                    className="h-full"
+                  >
+                    <div
+                      className={`h-full rounded-3xl bg-white dark:bg-charcoal border ${
+                        project.featured ? "border-gold/50 shadow-md ring-1 ring-gold/20" : "border-border shadow-sm hover:border-gold/40"
+                      } p-8 flex flex-col justify-between transition-all duration-300 group hover:shadow-xl hover:shadow-gold/5`}
                     >
-                      <span>Inquire About Similar Architecture</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
+                      <div>
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/20">
+                            {project.category}
+                          </span>
+                          {project.contractValue && (
+                            <span className="text-xs font-semibold text-slate-muted">
+                              {project.contractValue}
+                            </span>
+                          )}
+                        </div>
+
+                        <h3 className="text-2xl font-bold text-charcoal dark:text-warm-white mb-2 font-heading group-hover:text-gold transition-colors duration-300">
+                          {project.title}
+                        </h3>
+
+                        <div className="text-xs font-semibold text-gold mb-3">
+                          Client: {project.client}
+                        </div>
+
+                        <p className="text-xs sm:text-sm text-slate-muted leading-relaxed mb-4 font-normal">
+                          {project.description}
+                        </p>
+
+                        <div className="p-3.5 rounded-xl bg-warm-white dark:bg-graphite/60 border border-border mb-6">
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-charcoal dark:text-warm-white mb-1">
+                            Verified Outcome:
+                          </div>
+                          <p className="text-xs text-slate-muted leading-relaxed">
+                            {project.outcome}
+                          </p>
+                        </div>
+
+                        <div className="space-y-1.5 mb-6">
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-slate-muted">Tech Stack</div>
+                          <div className="flex flex-wrap gap-1.5">
+                            {project.technologies.map((t, idx) => (
+                              <span
+                                key={idx}
+                                className="text-[11px] px-2.5 py-1 rounded-lg bg-warm-white dark:bg-graphite border border-border text-charcoal/80 dark:text-warm-white/80 group-hover:border-gold/20 transition-colors"
+                              >
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="pt-4 border-t border-border flex items-center justify-between">
+                        <Link
+                          href={`/contact?project=${encodeURIComponent(project.title)}`}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-light transition-colors group/link"
+                        >
+                          <span>Inquire About Similar Architecture</span>
+                          <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1.5 transition-transform" />
+                        </Link>
+                      </div>
+                    </div>
+                  </TiltCard>
                 </motion.div>
               ))}
             </AnimatePresence>

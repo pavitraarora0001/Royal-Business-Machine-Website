@@ -3,6 +3,7 @@ import Link from "next/link";
 import { StatsSection } from "@/components/stats-section";
 import { CtaBanner } from "@/components/cta-banner";
 import { SectionHeader } from "@/components/section-header";
+import { RevealOnScroll, TiltCard } from "@/components/motion";
 import {
   Trophy,
   Star,
@@ -76,20 +77,27 @@ export default function AchievementsPage() {
     <div className="flex flex-col w-full overflow-hidden">
       
       {/* 1. Header */}
-      <section className="py-20 lg:py-28 bg-white dark:bg-charcoal border-b border-border text-center">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
-            <Trophy className="w-3.5 h-3.5" />
-            <span>Proven Track Record</span>
-          </div>
+      <section className="py-20 lg:py-28 bg-white dark:bg-charcoal border-b border-border text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-6 relative z-10">
+          <RevealOnScroll direction="down" distance={20}>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gold/10 text-gold border border-gold/25">
+              <Trophy className="w-3.5 h-3.5" />
+              <span>Proven Track Record</span>
+            </div>
+          </RevealOnScroll>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading">
-            Milestones of <span className="gold-gradient-text">Success & Impact</span>
-          </h1>
+          <RevealOnScroll direction="up" delay={0.1}>
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading">
+              Milestones of <span className="gold-gradient-text">Success & Impact</span>
+            </h1>
+          </RevealOnScroll>
 
-          <p className="text-base sm:text-xl text-slate-muted dark:text-slate-light leading-relaxed max-w-3xl mx-auto font-normal">
-            A consistent record of engineering excellence, institutional accountability, and measurable business growth across India&apos;s emerging markets.
-          </p>
+          <RevealOnScroll direction="up" delay={0.2}>
+            <p className="text-base sm:text-xl text-slate-muted dark:text-slate-light leading-relaxed max-w-3xl mx-auto font-normal">
+              A consistent record of engineering excellence, institutional accountability, and measurable business growth across India&apos;s emerging markets.
+            </p>
+          </RevealOnScroll>
         </div>
       </section>
 
@@ -100,58 +108,63 @@ export default function AchievementsPage() {
       <section className="py-24 bg-warm-white dark:bg-charcoal/50 border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           
-          <SectionHeader
-            badge="Institutional Proof"
-            title="Key Accomplishments & Distinctions"
-            subtitle="How Royal Business Machine delivers tangible enterprise value across public and private sectors."
-          />
+          <RevealOnScroll direction="down">
+            <SectionHeader
+              badge="Institutional Proof"
+              title="Key Accomplishments & Distinctions"
+              subtitle="How Royal Business Machine delivers tangible enterprise value across public and private sectors."
+            />
+          </RevealOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {achievements.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-8 rounded-3xl bg-white dark:bg-charcoal border border-border hover:border-gold/50 shadow-sm transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-2xl bg-gold/10 text-gold flex items-center justify-center">
-                      <item.icon className="w-6 h-6" />
+              <RevealOnScroll key={idx} direction="up" delay={idx * 0.08} distance={25} className="h-full">
+                <TiltCard tiltIntensity={6} glareOpacity={0.12} className="h-full">
+                  <div className="h-full p-8 rounded-3xl bg-white dark:bg-charcoal border border-border hover:border-gold/50 shadow-sm transition-all duration-300 flex flex-col justify-between group hover:shadow-xl hover:shadow-gold/5">
+                    <div>
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="w-12 h-12 rounded-2xl bg-gold/10 text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-charcoal transition-colors duration-300">
+                          <item.icon className="w-6 h-6" />
+                        </div>
+                        <span className="text-xs font-bold text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/20">
+                          {item.stat}
+                        </span>
+                      </div>
+
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-slate-muted block mb-2">
+                        {item.category}
+                      </span>
+
+                      <h3 className="text-xl font-bold text-charcoal dark:text-warm-white mb-3 font-heading group-hover:text-gold transition-colors duration-300">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-xs sm:text-sm text-slate-muted leading-relaxed font-normal">
+                        {item.description}
+                      </p>
                     </div>
-                    <span className="text-xs font-bold text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/20">
-                      {item.stat}
-                    </span>
+
+                    <div className="pt-6 mt-6 border-t border-border/60 flex items-center gap-2 text-xs text-charcoal dark:text-warm-white font-semibold">
+                      <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                      <span>Verified Operational Milestone</span>
+                    </div>
                   </div>
-
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-slate-muted block mb-2">
-                    {item.category}
-                  </span>
-
-                  <h3 className="text-xl font-bold text-charcoal dark:text-warm-white mb-3 font-heading">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-slate-muted leading-relaxed font-normal">
-                    {item.description}
-                  </p>
-                </div>
-
-                <div className="pt-6 mt-6 border-t border-border/60 flex items-center gap-2 text-xs text-charcoal dark:text-warm-white font-semibold">
-                  <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
-                  <span>Verified Operational Milestone</span>
-                </div>
-              </div>
+                </TiltCard>
+              </RevealOnScroll>
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-charcoal dark:bg-gold text-warm-white dark:text-charcoal font-bold text-xs uppercase tracking-wider hover:bg-gold transition-colors shadow-sm"
-            >
-              <span>Explore Verified Client Case Studies</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <RevealOnScroll direction="up" delay={0.2}>
+            <div className="mt-16 text-center">
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-charcoal dark:bg-gold text-warm-white dark:text-charcoal font-bold text-xs uppercase tracking-wider hover:bg-gold dark:hover:bg-warm-white transition-all shadow-md hover:shadow-gold/20"
+              >
+                <span>Explore Verified Client Case Studies</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </RevealOnScroll>
 
         </div>
       </section>
