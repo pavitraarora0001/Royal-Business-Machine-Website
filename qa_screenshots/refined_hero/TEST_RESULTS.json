@@ -1,0 +1,240 @@
+{
+  "viewports": {
+    "1920px_desktop_large": {
+      "screenshot": "qa_screenshots/refined_hero/hero_1920px_desktop_large.png",
+      "spans": [
+        {
+          "text": "Transforming Businesses Through",
+          "color": "rgb(24, 28, 33)",
+          "fontSize": "66.4px",
+          "lineHeight": "71.712px"
+        },
+        {
+          "text": "Technology & Innovation",
+          "color": "rgba(0, 0, 0, 0)",
+          "fontSize": "66.4px",
+          "lineHeight": "71.712px"
+        }
+      ],
+      "hasHorizontalOverflow": false,
+      "bodyWidth": 1920,
+      "windowWidth": 1920,
+      "ctas": [
+        {
+          "text": "View Case Studies (50+)",
+          "href": "/projects"
+        },
+        {
+          "text": "WhatsApp Direct",
+          "href": "https://wa.me/919057287689"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Instant WhatsApp Connect",
+          "href": "https://wa.me/919057287689"
+        }
+      ]
+    },
+    "1440px_desktop_standard": {
+      "screenshot": "qa_screenshots/refined_hero/hero_1440px_desktop_standard.png",
+      "spans": [
+        {
+          "text": "Transforming Businesses Through",
+          "color": "rgb(24, 28, 33)",
+          "fontSize": "66.4px",
+          "lineHeight": "71.712px"
+        },
+        {
+          "text": "Technology & Innovation",
+          "color": "rgba(0, 0, 0, 0)",
+          "fontSize": "66.4px",
+          "lineHeight": "71.712px"
+        }
+      ],
+      "hasHorizontalOverflow": false,
+      "bodyWidth": 1440,
+      "windowWidth": 1440,
+      "ctas": [
+        {
+          "text": "View Case Studies (50+)",
+          "href": "/projects"
+        },
+        {
+          "text": "WhatsApp Direct",
+          "href": "https://wa.me/919057287689"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Instant WhatsApp Connect",
+          "href": "https://wa.me/919057287689"
+        }
+      ]
+    },
+    "1024px_laptop_small": {
+      "screenshot": "qa_screenshots/refined_hero/hero_1024px_laptop_small.png",
+      "spans": [
+        {
+          "text": "Transforming Businesses Through",
+          "color": "rgb(24, 28, 33)",
+          "fontSize": "60px",
+          "lineHeight": "64.8px"
+        },
+        {
+          "text": "Technology & Innovation",
+          "color": "rgba(0, 0, 0, 0)",
+          "fontSize": "60px",
+          "lineHeight": "64.8px"
+        }
+      ],
+      "hasHorizontalOverflow": false,
+      "bodyWidth": 1024,
+      "windowWidth": 1024,
+      "ctas": [
+        {
+          "text": "View Case Studies (50+)",
+          "href": "/projects"
+        },
+        {
+          "text": "WhatsApp Direct",
+          "href": "https://wa.me/919057287689"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Instant WhatsApp Connect",
+          "href": "https://wa.me/919057287689"
+        }
+      ]
+    },
+    "768px_tablet": {
+      "screenshot": "qa_screenshots/refined_hero/hero_768px_tablet.png",
+      "spans": [
+        {
+          "text": "Transforming Businesses Through",
+          "color": "rgb(24, 28, 33)",
+          "fontSize": "48px",
+          "lineHeight": "51.84px"
+        },
+        {
+          "text": "Technology & Innovation",
+          "color": "rgba(0, 0, 0, 0)",
+          "fontSize": "48px",
+          "lineHeight": "51.84px"
+        }
+      ],
+      "hasHorizontalOverflow": false,
+      "bodyWidth": 768,
+      "windowWidth": 768,
+      "ctas": [
+        {
+          "text": "View Case Studies (50+)",
+          "href": "/projects"
+        },
+        {
+          "text": "WhatsApp Direct",
+          "href": "https://wa.me/919057287689"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Instant WhatsApp Connect",
+          "href": "https://wa.me/919057287689"
+        }
+      ]
+    },
+    "390px_mobile_iphone": {
+      "screenshot": "qa_screenshots/refined_hero/hero_390px_mobile_iphone.png",
+      "spans": [
+        {
+          "text": "Transforming Businesses Through",
+          "color": "rgb(24, 28, 33)",
+          "fontSize": "36px",
+          "lineHeight": "38.88px"
+        },
+        {
+          "text": "Technology & Innovation",
+          "color": "rgba(0, 0, 0, 0)",
+          "fontSize": "36px",
+          "lineHeight": "38.88px"
+        }
+      ],
+      "hasHorizontalOverflow": false,
+      "bodyWidth": 390,
+      "windowWidth": 390,
+      "ctas": [
+        {
+          "text": "View Case Studies (50+)",
+          "href": "/projects"
+        },
+        {
+          "text": "WhatsApp Direct",
+          "href": "https://wa.me/919057287689"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Explore Full Case Details",
+          "href": "/projects"
+        },
+        {
+          "text": "Instant WhatsApp Connect",
+          "href": "https://wa.me/919057287689"
+        }
+      ]
+    }
+  },
+  "contrastCheck": {},
+  "consoleErrors": [],
+  "solutionsDropdown": {
+    "tested": true,
+    "visible": false
+  }
+}

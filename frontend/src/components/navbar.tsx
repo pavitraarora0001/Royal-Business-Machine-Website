@@ -14,13 +14,16 @@ import {
   ChevronDown,
   ArrowRight,
   Phone,
-  MessageSquare,
   Shield,
   Layers,
   Sparkles,
   Users,
   Compass,
-  Briefcase
+  Briefcase,
+  Cpu,
+  Smartphone,
+  Globe2,
+  CheckCircle2
 } from "lucide-react";
 
 export function Navbar() {
@@ -34,13 +37,12 @@ export function Navbar() {
   useEffect(() => {
     setMounted(true);
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menus on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setActiveDropdown(null);
@@ -51,78 +53,97 @@ export function Navbar() {
       title: "Web & Enterprise Cloud",
       desc: "Custom web apps, Next.js portals & SaaS architectures",
       href: "/services/web-development",
-      icon: Layers,
+      icon: Globe2,
     },
     {
       title: "Mobile Applications",
       desc: "iOS, Android, cross-platform apps & logistics engines",
       href: "/services/mobile-apps",
-      icon: Compass,
+      icon: Smartphone,
     },
     {
       title: "Digital Marketing & SEO",
-      desc: "ROI-driven search optimization, Google & Meta ad funnels",
+      desc: "Technical SEO, ROAS ad funnels & brand positioning",
       href: "/services/digital-marketing",
       icon: Sparkles,
     },
     {
-      title: "Startup & Business Advisory",
+      title: "Startup & Venture Advisory",
       desc: "Pitch decks, business models, MSME setup & MVP sprints",
       href: "/services/consulting",
       icon: Briefcase,
     },
   ];
 
+  const solutionsMenu = [
+    {
+      title: "Industry Verticals",
+      desc: "10 tailored sectors from Healthcare & Dairy to Govt",
+      href: "/industries",
+      icon: Layers,
+    },
+    {
+      title: "7-Step Delivery Process",
+      desc: "Transparent discovery to deployment framework",
+      href: "/process",
+      icon: Compass,
+    },
+    {
+      title: "Milestones & Achievements",
+      desc: "50+ deployments, ₹1.8 Cr revenue & verified impact",
+      href: "/achievements",
+      icon: Shield,
+    },
+  ];
+
   const companyMenu = [
-    { title: "Leadership Team", desc: "Meet Founder & CEO Pavitra Arora and leadership", href: "/team", icon: Users },
-    { title: "Our Process", desc: "7-step agile delivery and execution framework", href: "/process", icon: Compass },
-    { title: "Achievements", desc: "50+ deployments, ₹1.8 Cr track record & impact", href: "/achievements", icon: Shield },
-    { title: "Industries", desc: "10 specialized sectors from Healthcare to Govt", href: "/industries", icon: Layers },
-    { title: "Testimonials", desc: "Client reviews and enterprise proof", href: "/testimonials", icon: Sparkles },
-    { title: "Insights & Blog", desc: "Tech trends, SaaS architectures & advice", href: "/blog", icon: Briefcase },
-    { title: "Careers", desc: "Join our engineering & design teams", href: "/careers", icon: Users },
-    { title: "FAQ", desc: "Answers regarding pricing, timelines & support", href: "/faq", icon: Compass },
+    { title: "Leadership Team", desc: "Founder & CEO Pavitra Arora and engineering team", href: "/team", icon: Users },
+    { title: "Client Testimonials", desc: "Verified enterprise reviews and partner ratings", href: "/testimonials", icon: Sparkles },
+    { title: "Insights & Tech Blog", desc: "Next.js 16, AI e-governance & architectural advice", href: "/blog", icon: Briefcase },
+    { title: "Careers & Culture", desc: "Engineering, design & growth roles", href: "/careers", icon: Users },
+    { title: "Frequently Asked Questions", desc: "IP ownership, SLAs, payment milestones & timelines", href: "/faq", icon: Compass },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled
-          ? "bg-warm-white/95 dark:bg-charcoal/95 backdrop-blur-md border-b border-border shadow-sm py-3"
-          : "bg-transparent py-5"
+          ? "bg-[#F7F7F5]/98 dark:bg-[#181C21]/98 backdrop-blur-md border-b border-border shadow-sm py-2.5"
+          : "bg-[#F7F7F5]/90 dark:bg-[#181C21]/90 backdrop-blur-md border-b border-border/80 py-3 sm:py-3.5"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
+          
           {/* Logo & Corporate Identifier */}
-          <Link href="/" className="flex items-center gap-3 group focus:outline-none">
-            <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-sm border border-gold/30 bg-white flex items-center justify-center p-1 group-hover:border-gold transition-colors">
+          <Link href="/" className="flex items-center gap-3 group focus:outline-none shrink-0">
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-2xl overflow-hidden shadow-sm border border-gold/40 bg-white flex items-center justify-center p-1.5 group-hover:border-gold transition-colors">
               <Image
                 src="/assets/logo/logo.png"
                 alt="Royal Business Machine Emblem"
-                width={36}
-                height={36}
+                width={40}
+                height={40}
                 className="object-contain"
                 priority
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-heading font-extrabold tracking-tight text-lg text-charcoal dark:text-warm-white group-hover:text-gold transition-colors leading-none">
+              <span className="font-heading font-extrabold tracking-tight text-base sm:text-lg text-charcoal dark:text-warm-white group-hover:text-gold transition-colors leading-none">
                 ROYAL BUSINESS MACHINE
               </span>
-              <span className="text-[10px] tracking-widest text-slate-muted uppercase font-medium mt-1">
+              <span className="text-[9px] sm:text-[10px] tracking-[0.2em] text-slate-muted uppercase font-semibold mt-1">
                 Integrated Technology Platform
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 text-sm font-semibold">
             <Link
               href="/"
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-3 py-2 rounded-lg transition-colors ${
                 pathname === "/"
-                  ? "text-gold font-semibold"
+                  ? "text-gold font-bold"
                   : "text-charcoal/80 dark:text-warm-white/80 hover:text-charcoal dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
               }`}
             >
@@ -131,9 +152,9 @@ export function Navbar() {
 
             <Link
               href="/about"
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-3 py-2 rounded-lg transition-colors ${
                 pathname === "/about"
-                  ? "text-gold font-semibold"
+                  ? "text-gold font-bold"
                   : "text-charcoal/80 dark:text-warm-white/80 hover:text-charcoal dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
               }`}
             >
@@ -148,9 +169,9 @@ export function Navbar() {
             >
               <Link
                 href="/services"
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ${
                   pathname.startsWith("/services")
-                    ? "text-gold font-semibold"
+                    ? "text-gold font-bold"
                     : "text-charcoal/80 dark:text-warm-white/80 hover:text-charcoal dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
                 }`}
               >
@@ -161,14 +182,15 @@ export function Navbar() {
               <AnimatePresence>
                 {activeDropdown === "services" && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.18 }}
-                    className="absolute top-full left-0 w-80 p-2 bg-white dark:bg-charcoal rounded-2xl shadow-xl border border-border mt-1 z-50"
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.16 }}
+                    className="absolute top-full left-0 w-84 p-2.5 bg-white dark:bg-charcoal rounded-2xl shadow-xl border border-border mt-1 z-50"
                   >
-                    <div className="p-2 border-b border-border/50 mb-1">
-                      <p className="text-xs font-semibold text-slate-muted uppercase tracking-wider">Enterprise Services</p>
+                    <div className="px-2 py-1.5 border-b border-border/60 mb-1 flex items-center justify-between">
+                      <p className="text-[11px] font-bold text-slate-muted uppercase tracking-wider">Enterprise Services</p>
+                      <span className="text-[10px] bg-gold/15 text-gold font-bold px-2 py-0.5 rounded-full">40+ Deliverables</span>
                     </div>
                     {servicesMenu.map((item, idx) => (
                       <Link
@@ -187,12 +209,12 @@ export function Navbar() {
                         </div>
                       </Link>
                     ))}
-                    <div className="mt-2 pt-2 border-t border-border/50">
+                    <div className="mt-1 pt-2 border-t border-border/60">
                       <Link
                         href="/services"
-                        className="flex items-center justify-between px-3 py-2 text-xs font-semibold text-gold hover:text-gold-dark transition-colors"
+                        className="flex items-center justify-between px-3 py-1.5 text-xs font-bold text-gold hover:text-gold-dark transition-colors"
                       >
-                        <span>View All 8 Categories (40+ Services)</span>
+                        <span>View All 8 Service Categories</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
@@ -204,41 +226,93 @@ export function Navbar() {
             {/* Portfolio Link */}
             <Link
               href="/projects"
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-3 py-2 rounded-lg transition-colors ${
                 pathname === "/projects" || pathname === "/portfolio"
-                  ? "text-gold font-semibold"
+                  ? "text-gold font-bold"
                   : "text-charcoal/80 dark:text-warm-white/80 hover:text-charcoal dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
               }`}
             >
               Portfolio
             </Link>
 
-            {/* Explore Solutions Dropdown */}
+            {/* Solutions Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setActiveDropdown("explore")}
+              onMouseEnter={() => setActiveDropdown("solutions")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
                 type="button"
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  activeDropdown === "explore"
-                    ? "text-gold"
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ${
+                  activeDropdown === "solutions" || pathname === "/industries" || pathname === "/process" || pathname === "/achievements"
+                    ? "text-gold font-bold"
+                    : "text-charcoal/80 dark:text-warm-white/80 hover:text-charcoal dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
+                }`}
+              >
+                <span>Solutions</span>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === "solutions" ? "rotate-180" : ""}`} />
+              </button>
+
+              <AnimatePresence>
+                {activeDropdown === "solutions" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.16 }}
+                    className="absolute top-full left-0 w-80 p-2.5 bg-white dark:bg-charcoal rounded-2xl shadow-xl border border-border mt-1 z-50"
+                  >
+                    <div className="px-2 py-1.5 border-b border-border/60 mb-1">
+                      <p className="text-[11px] font-bold text-slate-muted uppercase tracking-wider">Enterprise Frameworks</p>
+                    </div>
+                    {solutionsMenu.map((item, idx) => (
+                      <Link
+                        key={idx}
+                        href={item.href}
+                        className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-warm-white dark:hover:bg-graphite transition-colors group"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-gold/10 text-gold flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-gold group-hover:text-white transition-colors">
+                          <item.icon className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <div className="text-xs font-bold text-charcoal dark:text-warm-white group-hover:text-gold transition-colors">
+                            {item.title}
+                          </div>
+                          <div className="text-[11px] text-slate-muted line-clamp-1">{item.desc}</div>
+                        </div>
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Company Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("company")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button
+                type="button"
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ${
+                  activeDropdown === "company"
+                    ? "text-gold font-bold"
                     : "text-charcoal/80 dark:text-warm-white/80 hover:text-charcoal dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
                 }`}
               >
                 <span>Company</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === "explore" ? "rotate-180" : ""}`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === "company" ? "rotate-180" : ""}`} />
               </button>
 
               <AnimatePresence>
-                {activeDropdown === "explore" && (
+                {activeDropdown === "company" && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.18 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 w-[440px] p-3 bg-white dark:bg-charcoal rounded-2xl shadow-xl border border-border mt-1 z-50 grid grid-cols-2 gap-1.5"
+                    exit={{ opacity: 0, y: 6 }}
+                    transition={{ duration: 0.16 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 w-[460px] p-3 bg-white dark:bg-charcoal rounded-2xl shadow-xl border border-border mt-1 z-50 grid grid-cols-2 gap-1.5"
                   >
                     {companyMenu.map((item, idx) => (
                       <Link
@@ -264,9 +338,9 @@ export function Navbar() {
 
             <Link
               href="/contact"
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-3 py-2 rounded-lg transition-colors ${
                 pathname === "/contact"
-                  ? "text-gold font-semibold"
+                  ? "text-gold font-bold"
                   : "text-charcoal/80 dark:text-warm-white/80 hover:text-charcoal dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
               }`}
             >
@@ -275,14 +349,14 @@ export function Navbar() {
           </nav>
 
           {/* Right Header Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3">
             {/* Direct Phone Link */}
             <a
               href="tel:+919057287689"
-              className="hidden xl:flex items-center gap-1.5 text-xs font-semibold text-slate-muted hover:text-gold transition-colors px-2 py-1"
+              className="hidden xl:inline-flex items-center gap-1.5 text-xs font-bold text-charcoal/80 dark:text-warm-white/80 hover:text-gold transition-colors px-2.5 py-1.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
               title="Call Operations Desk"
             >
-              <Phone className="w-3.5 h-3.5 text-gold" />
+              <Phone className="w-3.5 h-3.5 text-gold shrink-0" />
               <span>+91 9057287689</span>
             </a>
 
@@ -290,13 +364,13 @@ export function Navbar() {
             {mounted && (
               <button
                 onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-                className="w-9 h-9 rounded-xl border border-border flex items-center justify-center text-charcoal dark:text-warm-white hover:border-gold hover:text-gold transition-colors"
+                className="w-9 h-9 rounded-xl border border-border flex items-center justify-center text-charcoal dark:text-warm-white hover:border-gold hover:text-gold transition-colors bg-white/50 dark:bg-charcoal/50"
                 aria-label="Toggle Theme"
               >
                 {resolvedTheme === "dark" ? (
                   <Sun className="w-4 h-4 text-gold" />
                 ) : (
-                  <Moon className="w-4 h-4" />
+                  <Moon className="w-4 h-4 text-charcoal" />
                 )}
               </button>
             )}
@@ -312,7 +386,7 @@ export function Navbar() {
             {/* Mobile Hamburger Trigger */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden w-10 h-10 rounded-xl border border-border flex items-center justify-center text-charcoal dark:text-warm-white focus:outline-none"
+              className="lg:hidden w-10 h-10 rounded-xl border border-border flex items-center justify-center text-charcoal dark:text-warm-white focus:outline-none bg-white/60 dark:bg-charcoal/60"
               aria-label="Open Mobile Menu"
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -328,34 +402,34 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-b border-border bg-white dark:bg-charcoal max-h-[85vh] overflow-y-auto px-4 pt-4 pb-8"
+            className="lg:hidden border-b border-border bg-white dark:bg-charcoal max-h-[85vh] overflow-y-auto px-4 pt-4 pb-8 shadow-xl"
           >
             <div className="flex flex-col space-y-1">
               <Link
                 href="/"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
               >
                 About Us
               </Link>
               <Link
                 href="/services"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite flex items-center justify-between"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite flex items-center justify-between"
               >
-                <span>All Services (8 Categories)</span>
-                <span className="text-xs bg-gold/15 text-gold px-2 py-0.5 rounded-full font-bold">40+</span>
+                <span>Enterprise Services</span>
+                <span className="text-xs bg-gold/15 text-gold px-2 py-0.5 rounded-full font-bold">8 Categories</span>
               </Link>
               <div className="pl-6 space-y-1 border-l-2 border-gold/30 ml-4 my-1">
                 {servicesMenu.map((sub, idx) => (
                   <Link
                     key={idx}
                     href={sub.href}
-                    className="block py-1.5 text-xs text-slate-muted hover:text-gold"
+                    className="block py-1 text-xs font-medium text-slate-muted hover:text-gold"
                   >
                     {sub.title}
                   </Link>
@@ -363,79 +437,79 @@ export function Navbar() {
               </div>
               <Link
                 href="/projects"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
               >
                 Portfolio & Case Studies
               </Link>
               <Link
                 href="/industries"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
               >
                 Industries We Empower
               </Link>
               <Link
                 href="/process"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
               >
                 7-Step Delivery Process
               </Link>
               <Link
                 href="/achievements"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
               >
                 Achievements & Milestones
               </Link>
               <Link
                 href="/team"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
               >
                 Leadership & Team
               </Link>
               <Link
                 href="/testimonials"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
               >
                 Client Testimonials
               </Link>
               <Link
                 href="/blog"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
               >
                 Insights & Blog
               </Link>
               <Link
                 href="/faq"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
               >
                 FAQ
               </Link>
               <Link
                 href="/careers"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
               >
                 Careers
               </Link>
               <Link
                 href="/contact"
-                className="px-4 py-3 rounded-xl font-medium text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
+                className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"
               >
                 Contact
               </Link>
             </div>
 
-            <div className="mt-6 pt-6 border-t border-border flex flex-col gap-3">
+            <div className="mt-5 pt-5 border-t border-border flex flex-col gap-2.5">
               <a
                 href="tel:+919057287689"
-                className="flex items-center justify-center gap-2 py-3 rounded-xl border border-border text-sm font-semibold text-charcoal dark:text-warm-white"
+                className="flex items-center justify-center gap-2 py-3 rounded-xl border border-border text-xs font-bold text-charcoal dark:text-warm-white"
               >
                 <Phone className="w-4 h-4 text-gold" />
-                <span>Call +91 9057287689</span>
+                <span>Call Operations: +91 9057287689</span>
               </a>
               <Link
                 href="/login"
-                className="flex items-center justify-center py-3 rounded-xl bg-gold text-white font-bold text-sm shadow-md"
+                className="flex items-center justify-center py-3 rounded-xl bg-charcoal dark:bg-gold text-warm-white dark:text-charcoal font-bold text-xs uppercase tracking-wider shadow-md"
               >
-                Client Portal Login
+                Portal Login
               </Link>
             </div>
           </motion.div>

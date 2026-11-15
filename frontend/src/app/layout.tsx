@@ -175,8 +175,8 @@ export default function RootLayout({
       <body className="antialiased bg-background text-foreground flex flex-col min-h-screen selection:bg-gold-light selection:text-charcoal">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <Navbar />
