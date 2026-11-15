@@ -35,6 +35,11 @@ export function Navbar() {
   const pathname = usePathname();
   const [prevPathname, setPrevPathname] = useState(pathname);
 
+  const closeMenus = () => {
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
   if (prevPathname !== pathname) {
     setPrevPathname(pathname);
     setIsMobileMenuOpen(false);
@@ -198,6 +203,7 @@ export function Navbar() {
                       <Link
                         key={idx}
                         href={item.href}
+                        onClick={closeMenus}
                         className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-warm-white dark:hover:bg-graphite transition-colors group"
                       >
                         <div className="w-8 h-8 rounded-lg bg-gold/10 text-gold flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-gold group-hover:text-white transition-colors">
@@ -271,6 +277,7 @@ export function Navbar() {
                       <Link
                         key={idx}
                         href={item.href}
+                        onClick={closeMenus}
                         className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-warm-white dark:hover:bg-graphite transition-colors group"
                       >
                         <div className="w-8 h-8 rounded-lg bg-gold/10 text-gold flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-gold group-hover:text-white transition-colors">
@@ -320,6 +327,7 @@ export function Navbar() {
                       <Link
                         key={idx}
                         href={item.href}
+                        onClick={closeMenus}
                         className="flex items-center gap-2.5 p-2 rounded-xl hover:bg-warm-white dark:hover:bg-graphite transition-colors group"
                       >
                         <div className="w-7 h-7 rounded-lg bg-gold/10 text-gold flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:text-white transition-colors">
@@ -406,7 +414,7 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden border-b border-border bg-white dark:bg-charcoal max-h-[85vh] overflow-y-auto px-4 pt-4 pb-8 shadow-xl"
           >
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-col space-y-1" onClick={closeMenus}>
               <Link
                 href="/"
                 className="px-4 py-2.5 rounded-xl font-bold text-charcoal dark:text-warm-white hover:bg-warm-white dark:hover:bg-graphite"

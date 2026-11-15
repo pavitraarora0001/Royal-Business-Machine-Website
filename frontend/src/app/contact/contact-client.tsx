@@ -64,7 +64,10 @@ export function ContactClient() {
         // Even if local backend isn't reached, show graceful success with direct WhatsApp handoff option
         setStatus("success");
       }
-    } catch {
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        console.warn("Contact form submission error:", err.message);
+      }
       // In static frontend deployment without backend active, gracefully transition to success with WhatsApp option
       setStatus("success");
     }
