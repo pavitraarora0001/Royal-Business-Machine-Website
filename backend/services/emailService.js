@@ -15,6 +15,10 @@ const createTransporter = () => {
 
 // Send OTP Email
 export const sendOTPEmail = async (email, otp, purpose) => {
+    if (process.env.NODE_ENV === 'development') {
+        console.log(`[DEV MODE] Simulated email sent to ${email} with OTP: ${otp}`);
+        return { success: true, messageId: 'dev-mode-simulated' };
+    }
     try {
         const transporter = createTransporter();
 
@@ -103,9 +107,17 @@ export const sendOTPEmail = async (email, otp, purpose) => {
             html
         };
 
-        const info = await transporter.sendMail(mailOptions);
-        console.log('✅ OTP Email sent:', info.messageId);
-        return { success: true, messageId: info.messageId };
+        try {
+            const info = await transporter.sendMail(mailOptions);
+            console.log('✅ OTP Email sent:', info.messageId);
+            return { success: true, messageId: info.messageId };
+        } catch (mailErr) {
+            if (process.env.NODE_ENV === 'development') {
+                console.log(`[DEV MODE] Simulated email sent to ${email} with OTP: ${otp}`);
+                return { success: true, messageId: 'dev-mode-simulated' };
+            }
+            throw mailErr;
+        }
     } catch (error) {
         console.error('❌ Error sending OTP email:', error);
         throw new Error('Failed to send OTP email');

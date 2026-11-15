@@ -39,8 +39,10 @@ export function LoginClient() {
       const data = await res.json();
       if (res.ok && data.success) {
         setSuccess("Authentication successful. Redirecting to portal...");
-        if (data.token) localStorage.setItem("rbm_token", data.token);
-        if (data.user?.role === "admin") {
+        const token = data.data?.accessToken || data.token;
+        const role = data.data?.user?.role || data.user?.role;
+        if (token) localStorage.setItem("rbm_token", token);
+        if (role === "admin") {
           setTimeout(() => router.push("/admin/dashboard"), 1000);
         } else {
           setTimeout(() => router.push("/client/dashboard"), 1000);

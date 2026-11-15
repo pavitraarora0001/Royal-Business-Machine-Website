@@ -39,10 +39,14 @@ export function RegisterClient() {
     setError("");
 
     try {
+      const cleanPhone = formData.phone.replace(/\D/g, '').slice(-10);
       const res = await fetch("http://localhost:5000/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          phone: cleanPhone || formData.phone,
+        }),
       });
 
       const data = await res.json();

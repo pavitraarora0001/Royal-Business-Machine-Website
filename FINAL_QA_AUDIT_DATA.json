@@ -1,0 +1,1300 @@
+{
+  "timestamp": "2026-11-15T09:21:42.464Z",
+  "pagesAudited": [
+    {
+      "slug": "home",
+      "path": "/",
+      "desktopScreenshot": "qa_screenshots/desktop/home.png",
+      "mobileScreenshot": "qa_screenshots/mobile/home.png",
+      "tabletScreenshot": "qa_screenshots/tablet/home.png",
+      "title": "Royal Business Machine | Enterprise Technology & Infrastructure",
+      "h1": "Transforming Businesses Through Technology & Innovation",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 64,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Transforming Businesses Through Technology & Innovation"
+        },
+        {
+          "tag": "H4",
+          "text": "Track Record Revenue"
+        },
+        {
+          "tag": "H4",
+          "text": "Enterprise Deployments"
+        },
+        {
+          "tag": "H4",
+          "text": "Client Satisfaction"
+        },
+        {
+          "tag": "H4",
+          "text": "Institutional Impact"
+        },
+        {
+          "tag": "H2",
+          "text": "Single-Point Accountability for Digital & Physical Infrastru"
+        },
+        {
+          "tag": "H3",
+          "text": "Full-Stack Ownership"
+        },
+        {
+          "tag": "H3",
+          "text": "Institutional Delivery"
+        },
+        {
+          "tag": "H3",
+          "text": "Proprietary Innovation"
+        },
+        {
+          "tag": "H2",
+          "text": "Integrated Business Infrastructure"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "about",
+      "path": "/about",
+      "desktopScreenshot": "qa_screenshots/desktop/about.png",
+      "mobileScreenshot": "qa_screenshots/mobile/about.png",
+      "tabletScreenshot": "qa_screenshots/tablet/about.png",
+      "title": "About Us | Company History, Mission & Leadership | Royal Business Machine",
+      "h1": "About Royal Business Machine",
+      "imagesTotal": 3,
+      "imagesMissingAlt": 0,
+      "linksTotal": 46,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "About Royal Business Machine"
+        },
+        {
+          "tag": "H4",
+          "text": "Track Record Revenue"
+        },
+        {
+          "tag": "H4",
+          "text": "Enterprise Deployments"
+        },
+        {
+          "tag": "H4",
+          "text": "Client Satisfaction"
+        },
+        {
+          "tag": "H4",
+          "text": "Institutional Impact"
+        },
+        {
+          "tag": "H3",
+          "text": "Pavitra Arora"
+        },
+        {
+          "tag": "H2",
+          "text": "Building India’s Integrated Infrastructure Partner"
+        },
+        {
+          "tag": "H3",
+          "text": "Our Vision"
+        },
+        {
+          "tag": "H3",
+          "text": "Our Mission"
+        },
+        {
+          "tag": "H2",
+          "text": "Our Guiding Values"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "team",
+      "path": "/team",
+      "desktopScreenshot": "qa_screenshots/desktop/team.png",
+      "mobileScreenshot": "qa_screenshots/mobile/team.png",
+      "tabletScreenshot": "qa_screenshots/tablet/team.png",
+      "title": "Executive Leadership & Team | Royal Business Machine | Royal Business Machine",
+      "h1": "Executive Leadership & Engineering Team",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 60,
+      "emptyLinks": 11,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Executive Leadership & Engineering Team"
+        },
+        {
+          "tag": "H3",
+          "text": "Pavitra Arora"
+        },
+        {
+          "tag": "H3",
+          "text": "A. Sterling"
+        },
+        {
+          "tag": "H3",
+          "text": "Sarah Chen"
+        },
+        {
+          "tag": "H3",
+          "text": "Marcus Johnson"
+        },
+        {
+          "tag": "H3",
+          "text": "Elena Rodriguez"
+        },
+        {
+          "tag": "H3",
+          "text": "David Kim"
+        },
+        {
+          "tag": "H3",
+          "text": "Looking to Build With Us?"
+        },
+        {
+          "tag": "H2",
+          "text": "Collaborate Directly with Our Leadership"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "achievements",
+      "path": "/achievements",
+      "desktopScreenshot": "qa_screenshots/desktop/achievements.png",
+      "mobileScreenshot": "qa_screenshots/mobile/achievements.png",
+      "tabletScreenshot": "qa_screenshots/tablet/achievements.png",
+      "title": "Achievements & Milestones of Success | Royal Business Machine | Royal Business Machine",
+      "h1": "Milestones of Success & Impact",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 46,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Milestones of Success & Impact"
+        },
+        {
+          "tag": "H4",
+          "text": "Track Record Revenue"
+        },
+        {
+          "tag": "H4",
+          "text": "Enterprise Deployments"
+        },
+        {
+          "tag": "H4",
+          "text": "Client Satisfaction"
+        },
+        {
+          "tag": "H4",
+          "text": "Institutional Impact"
+        },
+        {
+          "tag": "H2",
+          "text": "Key Accomplishments & Distinctions"
+        },
+        {
+          "tag": "H3",
+          "text": "15+ Tech Startups Launched & Accelerated"
+        },
+        {
+          "tag": "H3",
+          "text": "50+ Enterprise Deployments with 99% Satisfaction"
+        },
+        {
+          "tag": "H3",
+          "text": "Multi-Sector Dominance Across Emerging Markets"
+        },
+        {
+          "tag": "H3",
+          "text": "Government & Higher Education Institutional Execution"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "services",
+      "path": "/services",
+      "desktopScreenshot": "qa_screenshots/desktop/services.png",
+      "mobileScreenshot": "qa_screenshots/mobile/services.png",
+      "tabletScreenshot": "qa_screenshots/tablet/services.png",
+      "title": "Comprehensive Enterprise Services (8 Categories, 40+ Services) | Royal Business Machine",
+      "h1": "Enterprise Services & Infrastructure",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 57,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Enterprise Services & Infrastructure"
+        },
+        {
+          "tag": "H2",
+          "text": "IT & Software Development"
+        },
+        {
+          "tag": "H3",
+          "text": "Custom Software Development"
+        },
+        {
+          "tag": "H3",
+          "text": "Web Application Development"
+        },
+        {
+          "tag": "H3",
+          "text": "Mobile App Development"
+        },
+        {
+          "tag": "H3",
+          "text": "SaaS Development"
+        },
+        {
+          "tag": "H3",
+          "text": "ERP Systems"
+        },
+        {
+          "tag": "H3",
+          "text": "CRM Systems"
+        },
+        {
+          "tag": "H3",
+          "text": "Automation Systems"
+        },
+        {
+          "tag": "H2",
+          "text": "Explore In-Depth Solutions"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "service-web-development",
+      "path": "/services/web-development",
+      "desktopScreenshot": "qa_screenshots/desktop/service-web-development.png",
+      "mobileScreenshot": "qa_screenshots/mobile/service-web-development.png",
+      "tabletScreenshot": "qa_screenshots/tablet/service-web-development.png",
+      "title": "Web & Enterprise Cloud Application Development | Royal Business Machine | Royal Business Machine",
+      "h1": "Web & Enterprise Cloud Engineering",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 48,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Web & Enterprise Cloud Engineering"
+        },
+        {
+          "tag": "H2",
+          "text": "Modern Stack & Robust Architecture"
+        },
+        {
+          "tag": "H3",
+          "text": "Next.js & React 19 Frontend"
+        },
+        {
+          "tag": "H3",
+          "text": "Scalable Microservices Backend"
+        },
+        {
+          "tag": "H3",
+          "text": "Enterprise Relational & Document DBs"
+        },
+        {
+          "tag": "H3",
+          "text": "Role-Based Access & Security"
+        },
+        {
+          "tag": "H2",
+          "text": "Enterprise Applications We Engineer"
+        },
+        {
+          "tag": "H4",
+          "text": "Custom Enterprise ERPs"
+        },
+        {
+          "tag": "H4",
+          "text": "Multi-Tenant SaaS Portals"
+        },
+        {
+          "tag": "H4",
+          "text": "High-Volume E-Commerce Engines"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "service-mobile-apps",
+      "path": "/services/mobile-apps",
+      "desktopScreenshot": "qa_screenshots/desktop/service-mobile-apps.png",
+      "mobileScreenshot": "qa_screenshots/mobile/service-mobile-apps.png",
+      "tabletScreenshot": "qa_screenshots/tablet/service-mobile-apps.png",
+      "title": "Mobile Application Development (iOS & Android) | Royal Business Machine | Royal Business Machine",
+      "h1": "Mobile Application Development",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 47,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Mobile Application Development"
+        },
+        {
+          "tag": "H2",
+          "text": "Dairy Muneem — Field Logistics & Milk Procurement App"
+        },
+        {
+          "tag": "H2",
+          "text": "Built for Extreme Reliability in Any Environment"
+        },
+        {
+          "tag": "H3",
+          "text": "Offline-First Synchronization"
+        },
+        {
+          "tag": "H3",
+          "text": "Fluid Native Ergonomics"
+        },
+        {
+          "tag": "H3",
+          "text": "Push Notifications & Alerts"
+        },
+        {
+          "tag": "H3",
+          "text": "Enterprise Grade Security"
+        },
+        {
+          "tag": "H2",
+          "text": "Ready to Launch Your Custom Mobile Application?"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        },
+        {
+          "tag": "H4",
+          "text": "ENTERPRISE SERVICES"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "service-digital-marketing",
+      "path": "/services/digital-marketing",
+      "desktopScreenshot": "qa_screenshots/desktop/service-digital-marketing.png",
+      "mobileScreenshot": "qa_screenshots/mobile/service-digital-marketing.png",
+      "tabletScreenshot": "qa_screenshots/tablet/service-digital-marketing.png",
+      "title": "ROI-Focused Digital Marketing & SEO Services | Royal Business Machine | Royal Business Machine",
+      "h1": "Performance Digital Marketing & SEO",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 51,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Performance Digital Marketing & SEO"
+        },
+        {
+          "tag": "H2",
+          "text": "Engineered for Measurable Return on Investment"
+        },
+        {
+          "tag": "H3",
+          "text": "Search Engine Optimization (SEO)"
+        },
+        {
+          "tag": "H3",
+          "text": "Google Ads (PPC) Performance"
+        },
+        {
+          "tag": "H3",
+          "text": "Meta Ads & WhatsApp Funnels"
+        },
+        {
+          "tag": "H3",
+          "text": "Corporate Brand & PR Campaigns"
+        },
+        {
+          "tag": "H2",
+          "text": "Ready to Scale Your Inquiries and Revenue?"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        },
+        {
+          "tag": "H4",
+          "text": "ENTERPRISE SERVICES"
+        },
+        {
+          "tag": "H4",
+          "text": "OPERATIONS DESK"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "service-consulting",
+      "path": "/services/consulting",
+      "desktopScreenshot": "qa_screenshots/desktop/service-consulting.png",
+      "mobileScreenshot": "qa_screenshots/mobile/service-consulting.png",
+      "tabletScreenshot": "qa_screenshots/tablet/service-consulting.png",
+      "title": "Startup Advisory & Pitch Deck Design | Royal Business Machine | Royal Business Machine",
+      "h1": "Startup Advisory & Venture Consulting",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 47,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Startup Advisory & Venture Consulting"
+        },
+        {
+          "tag": "H2",
+          "text": "Comprehensive Venture Acceleration"
+        },
+        {
+          "tag": "H3",
+          "text": "Investor-Grade Pitch Deck Creation"
+        },
+        {
+          "tag": "H3",
+          "text": "Financial Modeling & Unit Economics"
+        },
+        {
+          "tag": "H3",
+          "text": "MSME, GST & Corporate Registration"
+        },
+        {
+          "tag": "H3",
+          "text": "MVP (Minimum Viable Product) Sprints"
+        },
+        {
+          "tag": "H2",
+          "text": "Ready to Scale Your Startup Vision?"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        },
+        {
+          "tag": "H4",
+          "text": "ENTERPRISE SERVICES"
+        },
+        {
+          "tag": "H4",
+          "text": "OPERATIONS DESK"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "projects",
+      "path": "/projects",
+      "desktopScreenshot": "qa_screenshots/desktop/projects.png",
+      "mobileScreenshot": "qa_screenshots/mobile/projects.png",
+      "tabletScreenshot": "qa_screenshots/tablet/projects.png",
+      "title": "Enterprise Portfolio & Case Studies (50+ Deployments) | Royal Business Machine",
+      "h1": "Enterprise Portfolio & Case Studies",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 61,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Enterprise Portfolio & Case Studies"
+        },
+        {
+          "tag": "H3",
+          "text": "Dairy Muneem — Milk Procurement & Logistics App"
+        },
+        {
+          "tag": "H3",
+          "text": "HMS — Multi-Specialty Hospital Management System"
+        },
+        {
+          "tag": "H3",
+          "text": "Govt College Bharatpur — Official Institutional Portal"
+        },
+        {
+          "tag": "H3",
+          "text": "Govt College Karauli — Official Institutional Portal"
+        },
+        {
+          "tag": "H3",
+          "text": "Jaivik Desh — Organic Agriculture E-Commerce Platform"
+        },
+        {
+          "tag": "H3",
+          "text": "Jim Corbett — Wildlife Safari & Resort Booking Portal"
+        },
+        {
+          "tag": "H3",
+          "text": "NyayaSetu — AI Legal Awareness & FIR Assistant"
+        },
+        {
+          "tag": "H3",
+          "text": "Anti-Paper Leak Secure Examination Software"
+        },
+        {
+          "tag": "H3",
+          "text": "Apex College of D-Pharma Institutional Portal"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "portfolio",
+      "path": "/portfolio",
+      "desktopScreenshot": "qa_screenshots/desktop/portfolio.png",
+      "mobileScreenshot": "qa_screenshots/mobile/portfolio.png",
+      "tabletScreenshot": "qa_screenshots/tablet/portfolio.png",
+      "title": "Enterprise Portfolio & Case Studies (50+ Deployments) | Royal Business Machine",
+      "h1": "Enterprise Portfolio & Case Studies",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 61,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Enterprise Portfolio & Case Studies"
+        },
+        {
+          "tag": "H3",
+          "text": "Dairy Muneem — Milk Procurement & Logistics App"
+        },
+        {
+          "tag": "H3",
+          "text": "HMS — Multi-Specialty Hospital Management System"
+        },
+        {
+          "tag": "H3",
+          "text": "Govt College Bharatpur — Official Institutional Portal"
+        },
+        {
+          "tag": "H3",
+          "text": "Govt College Karauli — Official Institutional Portal"
+        },
+        {
+          "tag": "H3",
+          "text": "Jaivik Desh — Organic Agriculture E-Commerce Platform"
+        },
+        {
+          "tag": "H3",
+          "text": "Jim Corbett — Wildlife Safari & Resort Booking Portal"
+        },
+        {
+          "tag": "H3",
+          "text": "NyayaSetu — AI Legal Awareness & FIR Assistant"
+        },
+        {
+          "tag": "H3",
+          "text": "Anti-Paper Leak Secure Examination Software"
+        },
+        {
+          "tag": "H3",
+          "text": "Apex College of D-Pharma Institutional Portal"
+        }
+      ],
+      "status": 304
+    },
+    {
+      "slug": "industries",
+      "path": "/industries",
+      "desktopScreenshot": "qa_screenshots/desktop/industries.png",
+      "mobileScreenshot": "qa_screenshots/mobile/industries.png",
+      "tabletScreenshot": "qa_screenshots/tablet/industries.png",
+      "title": "Industries We Empower (10 Specialized Sectors) | Royal Business Machine | Royal Business Machine",
+      "h1": "Industries We Empower",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 55,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Industries We Empower"
+        },
+        {
+          "tag": "H3",
+          "text": "Education & EdTech"
+        },
+        {
+          "tag": "H3",
+          "text": "Healthcare & Pharmaceuticals"
+        },
+        {
+          "tag": "H3",
+          "text": "Retail & Consumer Goods"
+        },
+        {
+          "tag": "H3",
+          "text": "Manufacturing & Heavy Industry"
+        },
+        {
+          "tag": "H3",
+          "text": "Hospitality & Eco-Tourism"
+        },
+        {
+          "tag": "H3",
+          "text": "Real Estate & Architecture"
+        },
+        {
+          "tag": "H3",
+          "text": "Logistics & Fleet Operations"
+        },
+        {
+          "tag": "H3",
+          "text": "Agriculture & Commodity Trading"
+        },
+        {
+          "tag": "H3",
+          "text": "Government & Public Sector"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "process",
+      "path": "/process",
+      "desktopScreenshot": "qa_screenshots/desktop/process.png",
+      "mobileScreenshot": "qa_screenshots/mobile/process.png",
+      "tabletScreenshot": "qa_screenshots/tablet/process.png",
+      "title": "7-Step Agile Delivery Framework | Royal Business Machine | Royal Business Machine",
+      "h1": "Our 7-Step Delivery Process",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 46,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Our 7-Step Delivery Process"
+        },
+        {
+          "tag": "H3",
+          "text": "Discovery & Requirements Audit"
+        },
+        {
+          "tag": "H3",
+          "text": "Strategic Architecture & Blueprint"
+        },
+        {
+          "tag": "H3",
+          "text": "UI/UX Ergonomics & Design Systems"
+        },
+        {
+          "tag": "H3",
+          "text": "Agile Full-Stack Engineering"
+        },
+        {
+          "tag": "H3",
+          "text": "Rigorous QA & Security Testing"
+        },
+        {
+          "tag": "H3",
+          "text": "Seamless Production Deployment"
+        },
+        {
+          "tag": "H3",
+          "text": "Ongoing Support & SLA Maintenance"
+        },
+        {
+          "tag": "H2",
+          "text": "Experience Predictable, Transparent Delivery"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "testimonials",
+      "path": "/testimonials",
+      "desktopScreenshot": "qa_screenshots/desktop/testimonials.png",
+      "mobileScreenshot": "qa_screenshots/mobile/testimonials.png",
+      "tabletScreenshot": "qa_screenshots/tablet/testimonials.png",
+      "title": "Client Testimonials & Institutional Reviews | Royal Business Machine | Royal Business Machine",
+      "h1": "Client Testimonials & Proof",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 45,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Client Testimonials & Proof"
+        },
+        {
+          "tag": "H4",
+          "text": "R. Patel"
+        },
+        {
+          "tag": "H2",
+          "text": "All Verified Client Reviews"
+        },
+        {
+          "tag": "H4",
+          "text": "R. Patel"
+        },
+        {
+          "tag": "H4",
+          "text": "Operational Head"
+        },
+        {
+          "tag": "H4",
+          "text": "Dr. K. Sharma"
+        },
+        {
+          "tag": "H4",
+          "text": "V. Meena"
+        },
+        {
+          "tag": "H4",
+          "text": "Medical Superintendent"
+        },
+        {
+          "tag": "H4",
+          "text": "A. Singhal"
+        },
+        {
+          "tag": "H2",
+          "text": "Ready to Become Our Next Success Story?"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "blog",
+      "path": "/blog",
+      "desktopScreenshot": "qa_screenshots/desktop/blog.png",
+      "mobileScreenshot": "qa_screenshots/mobile/blog.png",
+      "tabletScreenshot": "qa_screenshots/tablet/blog.png",
+      "title": "Technology Insights & Industry Articles | Royal Business Machine | Royal Business Machine",
+      "h1": "Insights, Analysis & News",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 45,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Insights, Analysis & News"
+        },
+        {
+          "tag": "H3",
+          "text": "10 Technology Trends Shaping 2026"
+        },
+        {
+          "tag": "H3",
+          "text": "How to Build a Scalable Multi-Tenant SaaS Architecture"
+        },
+        {
+          "tag": "H3",
+          "text": "Maximizing ROI with Data-Driven Digital Marketing"
+        },
+        {
+          "tag": "H3",
+          "text": "The Ultimate Startup Pitch Deck Guide for Indian Founders"
+        },
+        {
+          "tag": "H3",
+          "text": "AI & Automation: Replacing Repetitive Manual Workflows"
+        },
+        {
+          "tag": "H3",
+          "text": "The Strategic Importance of a Unified Brand Identity"
+        },
+        {
+          "tag": "H2",
+          "text": "Looking for Tailored Strategic Advice for Your Venture?"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        },
+        {
+          "tag": "H4",
+          "text": "ENTERPRISE SERVICES"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "faq",
+      "path": "/faq",
+      "desktopScreenshot": "qa_screenshots/desktop/faq.png",
+      "mobileScreenshot": "qa_screenshots/mobile/faq.png",
+      "tabletScreenshot": "qa_screenshots/tablet/faq.png",
+      "title": "Frequently Asked Questions (FAQ) | Royal Business Machine | Royal Business Machine",
+      "h1": "Frequently Asked Questions",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 47,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "tag": "H3",
+          "text": "Have a Specific Technical Question?"
+        },
+        {
+          "tag": "H2",
+          "text": "Ready to Discuss Your Project Scope?"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        },
+        {
+          "tag": "H4",
+          "text": "ENTERPRISE SERVICES"
+        },
+        {
+          "tag": "H4",
+          "text": "OPERATIONS DESK"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "careers",
+      "path": "/careers",
+      "desktopScreenshot": "qa_screenshots/desktop/careers.png",
+      "mobileScreenshot": "qa_screenshots/mobile/careers.png",
+      "tabletScreenshot": "qa_screenshots/tablet/careers.png",
+      "title": "Careers & Culture at Royal Business Machine | Royal Business Machine",
+      "h1": "Build the Future of Enterprise Technology",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 50,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Build the Future of Enterprise Technology"
+        },
+        {
+          "tag": "H2",
+          "text": "Culture Engineered for Excellence"
+        },
+        {
+          "tag": "H3",
+          "text": "High-Impact Deployments"
+        },
+        {
+          "tag": "H3",
+          "text": "Continuous Upskilling"
+        },
+        {
+          "tag": "H3",
+          "text": "Modern Culture & Ownership"
+        },
+        {
+          "tag": "H3",
+          "text": "Hardware & AI Lab Access"
+        },
+        {
+          "tag": "H2",
+          "text": "Explore Open Positions"
+        },
+        {
+          "tag": "H3",
+          "text": "Senior Full-Stack Software Engineer"
+        },
+        {
+          "tag": "H3",
+          "text": "UI/UX Product Designer"
+        },
+        {
+          "tag": "H3",
+          "text": "AI & Data Solutions Engineer"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "contact",
+      "path": "/contact",
+      "desktopScreenshot": "qa_screenshots/desktop/contact.png",
+      "mobileScreenshot": "qa_screenshots/mobile/contact.png",
+      "tabletScreenshot": "qa_screenshots/tablet/contact.png",
+      "title": "Contact Us & Business Inquiries | Royal Business Machine | Royal Business Machine",
+      "h1": "Contact Royal Business Machine",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 47,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Contact Royal Business Machine"
+        },
+        {
+          "tag": "H2",
+          "text": "Let's Build Your Digital Infrastructure"
+        },
+        {
+          "tag": "H3",
+          "text": "DIRECT PHONE LINES"
+        },
+        {
+          "tag": "H3",
+          "text": "WHATSAPP DIRECT SUPPORT"
+        },
+        {
+          "tag": "H3",
+          "text": "OFFICIAL EMAIL DESK"
+        },
+        {
+          "tag": "H3",
+          "text": "REGISTERED HEADQUARTERS"
+        },
+        {
+          "tag": "H3",
+          "text": "OPERATIONAL HOURS & SLA"
+        },
+        {
+          "tag": "H3",
+          "text": "Request Formal Project Proposal"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        },
+        {
+          "tag": "H4",
+          "text": "ENTERPRISE SERVICES"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "privacy",
+      "path": "/privacy",
+      "desktopScreenshot": "qa_screenshots/desktop/privacy.png",
+      "mobileScreenshot": "qa_screenshots/mobile/privacy.png",
+      "tabletScreenshot": "qa_screenshots/tablet/privacy.png",
+      "title": "Privacy Policy & Data Protection | Royal Business Machine | Royal Business Machine",
+      "h1": "Privacy Policy",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 45,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Privacy Policy"
+        },
+        {
+          "tag": "H2",
+          "text": "1. Overview & Commitment"
+        },
+        {
+          "tag": "H2",
+          "text": "2. Information We Collect"
+        },
+        {
+          "tag": "H2",
+          "text": "3. Purpose of Processing"
+        },
+        {
+          "tag": "H2",
+          "text": "4. Data Confidentiality & Non-Disclosure"
+        },
+        {
+          "tag": "H2",
+          "text": "5. Security Safeguards"
+        },
+        {
+          "tag": "H2",
+          "text": "6. Contact Privacy Officer"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        },
+        {
+          "tag": "H4",
+          "text": "ENTERPRISE SERVICES"
+        },
+        {
+          "tag": "H4",
+          "text": "OPERATIONS DESK"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "terms",
+      "path": "/terms",
+      "desktopScreenshot": "qa_screenshots/desktop/terms.png",
+      "mobileScreenshot": "qa_screenshots/mobile/terms.png",
+      "tabletScreenshot": "qa_screenshots/tablet/terms.png",
+      "title": "Terms of Service & Client Agreements | Royal Business Machine | Royal Business Machine",
+      "h1": "Terms of Service",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 44,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Terms of Service"
+        },
+        {
+          "tag": "H2",
+          "text": "1. Acceptance of Terms"
+        },
+        {
+          "tag": "H2",
+          "text": "2. Project Scoping & Milestone Delivery"
+        },
+        {
+          "tag": "H2",
+          "text": "3. Intellectual Property Rights & Ownership"
+        },
+        {
+          "tag": "H2",
+          "text": "4. Payment Terms & Invoicing"
+        },
+        {
+          "tag": "H2",
+          "text": "5. Warranty & Post-Launch Support"
+        },
+        {
+          "tag": "H2",
+          "text": "6. Governing Law & Jurisdiction"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        },
+        {
+          "tag": "H4",
+          "text": "ENTERPRISE SERVICES"
+        },
+        {
+          "tag": "H4",
+          "text": "OPERATIONS DESK"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "login",
+      "path": "/login",
+      "desktopScreenshot": "qa_screenshots/desktop/login.png",
+      "mobileScreenshot": "qa_screenshots/mobile/login.png",
+      "tabletScreenshot": "qa_screenshots/tablet/login.png",
+      "title": "Client & Administrative Portal Login | Royal Business Machine | Royal Business Machine",
+      "h1": "Enterprise Portal Login",
+      "imagesTotal": 3,
+      "imagesMissingAlt": 0,
+      "linksTotal": 45,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Enterprise Portal Login"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        },
+        {
+          "tag": "H4",
+          "text": "ENTERPRISE SERVICES"
+        },
+        {
+          "tag": "H4",
+          "text": "OPERATIONS DESK"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "register",
+      "path": "/register",
+      "desktopScreenshot": "qa_screenshots/desktop/register.png",
+      "mobileScreenshot": "qa_screenshots/mobile/register.png",
+      "tabletScreenshot": "qa_screenshots/tablet/register.png",
+      "title": "Client Account Registration | Royal Business Machine | Royal Business Machine",
+      "h1": "Register Client Account",
+      "imagesTotal": 3,
+      "imagesMissingAlt": 0,
+      "linksTotal": 44,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Register Client Account"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        },
+        {
+          "tag": "H4",
+          "text": "ENTERPRISE SERVICES"
+        },
+        {
+          "tag": "H4",
+          "text": "OPERATIONS DESK"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "client-dashboard",
+      "path": "/client/dashboard",
+      "desktopScreenshot": "qa_screenshots/desktop/client-dashboard.png",
+      "mobileScreenshot": "qa_screenshots/mobile/client-dashboard.png",
+      "tabletScreenshot": "qa_screenshots/tablet/client-dashboard.png",
+      "title": "Client Project Portal & Dashboard | Royal Business Machine | Royal Business Machine",
+      "h1": "Welcome to Your Client Portal",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 45,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Welcome to Your Client Portal"
+        },
+        {
+          "tag": "H3",
+          "text": "Active Deployment: Enterprise Web & Mobile Platform"
+        },
+        {
+          "tag": "H4",
+          "text": "MILESTONE BREAKDOWN"
+        },
+        {
+          "tag": "H3",
+          "text": "Dedicated Account Lead"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        },
+        {
+          "tag": "H4",
+          "text": "ENTERPRISE SERVICES"
+        },
+        {
+          "tag": "H4",
+          "text": "OPERATIONS DESK"
+        }
+      ],
+      "status": 200
+    },
+    {
+      "slug": "admin-dashboard",
+      "path": "/admin/dashboard",
+      "desktopScreenshot": "qa_screenshots/desktop/admin-dashboard.png",
+      "mobileScreenshot": "qa_screenshots/mobile/admin-dashboard.png",
+      "tabletScreenshot": "qa_screenshots/tablet/admin-dashboard.png",
+      "title": "Administrative Operations Center | Royal Business Machine | Royal Business Machine",
+      "h1": "Executive Administration Center",
+      "imagesTotal": 2,
+      "imagesMissingAlt": 0,
+      "linksTotal": 51,
+      "emptyLinks": 0,
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "Executive Administration Center"
+        },
+        {
+          "tag": "H3",
+          "text": "Recent Business Inquiries & Leads"
+        },
+        {
+          "tag": "H4",
+          "text": "COMPANY"
+        },
+        {
+          "tag": "H4",
+          "text": "ENTERPRISE SERVICES"
+        },
+        {
+          "tag": "H4",
+          "text": "OPERATIONS DESK"
+        }
+      ],
+      "status": 200
+    }
+  ],
+  "functionalTests": {
+    "mobileMenu": {
+      "tested": true,
+      "success": true,
+      "details": "Drawer opened, verified Services, Portfolio and Company menu links."
+    },
+    "contactForm": {
+      "tested": true,
+      "success": true,
+      "details": "Form submitted and handled with sanitized phone. Success banner confirmed."
+    },
+    "faqAccordion": {
+      "tested": true,
+      "success": true,
+      "details": "Second FAQ accordion expanded; verified AMC & warranty response text is visible."
+    },
+    "servicesTabs": {
+      "tested": true,
+      "success": true,
+      "details": "Category switched to Design & Brand; Logo Design & Vector Marks deliverables confirmed."
+    },
+    "projectsTabs": {
+      "tested": true,
+      "success": true,
+      "details": "Filter switched to Mobile Apps; Dairy Muneem shown exclusively while ERP hidden."
+    },
+    "clientAuth": {
+      "tested": true,
+      "success": true,
+      "currentUrl": "http://localhost:3000/client/dashboard",
+      "details": "Client logged in via real backend JWT and routed to /client/dashboard."
+    },
+    "adminAuth": {
+      "tested": true,
+      "success": true,
+      "currentUrl": "http://localhost:3000/admin/dashboard",
+      "details": "Admin logged in via real backend JWT and routed to /admin/dashboard."
+    },
+    "registration": {
+      "tested": true,
+      "success": true,
+      "details": "Registration handled cleanly via backend API with simulated OTP for development."
+    }
+  },
+  "consoleErrors": [],
+  "failedRequests": [],
+  "brokenLinksSummary": []
+}

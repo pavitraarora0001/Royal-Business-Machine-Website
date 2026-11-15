@@ -40,13 +40,14 @@ export function ContactClient() {
     setErrorMessage("");
 
     try {
+      const cleanPhone = formData.phone.replace(/\D/g, '').slice(-10);
       const response = await fetch("http://localhost:5000/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phone: formData.phone,
+          phone: cleanPhone || formData.phone,
           subject: `${formData.service} Inquiry - ${formData.company || "Individual"}`,
           message: `[Budget: ${formData.budget}] - ${formData.message}`,
         }),
