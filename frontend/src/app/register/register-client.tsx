@@ -40,7 +40,8 @@ export function RegisterClient() {
 
     try {
       const cleanPhone = formData.phone.replace(/\D/g, '').slice(-10);
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const apiEndpoint = `${process.env.NEXT_PUBLIC_API_URL || ""}/api/auth/register`;
+      const res = await fetch(apiEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

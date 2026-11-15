@@ -41,7 +41,8 @@ export function ContactClient() {
 
     try {
       const cleanPhone = formData.phone.replace(/\D/g, '').slice(-10);
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const apiEndpoint = `${process.env.NEXT_PUBLIC_API_URL || ""}/api/contact`;
+      const response = await fetch(apiEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
