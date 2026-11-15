@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 // Create transporter
 const createTransporter = () => {
-    return nodemailer.createTransporter({
+    return nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
         port: parseInt(process.env.EMAIL_PORT || 587),
         secure: false, // true for 465, false for other ports
@@ -15,7 +15,7 @@ const createTransporter = () => {
 
 // Send OTP Email
 export const sendOTPEmail = async (email, otp, purpose) => {
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
         console.log(`[DEV MODE] Simulated email sent to ${email} with OTP: ${otp}`);
         return { success: true, messageId: 'dev-mode-simulated' };
     }
