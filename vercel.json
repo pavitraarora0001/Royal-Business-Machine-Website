@@ -1,4 +1,39 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": true
+  "services": {
+    "web": {
+      "root": "frontend",
+      "framework": "nextjs",
+      "bindings": [
+        {
+          "type": "service",
+          "service": "api",
+          "format": "url",
+          "env": "BACKEND_API_URL"
+        }
+      ]
+    },
+    "api": {
+      "root": "backend",
+      "entrypoint": "server.js"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": { "service": "api" }
+    },
+    {
+      "source": "/uploads/(.*)",
+      "destination": { "service": "api" }
+    },
+    {
+      "source": "/health",
+      "destination": { "service": "api" }
+    },
+    {
+      "source": "/(.*)",
+      "destination": { "service": "web" }
+    }
+  ]
 }

@@ -69,17 +69,16 @@ export function RegisterClient() {
     <div className="min-h-[85vh] flex items-center justify-center py-16 px-4 bg-warm-white dark:bg-charcoal/50">
       <div className="w-full max-w-lg p-8 sm:p-10 rounded-3xl bg-white dark:bg-charcoal border border-border shadow-xl space-y-8">
         
-        <div className="text-center space-y-3">
-          <Link href="/" className="inline-block">
-            <div className="w-14 h-14 rounded-2xl bg-white border border-gold/40 flex items-center justify-center p-2 mx-auto shadow-sm">
-              <Image
-                src="/assets/logo/logo.png"
-                alt="RBM Emblem"
-                width={48}
-                height={48}
-                className="object-contain"
-              />
-            </div>
+        <div className="text-center space-y-4">
+          <Link href="/" className="inline-block group focus:outline-none" aria-label="Royal Business Machine">
+            <Image
+              src="/assets/logo/logo-stacked.png"
+              alt="Royal Business Machine"
+              width={467}
+              height={235}
+              className="w-44 sm:w-52 h-auto mx-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              priority
+            />
           </Link>
 
           <h1 className="text-2xl sm:text-3xl font-extrabold text-charcoal dark:text-warm-white font-heading">

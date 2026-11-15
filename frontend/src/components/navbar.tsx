@@ -123,25 +123,15 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           
           {/* Logo & Corporate Identifier */}
-          <Link href="/" className="flex items-center gap-3 group focus:outline-none shrink-0">
-            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-2xl overflow-hidden shadow-sm border border-gold/40 bg-white flex items-center justify-center p-1.5 group-hover:border-gold transition-colors">
-              <Image
-                src="/assets/logo/logo.png"
-                alt="Royal Business Machine Emblem"
-                width={40}
-                height={40}
-                className="object-contain"
-                priority
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-extrabold tracking-tight text-base sm:text-lg text-charcoal dark:text-warm-white group-hover:text-gold transition-colors leading-none">
-                ROYAL BUSINESS MACHINE
-              </span>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.2em] text-slate-muted uppercase font-semibold mt-1">
-                Integrated Technology Platform
-              </span>
-            </div>
+          <Link href="/" className="flex items-center group focus:outline-none shrink-0 py-0.5" aria-label="Royal Business Machine">
+            <Image
+              src="/assets/logo/logo-horizontal.png"
+              alt="Royal Business Machine"
+              width={642}
+              height={163}
+              className="w-[185px] sm:w-[220px] md:w-[250px] lg:w-[285px] xl:w-[310px] h-auto object-contain object-left transition-transform duration-200 group-hover:scale-[1.02]"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

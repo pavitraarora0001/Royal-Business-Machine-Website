@@ -58,9 +58,16 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/assets/logo/favicon.ico",
-    shortcut: "/assets/logo/favicon.ico",
-    apple: "/assets/logo/logo.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/assets/logo/favicon.ico" },
+      { url: "/assets/logo/favicon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/assets/logo/logo-symbol.png" },
+    ],
   },
   openGraph: {
     title: "Royal Business Machine | Enterprise Technology & Infrastructure",
@@ -70,10 +77,10 @@ export const metadata: Metadata = {
     siteName: "Royal Business Machine",
     images: [
       {
-        url: "/assets/logo/logo.png",
+        url: "/assets/logo/logo-horizontal.png",
         width: 1200,
         height: 630,
-        alt: "Royal Business Machine Corporate Emblem",
+        alt: "Royal Business Machine Corporate Brand",
       },
     ],
     locale: "en_IN",
@@ -84,7 +91,7 @@ export const metadata: Metadata = {
     title: "Royal Business Machine | Technology & Enterprise Solutions",
     description:
       "Transforming businesses with bespoke software, mobile apps, institutional infrastructure, and full-scale branding.",
-    images: ["/assets/logo/logo.png"],
+    images: ["/assets/logo/logo-horizontal.png"],
     creator: "@royalbizmachine",
   },
   robots: {
@@ -109,7 +116,7 @@ const jsonLd = {
       "name": "Royal Business Machine",
       "alternateName": "RBM",
       "url": "https://royalbusinessmachine.com",
-      "logo": "https://royalbusinessmachine.com/assets/logo/logo.png",
+      "logo": "https://royalbusinessmachine.com/assets/logo/logo-horizontal.png",
       "founder": {
         "@type": "Person",
         "name": "Pavitra Arora",
@@ -144,7 +151,7 @@ const jsonLd = {
       "@type": "LocalBusiness",
       "@id": "https://royalbusinessmachine.com/#localbusiness",
       "name": "Royal Business Machine",
-      "image": "https://royalbusinessmachine.com/assets/logo/logo.png",
+      "image": "https://royalbusinessmachine.com/assets/logo/logo-horizontal.png",
       "telephone": "+91-9057287689",
       "email": "royalbusinessmachine@gmail.com",
       "address": {

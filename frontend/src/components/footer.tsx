@@ -28,24 +28,14 @@ export function Footer() {
           
           {/* Column 1: Company Profile & Authority */}
           <div className="lg:col-span-2 space-y-6">
-            <Link href="/" className="flex items-center gap-3 group inline-flex">
-              <div className="relative w-11 h-11 rounded-xl overflow-hidden border border-gold/40 bg-white flex items-center justify-center p-1 group-hover:border-gold transition-colors">
-                <Image
-                  src="/assets/logo/logo.png"
-                  alt="Royal Business Machine Emblem"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-extrabold tracking-tight text-xl text-white group-hover:text-gold transition-colors leading-none">
-                  ROYAL BUSINESS MACHINE
-                </span>
-                <span className="text-[10px] tracking-widest text-slate-light uppercase font-semibold mt-1">
-                  Integrated Technology & Infrastructure Platform
-                </span>
-              </div>
+            <Link href="/" className="inline-block group focus:outline-none" aria-label="Royal Business Machine">
+              <Image
+                src="/assets/logo/logo-horizontal.png"
+                alt="Royal Business Machine"
+                width={642}
+                height={163}
+                className="w-[240px] sm:w-[280px] md:w-[310px] h-auto object-contain object-left transition-transform duration-200 group-hover:scale-[1.02]"
+              />
             </Link>
 
             <p className="text-sm text-slate-light leading-relaxed max-w-md">

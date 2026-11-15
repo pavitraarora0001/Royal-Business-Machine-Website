@@ -78,10 +78,10 @@ export default function AboutPage() {
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative w-72 h-88 sm:w-80 sm:h-96 rounded-3xl overflow-hidden border-2 border-gold/40 shadow-xl bg-charcoal p-8 flex flex-col justify-between text-warm-white">
                 <div className="space-y-3">
-                  <div className="w-16 h-16 rounded-2xl bg-white/10 border border-gold/30 flex items-center justify-center p-2">
+                  <div className="w-16 h-16 rounded-2xl bg-white/10 border border-gold/30 flex items-center justify-center p-2.5 shadow-sm">
                     <Image
-                      src="/assets/logo/logo.png"
-                      alt="RBM Emblem"
+                      src="/assets/logo/logo-symbol.png"
+                      alt="Royal Business Machine Emblem"
                       width={48}
                       height={48}
                       className="object-contain"
