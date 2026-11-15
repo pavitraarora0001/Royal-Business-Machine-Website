@@ -338,6 +338,20 @@ export function HeroSection() {
           </div>
 
         </div>
+
+        {/* Cinematic Scroll Indicator Prompt */}
+        <div className="hidden sm:flex flex-col items-center justify-center pt-8 pb-1 text-center pointer-events-none select-none">
+          <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">
+            Scroll to explore technology core
+          </span>
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-4 h-7 rounded-full border border-[#B69A69]/50 flex items-start justify-center p-1"
+          >
+            <div className="w-1 h-2 rounded-full bg-[#B69A69]" />
+          </motion.div>
+        </div>
       </div>
     </section>
   );

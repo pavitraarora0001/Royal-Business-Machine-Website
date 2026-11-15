@@ -5,9 +5,17 @@ import { ServicesPreview } from "@/components/home/services-preview";
 import { CtaBanner } from "@/components/cta-banner";
 import { SectionHeader } from "@/components/section-header";
 import {
-  RevealOnScroll,
-  TiltCard,
-} from "@/components/motion";
+  ScrollProgress,
+  ScrollScene,
+  ScrollTransition,
+  SectionReveal,
+  TextReveal,
+  FloatingGeometry,
+  ProjectShowcase,
+  ProcessPipeline,
+  AnimatedCircuit,
+} from "@/components/cinematic";
+import { TiltCard } from "@/components/motion";
 import {
   ArrowRight,
   ShieldCheck,
@@ -68,32 +76,63 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="flex flex-col w-full overflow-hidden">
-      {/* 1. Hero Section */}
-      <HeroSection />
+    <div className="relative flex flex-col w-full overflow-hidden">
+      {/* 1. Global Scroll Progress Bar */}
+      <ScrollProgress showPercentage={true} />
 
-      {/* 2. Authentic Stats Section */}
-      <StatsSection />
+      {/* 2. Coordinated Background 3D ScrollScene (Royal Technology Core) */}
+      <ScrollScene intensity="full" />
 
-      {/* 3. The RBM Advantage / Company Narrative */}
-      <section className="py-24 bg-white dark:bg-charcoal border-b border-border relative overflow-hidden">
-        {/* Ambient Glow */}
-        <div className="absolute inset-0 pointer-events-none opacity-30">
-          <div className="absolute top-1/2 -right-48 w-96 h-96 bg-gold/10 rounded-full blur-3xl" />
-        </div>
+      {/* 3. Hero Section (Phase 0) */}
+      <div id="hero" className="relative z-10">
+        <HeroSection />
+      </div>
+
+      <ScrollTransition />
+
+      {/* 4. Authentic Stats Section */}
+      <div id="stats" className="relative z-10">
+        <StatsSection />
+      </div>
+
+      <ScrollTransition />
+
+      {/* 5. The RBM Advantage / Company Narrative (Phase 1) */}
+      <section
+        id="advantage"
+        className="py-24 bg-white/80 dark:bg-charcoal/80 backdrop-blur-md border-b border-border relative overflow-hidden z-10"
+      >
+        {/* Floating Geometry Accents */}
+        <FloatingGeometry
+          type="octahedron"
+          size={52}
+          color="#C6A869"
+          speed={7}
+          className="absolute -top-4 right-12 hidden lg:block opacity-40"
+        />
+        <FloatingGeometry
+          type="prism"
+          size={44}
+          color="#E5C583"
+          speed={9}
+          className="absolute bottom-8 left-8 hidden lg:block opacity-30"
+        />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <RevealOnScroll direction="left" className="lg:col-span-6 space-y-6">
+            <SectionReveal direction="left" className="lg:col-span-6 space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest bg-gold/10 text-gold border border-gold/25">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>The Integrated Model</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading leading-tight">
-                Single-Point Accountability for Digital & Physical Infrastructure
-              </h2>
+              <TextReveal
+                as="h2"
+                text="Single-Point Accountability for Digital & Physical Infrastructure"
+                highlightWords={["Accountability", "Digital", "Infrastructure"]}
+                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-charcoal dark:text-warm-white font-heading leading-tight"
+              />
 
               <p className="text-base text-slate-muted dark:text-slate-light leading-relaxed font-normal">
                 Indian MSMEs and institutions face severe coordination bottlenecks when dealing with separate web designers, app agencies, marketing freelancers, and printing shops.
@@ -112,12 +151,12 @@ export default function HomePage() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
-            </RevealOnScroll>
+            </SectionReveal>
 
-            <RevealOnScroll direction="right" className="lg:col-span-6 space-y-5">
+            <SectionReveal direction="right" className="lg:col-span-6 space-y-5">
               {corePillars.map((pillar, idx) => (
                 <TiltCard key={idx} maxTilt={4}>
-                  <div className="p-6 rounded-2xl bg-warm-white/70 dark:bg-graphite/40 border border-border hover:border-gold/50 hover:shadow-lg transition-all group">
+                  <div className="p-6 rounded-2xl bg-warm-white/70 dark:bg-graphite/40 border border-border hover:border-gold/50 hover:shadow-lg transition-all group backdrop-blur-sm">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:text-white group-hover:scale-105 transition-all">
                         <pillar.icon className="w-6 h-6" />
@@ -134,17 +173,23 @@ export default function HomePage() {
                   </div>
                 </TiltCard>
               ))}
-            </RevealOnScroll>
+            </SectionReveal>
 
           </div>
         </div>
       </section>
 
-      {/* 4. Services Preview Grid */}
-      <ServicesPreview />
+      <AnimatedCircuit orientation="horizontal" color="#C6A869" className="relative z-10 my-4" />
 
-      {/* 5. Featured Case Studies */}
-      <section className="py-24 bg-white dark:bg-charcoal border-b border-border relative overflow-hidden">
+      {/* 6. Services Preview Grid (Phase 2) */}
+      <div id="services" className="relative z-10">
+        <ServicesPreview />
+      </div>
+
+      <ScrollTransition />
+
+      {/* 7. Featured Case Studies & High-Impact Deployments (Phase 3) */}
+      <section id="projects" className="py-24 bg-white/70 dark:bg-charcoal/70 backdrop-blur-md border-b border-border relative overflow-hidden z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SectionHeader
@@ -155,53 +200,17 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredCaseStudies.map((study, idx) => (
-              <RevealOnScroll key={idx} delay={idx * 0.1} direction="up" className="h-full">
-                <TiltCard maxTilt={5} className="h-full">
-                  <div className="h-full rounded-2xl bg-warm-white/60 dark:bg-graphite/40 border border-border p-7 flex flex-col justify-between hover:border-gold/60 hover:shadow-2xl transition-all duration-300 group">
-                    <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-gold bg-gold/10 px-2.5 py-1 rounded-full border border-gold/20">
-                          {study.category}
-                        </span>
-                        <span className="text-xs font-semibold text-slate-muted">
-                          {study.value}
-                        </span>
-                      </div>
-
-                      <h3 className="text-2xl font-bold text-charcoal dark:text-warm-white mb-2 font-heading group-hover:text-gold transition-colors">
-                        {study.title}
-                      </h3>
-
-                      <p className="text-xs text-gold font-medium mb-3">
-                        Client: {study.client}
-                      </p>
-
-                      <p className="text-xs sm:text-sm text-slate-muted leading-relaxed mb-6 font-normal">
-                        {study.desc}
-                      </p>
-
-                      <div className="flex flex-wrap gap-1.5 mb-6">
-                        {study.tech.map((t, i) => (
-                          <span
-                            key={i}
-                            className="text-[11px] px-2.5 py-1 rounded-lg bg-white dark:bg-charcoal border border-border text-charcoal/80 dark:text-warm-white/80"
-                          >
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <Link
-                      href={study.href}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-dark transition-colors pt-2 group-hover:translate-x-1.5 transition-transform"
-                    >
-                      <span>Explore Full Case Details</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                </TiltCard>
-              </RevealOnScroll>
+              <ProjectShowcase
+                key={idx}
+                index={idx}
+                title={study.title}
+                category={study.category}
+                client={study.client}
+                contractValue={study.value}
+                description={study.desc}
+                technologies={study.tech}
+                href={study.href}
+              />
             ))}
           </div>
 
@@ -218,9 +227,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. Proprietary Solutions Spotlight: NyayaSetu */}
-      <section className="py-24 bg-charcoal text-warm-white relative overflow-hidden">
-        {/* Subtle grid background */}
+      <ScrollTransition />
+
+      {/* 8. Proprietary Solutions Spotlight: NyayaSetu AI */}
+      <section id="innovation" className="py-24 bg-charcoal text-warm-white relative overflow-hidden z-10">
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{
@@ -230,7 +240,7 @@ export default function HomePage() {
         />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <RevealOnScroll direction="up">
+          <SectionReveal direction="up">
             <div className="max-w-5xl mx-auto rounded-3xl bg-graphite/80 border border-gold/40 p-8 sm:p-14 relative overflow-hidden shadow-2xl backdrop-blur-md">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
@@ -240,9 +250,12 @@ export default function HomePage() {
                     <span>Flagship AI E-Governance Solution</span>
                   </div>
 
-                  <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-heading">
-                    NyayaSetu — Bridge to Justice
-                  </h2>
+                  <TextReveal
+                    as="h2"
+                    text="NyayaSetu — Bridge to Justice"
+                    highlightWords={["NyayaSetu", "Justice"]}
+                    className="text-3xl sm:text-4xl font-extrabold text-white font-heading"
+                  />
 
                   <p className="text-sm text-slate-light leading-relaxed">
                     An AI-powered, SaaS-based e-governance platform designed to bridge the gap between citizens and law-enforcement agencies. Provides guided incident submission with automated IPC/BNS section identification and a secure police dashboard for faster, accurate FIR preparation.
@@ -284,12 +297,29 @@ export default function HomePage() {
 
               </div>
             </div>
-          </RevealOnScroll>
+          </SectionReveal>
         </div>
       </section>
 
-      {/* 7. Client Proof / Authentic Reviews */}
-      <section className="py-24 bg-warm-white dark:bg-charcoal/40 border-b border-border relative overflow-hidden">
+      <ScrollTransition />
+
+      {/* 9. Process Pipeline: 7-Step Agile Delivery (Connected Technology Pipeline) */}
+      <section id="process" className="py-24 bg-white/70 dark:bg-charcoal/70 backdrop-blur-md border-b border-border relative overflow-hidden z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <SectionHeader
+            badge="Execution Pipeline"
+            title="7-Step Agile Delivery Framework"
+            subtitle="A transparent, scroll-synchronized delivery process turning operational goals into scalable enterprise software, mobile apps, and institutional platforms."
+          />
+
+          <ProcessPipeline />
+        </div>
+      </section>
+
+      <ScrollTransition />
+
+      {/* 10. Client Proof / Authentic Reviews */}
+      <section id="reviews" className="py-24 bg-warm-white/70 dark:bg-charcoal/40 backdrop-blur-md border-b border-border relative overflow-hidden z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <SectionHeader
@@ -299,7 +329,7 @@ export default function HomePage() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <RevealOnScroll delay={0.1} direction="up" className="h-full">
+            <SectionReveal delay={0.1} direction="up" className="h-full">
               <TiltCard maxTilt={5} className="h-full">
                 <div className="h-full p-7 rounded-2xl bg-white dark:bg-charcoal border border-border hover:border-gold/50 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all duration-300">
                   <div>
@@ -318,9 +348,9 @@ export default function HomePage() {
                   </div>
                 </div>
               </TiltCard>
-            </RevealOnScroll>
+            </SectionReveal>
 
-            <RevealOnScroll delay={0.2} direction="up" className="h-full">
+            <SectionReveal delay={0.2} direction="up" className="h-full">
               <TiltCard maxTilt={5} className="h-full">
                 <div className="h-full p-7 rounded-2xl bg-white dark:bg-charcoal border border-border hover:border-gold/50 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all duration-300">
                   <div>
@@ -339,9 +369,9 @@ export default function HomePage() {
                   </div>
                 </div>
               </TiltCard>
-            </RevealOnScroll>
+            </SectionReveal>
 
-            <RevealOnScroll delay={0.3} direction="up" className="h-full">
+            <SectionReveal delay={0.3} direction="up" className="h-full">
               <TiltCard maxTilt={5} className="h-full">
                 <div className="h-full p-7 rounded-2xl bg-white dark:bg-charcoal border border-border hover:border-gold/50 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all duration-300">
                   <div>
@@ -360,7 +390,7 @@ export default function HomePage() {
                   </div>
                 </div>
               </TiltCard>
-            </RevealOnScroll>
+            </SectionReveal>
           </div>
 
           <div className="mt-12 text-center">
@@ -376,8 +406,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. Conversion CTA Banner */}
-      <CtaBanner />
+      {/* 11. Conversion CTA Banner (Phase 4: Technology Convergence) */}
+      <div id="contact" className="relative z-10">
+        <CtaBanner />
+      </div>
     </div>
   );
 }
