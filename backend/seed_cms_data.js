@@ -538,7 +538,7 @@ async function seed() {
     }
     console.log('✓ Portfolio projects seeded');
 
-    // 5. Team Members
+    // 5. Team Members (Only verified actual team members)
     const initialTeam = [
         {
             name: "Pavitra Arora",
@@ -554,33 +554,27 @@ async function seed() {
             isFeatured: true,
             isActive: true,
             order: 1
-        },
-        {
-            name: "A. Sterling",
-            role: "Chief Technology Officer & Cloud Architect",
-            badge: "Engineering",
-            bio: "Specializing in high-concurrency microservices, cloud deployments on AWS/GCP, distributed databases, and high-security enterprise ERP systems.",
-            skills: ["Next.js / React 19", "Node.js & Go", "PostgreSQL & Redis", "Cloud Security"],
-            isFeatured: false,
-            isActive: true,
-            order: 2
-        },
-        {
-            name: "Sarah Chen",
-            role: "Lead Full-Stack Software Engineer",
-            badge: "Core Engineering",
-            bio: "Leads frontend engineering and mobile app development across iOS and Android ecosystems, with deep expertise in offline synchronization.",
-            skills: ["React Native", "Flutter", "TypeScript", "Tailwind CSS"],
-            isFeatured: false,
-            isActive: true,
-            order: 3
         }
     ];
+
+    // Clean up any stale fictional profiles
+    await TeamMember.deleteMany({
+        name: { $in: ["A. Sterling", "Sarah Chen", "Marcus Johnson", "Elena Rodriguez", "David Kim"] }
+    });
 
     for (const t of initialTeam) {
         const exists = await TeamMember.findOne({ name: t.name });
         if (!exists) {
             await TeamMember.create(t);
+        } else {
+            exists.role = t.role;
+            exists.badge = t.badge;
+            exists.bio = t.bio;
+            exists.skills = t.skills;
+            exists.socials = t.socials;
+            exists.isFeatured = t.isFeatured;
+            exists.isActive = t.isActive;
+            await exists.save();
         }
     }
     console.log('✓ Team members seeded');

@@ -39,7 +39,7 @@ const articles = [
     excerpt: "Stop guessing and start measuring. Learn how precision search intent, Meta lookalikes, and direct WhatsApp funnels can drive measurable B2B enterprise leads.",
     date: "Mar 05, 2026",
     readTime: "5 min read",
-    author: "Elena Rodriguez",
+    author: "RBM Growth Team",
   },
   {
     slug: "ultimate-startup-pitch-deck-guide",
@@ -57,7 +57,7 @@ const articles = [
     excerpt: "How intelligent rule engines, OCR document processing, and automated ledger triggers can save your enterprise thousands of operational hours annually.",
     date: "Feb 20, 2026",
     readTime: "5 min read",
-    author: "Sarah Chen",
+    author: "Pavitra Arora",
   },
   {
     slug: "importance-of-unified-brand-identity",
@@ -66,7 +66,7 @@ const articles = [
     excerpt: "Why your corporate web portal, physical metallic visiting cards, packaging boxes, and social voice need to speak the exact same visual language.",
     date: "Feb 12, 2026",
     readTime: "4 min read",
-    author: "Marcus Johnson",
+    author: "RBM Brand Studio",
   },
 ];
 

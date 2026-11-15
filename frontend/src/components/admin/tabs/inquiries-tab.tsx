@@ -57,9 +57,9 @@ export function InquiriesTab() {
       message: "Looking for direct-to-consumer B2B ordering portal for commodity distribution with automated GST invoice generation.",
       status: "Contacted",
       date: "Nov 13, 2026",
-      assignedTo: "Sarah Chen",
+      assignedTo: "Technical Operations",
       notes: [
-        { text: "Spoke via WhatsApp. Sent company deck and e-commerce case studies.", date: "Nov 13, 2026", author: "Sarah Chen" },
+        { text: "Spoke via WhatsApp. Sent company deck and e-commerce case studies.", date: "Nov 13, 2026", author: "Technical Operations" },
       ],
     },
     {
@@ -89,9 +89,9 @@ export function InquiriesTab() {
       message: "Interested in NyayaSetu legal drafting assistant pilot for municipal legal aid.",
       status: "Proposal Sent",
       date: "Nov 09, 2026",
-      assignedTo: "A. Sterling",
+      assignedTo: "Pavitra Arora",
       notes: [
-        { text: "Technical architecture proposal submitted. Awaiting board review.", date: "Nov 10, 2026", author: "A. Sterling" },
+        { text: "Technical architecture proposal submitted. Awaiting board review.", date: "Nov 10, 2026", author: "Pavitra Arora" },
       ],
     },
   ]);
