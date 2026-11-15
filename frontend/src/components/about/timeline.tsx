@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 export function Timeline() {
   const milestones = [

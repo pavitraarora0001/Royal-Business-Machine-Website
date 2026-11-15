@@ -4,9 +4,6 @@ import { SectionHeader } from "@/components/section-header";
 import { CtaBanner } from "@/components/cta-banner";
 import {
   Smartphone,
-  CheckCircle2,
-  Cpu,
-  Layers,
   ArrowRight,
   ShieldCheck,
   Zap,

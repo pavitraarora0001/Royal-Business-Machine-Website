@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { SectionHeader } from "@/components/section-header";
 import { CtaBanner } from "@/components/cta-banner";
 import {
   BookOpen,
-  Calendar,
   User,
   ArrowRight,
-  Clock,
-  Sparkles,
-  Tag
+  Clock
 } from "lucide-react";
 
 export const metadata: Metadata = {

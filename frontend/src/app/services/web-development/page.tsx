@@ -4,10 +4,6 @@ import { SectionHeader } from "@/components/section-header";
 import { CtaBanner } from "@/components/cta-banner";
 import {
   Code,
-  Layers,
-  ShieldCheck,
-  CheckCircle2,
-  Cpu,
   Globe2,
   ArrowRight,
   Database,

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import {
   Phone,
   Mail,
@@ -10,10 +9,8 @@ import {
   Clock,
   ShieldCheck,
   CheckCircle2,
-  AlertCircle,
   Send,
-  Sparkles,
-  ArrowRight
+  Sparkles
 } from "lucide-react";
 
 export function ContactClient() {
@@ -28,7 +25,6 @@ export function ContactClient() {
   });
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,7 +33,6 @@ export function ContactClient() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    setErrorMessage("");
 
     try {
       const cleanPhone = formData.phone.replace(/\D/g, '').slice(-10);
@@ -69,7 +64,7 @@ export function ContactClient() {
         // Even if local backend isn't reached, show graceful success with direct WhatsApp handoff option
         setStatus("success");
       }
-    } catch (err: any) {
+    } catch {
       // In static frontend deployment without backend active, gracefully transition to success with WhatsApp option
       setStatus("success");
     }

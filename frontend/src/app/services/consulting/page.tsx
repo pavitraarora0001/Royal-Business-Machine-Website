@@ -5,14 +5,11 @@ import { CtaBanner } from "@/components/cta-banner";
 import {
   Lightbulb,
   Rocket,
-  FileText,
   DollarSign,
   ShieldCheck,
-  CheckCircle2,
   ArrowRight,
   Download,
-  Presentation,
-  TrendingUp
+  Presentation
 } from "lucide-react";
 
 export const metadata: Metadata = {

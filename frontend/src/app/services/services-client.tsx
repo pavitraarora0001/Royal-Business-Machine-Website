@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeader } from "@/components/section-header";
 import { CtaBanner } from "@/components/cta-banner";
 import {
@@ -16,16 +15,13 @@ import {
   Cpu,
   ArrowRight,
   CheckCircle2,
-  ChevronRight,
-  ShieldCheck,
-  Sparkles,
   Layers
 } from "lucide-react";
 
 export interface ServiceCategory {
   id: string;
   title: string;
-  icon: any;
+  icon: React.ElementType;
   badge: string;
   dedicatedUrl?: string;
   description: string;
@@ -322,7 +318,6 @@ export const serviceCategories: ServiceCategory[] = [
 
 export function ServicesDirectoryClient() {
   const [selectedCategory, setSelectedCategory] = useState<string>("software");
-  const [expandedService, setExpandedService] = useState<string | null>(null);
 
   const currentCategory = serviceCategories.find((cat) => cat.id === selectedCategory) || serviceCategories[0];
 
@@ -356,7 +351,6 @@ export function ServicesDirectoryClient() {
                 key={cat.id}
                 onClick={() => {
                   setSelectedCategory(cat.id);
-                  setExpandedService(null);
                 }}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
                   selectedCategory === cat.id

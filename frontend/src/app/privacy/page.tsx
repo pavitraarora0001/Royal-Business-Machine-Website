@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, Lock, Eye, FileText, ArrowLeft } from "lucide-react";
+import { Lock, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy & Data Protection | Royal Business Machine",

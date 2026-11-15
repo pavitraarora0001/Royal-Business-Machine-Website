@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SectionHeader } from "@/components/section-header";
 import { CtaBanner } from "@/components/cta-banner";
 import {
   GraduationCap,
@@ -14,7 +13,6 @@ import {
   Building2,
   Landmark,
   ArrowRight,
-  ShieldCheck,
   CheckCircle2,
   Sparkles
 } from "lucide-react";

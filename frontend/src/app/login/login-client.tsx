@@ -53,7 +53,7 @@ export function LoginClient() {
         setSuccess("Demo Login Access Granted. Redirecting to Client Dashboard...");
         setTimeout(() => router.push("/client/dashboard"), 1000);
       }
-    } catch (err) {
+    } catch {
       setSuccess("Demo Login Access Granted. Redirecting to Client Dashboard...");
       setTimeout(() => router.push("/client/dashboard"), 1000);
     } finally {

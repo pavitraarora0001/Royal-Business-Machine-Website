@@ -3,18 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  Layers,
   CheckCircle2,
   Clock,
   Download,
   MessageSquare,
-  Phone,
-  FileText,
-  CreditCard,
-  Plus,
-  ArrowRight,
-  ShieldCheck,
-  User
+  ShieldCheck
 } from "lucide-react";
 
 export function ClientDashboardClient() {

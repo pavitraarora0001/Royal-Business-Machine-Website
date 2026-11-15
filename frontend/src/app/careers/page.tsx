@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { SectionHeader } from "@/components/section-header";
 import { CtaBanner } from "@/components/cta-banner";
 import {
   Briefcase,
-  Users,
   Sparkles,
   CheckCircle2,
   ArrowRight,
-  ShieldCheck,
   Zap,
   GraduationCap,
   HeartHandshake,

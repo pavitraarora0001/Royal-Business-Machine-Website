@@ -3,17 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { SectionHeader } from "@/components/section-header";
 import { CtaBanner } from "@/components/cta-banner";
 import {
   HelpCircle,
   Plus,
   Minus,
-  Sparkles,
   ArrowRight,
-  ShieldCheck,
-  CheckCircle2,
-  Phone,
   MessageSquare
 } from "lucide-react";
 

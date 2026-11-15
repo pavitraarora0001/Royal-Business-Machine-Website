@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ServicesDirectoryClient } from "./services-client";
 
 export const metadata: Metadata = {

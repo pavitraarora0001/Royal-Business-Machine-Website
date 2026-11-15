@@ -3,21 +3,11 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { SectionHeader } from "@/components/section-header";
 import { CtaBanner } from "@/components/cta-banner";
 import {
   FolderGit2,
-  ExternalLink,
-  ShieldCheck,
-  CheckCircle2,
   ArrowRight,
-  Filter,
-  Layers,
-  Sparkles,
-  Building2,
-  Smartphone,
-  Globe2,
-  Cpu
+  Filter
 } from "lucide-react";
 
 type ProjectCategory =

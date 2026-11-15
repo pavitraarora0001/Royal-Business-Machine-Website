@@ -6,12 +6,9 @@ import {
   TrendingUp,
   Search,
   Target,
-  BarChart3,
-  CheckCircle2,
   ArrowRight,
   Share2,
-  DollarSign,
-  Users
+  DollarSign
 } from "lucide-react";
 
 export const metadata: Metadata = {

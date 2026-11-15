@@ -12,8 +12,7 @@ import {
   Linkedin,
   Twitter,
   Instagram,
-  Facebook,
-  ExternalLink
+  Facebook
 } from "lucide-react";
 
 export function Footer() {

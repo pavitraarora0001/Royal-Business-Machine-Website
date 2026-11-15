@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { HeroSection } from "@/components/home/hero-section";
 import { StatsSection } from "@/components/stats-section";
 import { ServicesPreview } from "@/components/home/services-preview";
@@ -9,13 +8,10 @@ import {
   ArrowRight,
   ShieldCheck,
   CheckCircle2,
-  ExternalLink,
   Cpu,
   Layers,
   Sparkles,
-  Quote,
-  Star,
-  Users
+  Star
 } from "lucide-react";
 
 export default function HomePage() {

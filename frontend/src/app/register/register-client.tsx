@@ -11,7 +11,6 @@ import {
   Phone,
   Building2,
   ArrowRight,
-  ShieldCheck,
   CheckCircle2,
   AlertCircle
 } from "lucide-react";
@@ -58,7 +57,7 @@ export function RegisterClient() {
         setSuccess("Client account registered. Redirecting to client dashboard...");
         setTimeout(() => router.push("/client/dashboard"), 1200);
       }
-    } catch (err) {
+    } catch {
       setSuccess("Client account registered. Redirecting to client dashboard...");
       setTimeout(() => router.push("/client/dashboard"), 1200);
     } finally {

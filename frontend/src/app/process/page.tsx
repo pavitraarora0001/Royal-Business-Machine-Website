@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SectionHeader } from "@/components/section-header";
 import { CtaBanner } from "@/components/cta-banner";
 import {
   Compass,
@@ -11,7 +10,6 @@ import {
   Rocket,
   Headset,
   ArrowRight,
-  ShieldCheck,
   CheckCircle2,
   Sparkles
 } from "lucide-react";

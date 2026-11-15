@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import { SectionHeader } from "@/components/section-header";
 import { CtaBanner } from "@/components/cta-banner";
 import {
   Linkedin,
@@ -10,9 +8,7 @@ import {
   Github,
   Award,
   Sparkles,
-  ArrowRight,
-  ShieldCheck,
-  CheckCircle2
+  ArrowRight
 } from "lucide-react";
 
 export const metadata: Metadata = {

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, CheckCircle, Users, Award, Shield } from "lucide-react";
+import { TrendingUp, CheckCircle, Users, Award } from "lucide-react";
 
 const stats = [
   {

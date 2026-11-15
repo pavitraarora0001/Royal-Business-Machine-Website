@@ -11,9 +11,7 @@ import {
   Award,
   ShieldCheck,
   CheckCircle2,
-  Users,
-  ArrowRight,
-  Sparkles
+  ArrowRight
 } from "lucide-react";
 
 export const metadata: Metadata = {

@@ -1,24 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import {
   ShieldAlert,
-  Users,
   TrendingUp,
-  FileText,
   Mail,
   Phone,
-  CheckCircle2,
-  Clock,
   ArrowUpRight,
   Database,
   Server
 } from "lucide-react";
 
 export function AdminDashboardClient() {
-  const [filter, setFilter] = useState("all");
-
   const recentInquiries = [
     {
       id: "INQ-2026-112",

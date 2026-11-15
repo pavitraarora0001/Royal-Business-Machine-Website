@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeader } from "@/components/section-header";
 import { CtaBanner } from "@/components/cta-banner";
@@ -10,11 +9,8 @@ import {
   Star,
   ChevronLeft,
   ChevronRight,
-  ShieldCheck,
   CheckCircle2,
-  Building2,
-  Sparkles,
-  ArrowRight
+  Sparkles
 } from "lucide-react";
 
 interface TestimonialItem {

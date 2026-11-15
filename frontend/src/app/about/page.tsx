@@ -10,7 +10,6 @@ import {
   Eye,
   ShieldCheck,
   CheckCircle2,
-  Users,
   Award,
   Layers,
   ArrowRight,

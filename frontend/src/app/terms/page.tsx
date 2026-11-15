@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FileText, ShieldCheck, Scale, ArrowLeft } from "lucide-react";
+import { Scale, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Terms of Service & Client Agreements | Royal Business Machine",

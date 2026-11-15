@@ -6,15 +6,12 @@ import {
   ShieldCheck,
   MessageSquare,
   ChevronRight,
-  Sparkles,
   TrendingUp,
   Layers,
   CheckCircle2,
   Cpu,
   Smartphone,
-  Globe2,
-  Lock,
-  ExternalLink
+  Lock
 } from "lucide-react";
 
 export function HeroSection() {
