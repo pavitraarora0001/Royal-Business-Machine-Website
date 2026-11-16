@@ -575,3 +575,13 @@ export const toggleAdminUserStatus = (id: string) => adminApi.toggleUserStatus(i
 
 export const getActivityLogs = (params?: { module?: string; action?: string }) => adminApi.getActivityLogs(params);
 
+// Products Marketplace APIs
+export const getAdminProducts = (status?: string) =>
+  apiRequest(`/api/products${status ? `?status=${status}` : ""}`, { method: "GET" });
+export const createAdminProduct = (data: unknown) =>
+  apiRequest("/api/products", { method: "POST", body: JSON.stringify(data) });
+export const updateAdminProduct = (id: string, data: unknown) =>
+  apiRequest(`/api/products/${id}`, { method: "PUT", body: JSON.stringify(data) });
+export const deleteAdminProduct = (id: string) =>
+  apiRequest(`/api/products/${id}`, { method: "DELETE" });
+

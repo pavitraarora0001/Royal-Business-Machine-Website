@@ -91,17 +91,17 @@ export function Footer() {
 
           {/* Column 3: Core Service Offerings */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-gold mb-5">Enterprise Services</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest text-gold mb-5">Enterprise Divisions</h4>
             <ul className="space-y-3">
               <FooterLink href="/services/web-development">Web & Cloud Engineering</FooterLink>
-              <FooterLink href="/services/mobile-apps">Mobile App Development</FooterLink>
+              <FooterLink href="/services/mobile-app-development">Mobile App Development</FooterLink>
               <FooterLink href="/services/digital-marketing">Digital Marketing & SEO</FooterLink>
-              <FooterLink href="/services/consulting">Startup Advisory & Pitch Decks</FooterLink>
-              <FooterLink href="/services#software">Custom ERP & CRM Systems</FooterLink>
-              <FooterLink href="/services#printing">In-House Printing Services</FooterLink>
-              <FooterLink href="/services#education">EdTech & Smart Lab Setups</FooterLink>
-              <FooterLink href="/services#advanced">AI, IoT & Automation</FooterLink>
-              <FooterLink href="/services">All 8 Service Categories</FooterLink>
+              <FooterLink href="/services/business-consulting">Startup Advisory & Pitch Decks</FooterLink>
+              <FooterLink href="/services/software-development">Custom ERP & Software</FooterLink>
+              <FooterLink href="/services/ai-automation">AI & Process Automation</FooterLink>
+              <FooterLink href="/services/whatsapp-automation">WhatsApp Automation Suite</FooterLink>
+              <FooterLink href="/products">Software Products (12 Platforms)</FooterLink>
+              <FooterLink href="/services">All 12 Service Divisions</FooterLink>
             </ul>
           </div>
 

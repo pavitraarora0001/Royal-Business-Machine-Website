@@ -21,7 +21,8 @@ import {
   Compass,
   Briefcase,
   Smartphone,
-  Globe2
+  Globe2,
+  Cpu
 } from "lucide-react";
 
 const emptySubscribe = () => () => {};
@@ -65,7 +66,7 @@ export function Navbar() {
     {
       title: "Mobile Applications",
       desc: "iOS, Android, cross-platform apps & logistics engines",
-      href: "/services/mobile-apps",
+      href: "/services/mobile-app-development",
       icon: Smartphone,
     },
     {
@@ -77,15 +78,21 @@ export function Navbar() {
     {
       title: "Startup & Venture Advisory",
       desc: "Pitch decks, business models, MSME setup & MVP sprints",
-      href: "/services/consulting",
+      href: "/services/business-consulting",
       icon: Briefcase,
     },
   ];
 
   const solutionsMenu = [
     {
+      title: "Software Products & Platforms",
+      desc: "12 ready SaaS suites including Dairy Muneem, HMS & CampusCore",
+      href: "/products",
+      icon: Cpu,
+    },
+    {
       title: "Industry Verticals",
-      desc: "10 tailored sectors from Healthcare & Dairy to Govt",
+      desc: "11 tailored sectors from Healthcare & Dairy to Government",
       href: "/industries",
       icon: Layers,
     },

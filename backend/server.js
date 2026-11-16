@@ -21,6 +21,7 @@ import blogRoutes from './routes/blogs.js';
 import settingRoutes from './routes/settings.js';
 import mediaRoutes from './routes/media.js';
 import crmRoutes from './routes/crm.js';
+import productRoutes from './routes/products.js';
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './config/swagger.js';
 
@@ -105,6 +106,7 @@ app.use('/api/blogs', blogRoutes);
 app.use('/api/settings', settingRoutes);
 app.use('/api/media', mediaRoutes);
 app.use('/api/crm', crmRoutes);
+app.use('/api/products', productRoutes);
 
 // API Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {

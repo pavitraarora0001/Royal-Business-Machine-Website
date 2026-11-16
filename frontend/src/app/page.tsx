@@ -303,6 +303,143 @@ export default function HomePage() {
 
       <ScrollTransition />
 
+      {/* 8.5. Proprietary Software Marketplace Preview */}
+      <section id="products-marketplace" className="py-24 bg-white/70 dark:bg-charcoal/70 backdrop-blur-md border-b border-border relative overflow-hidden z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <SectionHeader
+            badge="Turnkey Platforms"
+            title="Proprietary Enterprise Software Suites"
+            subtitle="Engineered in-house for mission-critical operations. Zero middleman reseller markups, high concurrency resilience, and on-premise deployment readiness."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <SectionReveal delay={0.05} direction="up" className="h-full">
+              <TiltCard maxTilt={5} className="h-full">
+                <div className="h-full p-6 sm:p-7 rounded-2xl bg-white dark:bg-charcoal border border-border hover:border-gold/50 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-gold">Agritech Logistics</span>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">Ready</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold font-serif text-navy dark:text-white">Dairy Muneem</h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Fat/SNF rate computation & offline farmer ledger app for rural pooling centers.</p>
+                    </div>
+                    <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 border-t border-border pt-3">
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" /> Real-time Fat/SNF Engine</li>
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" /> Bluetooth Thermal Receipts</li>
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" /> 100% Offline SQLite Sync</li>
+                    </ul>
+                  </div>
+                  <div className="pt-6 border-t border-border mt-4">
+                    <Link href="/products" className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-light">
+                      <span>Explore Dairy Muneem</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </TiltCard>
+            </SectionReveal>
+
+            <SectionReveal delay={0.1} direction="up" className="h-full">
+              <TiltCard maxTilt={5} className="h-full">
+                <div className="h-full p-6 sm:p-7 rounded-2xl bg-white dark:bg-charcoal border border-border hover:border-gold/50 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-gold">Healthcare Clinical</span>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">Ready</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold font-serif text-navy dark:text-white">Royal HMS ERP</h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Multi-specialty hospital management connecting OPD, IPD, EHR, and pharmacy.</p>
+                    </div>
+                    <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 border-t border-border pt-3">
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" /> HL7-Compliant Clinical EHR</li>
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" /> Doctor Digital Prescription Pad</li>
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" /> Diagnostic QR Lab Reports</li>
+                    </ul>
+                  </div>
+                  <div className="pt-6 border-t border-border mt-4">
+                    <Link href="/products" className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-light">
+                      <span>Explore Royal HMS</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </TiltCard>
+            </SectionReveal>
+
+            <SectionReveal delay={0.15} direction="up" className="h-full">
+              <TiltCard maxTilt={5} className="h-full">
+                <div className="h-full p-6 sm:p-7 rounded-2xl bg-white dark:bg-charcoal border border-border hover:border-gold/50 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-gold">Higher Education</span>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">Ready</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold font-serif text-navy dark:text-white">CampusCore ERP</h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Institutional web portal built to sustain 100,000+ concurrent student visits.</p>
+                    </div>
+                    <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 border-t border-border pt-3">
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" /> 100k Concurrency Result Engine</li>
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" /> WCAG 2.1 Bilingual Access</li>
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" /> Regulatory Document Vault</li>
+                    </ul>
+                  </div>
+                  <div className="pt-6 border-t border-border mt-4">
+                    <Link href="/products" className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-light">
+                      <span>Explore CampusCore</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </TiltCard>
+            </SectionReveal>
+
+            <SectionReveal delay={0.2} direction="up" className="h-full">
+              <TiltCard maxTilt={5} className="h-full">
+                <div className="h-full p-6 sm:p-7 rounded-2xl bg-white dark:bg-charcoal border border-border hover:border-gold/50 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-gold">Retail & Wholesale</span>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">Ready</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold font-serif text-navy dark:text-white">OmniStock POS</h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Multi-location inventory tracking with automated serial warranty verification.</p>
+                    </div>
+                    <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300 border-t border-border pt-3">
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" /> Battery / Hardware Warranty Engine</li>
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" /> Low-Stock Threshold Alerts</li>
+                      <li className="flex items-center gap-1.5"><CheckCircle2 className="w-3.5 h-3.5 text-gold shrink-0" /> Multi-Depot Stock Transfers</li>
+                    </ul>
+                  </div>
+                  <div className="pt-6 border-t border-border mt-4">
+                    <Link href="/products" className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-light">
+                      <span>Explore OmniStock</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </TiltCard>
+            </SectionReveal>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/products"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-navy dark:bg-gold text-white dark:text-navy font-bold text-xs uppercase tracking-wider hover:opacity-95 transition-all shadow-md group"
+            >
+              <span>Explore All 12 Software Products & Roadmap</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <ScrollTransition />
+
       {/* 9. Process Pipeline: 7-Step Agile Delivery (Connected Technology Pipeline) */}
       <section id="process" className="py-24 bg-white/70 dark:bg-charcoal/70 backdrop-blur-md border-b border-border relative overflow-hidden z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

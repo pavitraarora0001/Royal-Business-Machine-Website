@@ -31,6 +31,20 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/services/consulting",
+        destination: "/services/business-consulting",
+        permanent: true,
+      },
+      {
+        source: "/services/mobile-apps",
+        destination: "/services/mobile-app-development",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

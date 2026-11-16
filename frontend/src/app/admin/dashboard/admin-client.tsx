@@ -7,6 +7,7 @@ import { OverviewTab } from "@/components/admin/tabs/overview-tab";
 import { CmsTab } from "@/components/admin/tabs/cms-tab";
 import { HomepageTab } from "@/components/admin/tabs/homepage-tab";
 import { ServicesTab } from "@/components/admin/tabs/services-tab";
+import { ProductsTab } from "@/components/admin/tabs/products-tab";
 import { PortfolioTab } from "@/components/admin/tabs/portfolio-tab";
 import { MediaTab } from "@/components/admin/tabs/media-tab";
 import { InquiriesTab } from "@/components/admin/tabs/inquiries-tab";
@@ -96,6 +97,8 @@ export function AdminDashboardClient() {
         return <CmsTab defaultPage="about" />;
       case "services":
         return <ServicesTab />;
+      case "products":
+        return <ProductsTab />;
       case "portfolio":
         return <PortfolioTab />;
       case "media":

@@ -7,87 +7,127 @@ import { TiltCard } from "@/components/motion";
 import {
   Code2,
   Globe2,
+  Smartphone,
+  Sparkles,
   TrendingUp,
   Palette,
-  Printer,
-  Rocket,
-  GraduationCap,
-  Cpu,
+  Database,
+  Cloud,
+  MessageSquare,
+  Radio,
+  BarChart3,
+  ShieldCheck,
   ArrowRight,
 } from "lucide-react";
 
-const previewServices = [
+const previewDivisions = [
   {
     id: "software",
     title: "IT & Software Development",
-    desc: "Custom ERP systems, CRM platforms, and high-concurrency SaaS applications built for scale.",
+    desc: "Custom ERP, high-throughput backend APIs, and multi-tenant SaaS engines built on Node.js and PostgreSQL.",
     icon: Code2,
-    href: "/services/web-development",
+    href: "/services/software-development",
     badge: "Enterprise",
-    features: ["Custom ERP/CRM", "SaaS Development", "Business Automation"],
+    features: ["Custom ERP Platforms", "High-Throughput APIs", "SaaS Engineering"],
   },
   {
     id: "web",
     title: "Website & E-Commerce",
-    desc: "Fast, luxury corporate portals and scalable digital storefronts equipped with secure checkout.",
+    desc: "Next.js 16 portals, Razorpay/Stripe checkouts, and institutional web systems handling 100k+ concurrent visits.",
     icon: Globe2,
     href: "/services/web-development",
-    badge: "High-Ticket",
-    features: ["Next.js Architectures", "E-Commerce Stores", "Booking Engines"],
+    badge: "Core Engineering",
+    features: ["Next.js 16 SSR/SSG", "Direct Booking Engines", "Omnichannel Stores"],
   },
   {
     id: "mobile",
     title: "Mobile App Development",
-    desc: "Fluid iOS and Android applications with offline synchronization. Creators of Dairy Muneem.",
-    icon: Cpu,
-    href: "/services/mobile-apps",
+    desc: "Offline-first React Native & Flutter applications. Deployed across 40+ dairy procurement centers.",
+    icon: Smartphone,
+    href: "/services/mobile-app-development",
     badge: "Native & Hybrid",
-    features: ["React Native & Flutter", "Logistics Applications", "Real-Time Telemetry"],
+    features: ["Dairy Muneem App", "Offline SQLite Sync", "Bluetooth Thermal SDK"],
+  },
+  {
+    id: "ai-auto",
+    title: "AI & Business Automation",
+    desc: "Deterministic legal AI assistants (NyayaSetu), document parsing pipelines, and LangChain agents.",
+    icon: Sparkles,
+    href: "/services/ai-automation",
+    badge: "Flagship AI",
+    features: ["NyayaSetu Assistant", "Document OCR Pipelines", "ERP Process Bots"],
   },
   {
     id: "marketing",
     title: "Digital Marketing & SEO",
-    desc: "ROI-driven search visibility, Google Ads, Meta campaigns, and high-converting B2B lead funnels.",
+    desc: "High-ticket Google Ads, Meta retargeting funnels, and localized district-level search dominance.",
     icon: TrendingUp,
     href: "/services/digital-marketing",
     badge: "Performance",
-    features: ["SEO Dominance", "Google & Meta Ads", "B2B Lead Generation"],
+    features: ["Local & Enterprise SEO", "B2B Lead Generation", "High-ROAS Ad Funnels"],
   },
   {
     id: "design",
-    title: "Design & Brand Identity",
-    desc: "Distinctive corporate logos, complete brand guidelines, and UI/UX design systems.",
+    title: "UI/UX & Brand Identity",
+    desc: "Enterprise design systems, interactive prototypes, and luxury physical collateral (foil cards & packaging).",
     icon: Palette,
-    href: "/services",
-    badge: "Creative",
-    features: ["Logo & Visual Marks", "UI/UX Prototyping", "Packaging Design"],
+    href: "/services/ui-ux-design",
+    badge: "Creative Suite",
+    features: ["Figma Design Systems", "Gold Foil Print Collateral", "Apparel Brand Tagging"],
   },
   {
-    id: "printing",
-    title: "Physical Printing Services",
-    desc: "In-house physical collateral: metallic visiting cards, flyers, apparel hangtags, and brochures.",
-    icon: Printer,
-    href: "/services",
-    badge: "In-House Press",
-    features: ["Metallic Visiting Cards", "Brochures & Catalogs", "Apparel Brand Tags"],
+    id: "erp",
+    title: "Enterprise ERP & CRM Solutions",
+    desc: "Unified operations platforms connecting multi-location inventory, quotations, HRMS, and client pipelines.",
+    icon: Database,
+    href: "/services/erp-solutions",
+    badge: "Operations",
+    features: ["Multi-Branch Inventory", "Automated Proforma Invoicing", "Client Pipeline CRM"],
   },
   {
-    id: "startup",
-    title: "Startup & Business Advisory",
-    desc: "Turnkey growth launchpacks, investor pitch decks, financial models, and rapid MVP engineering.",
-    icon: Rocket,
-    href: "/services/consulting",
-    badge: "Consulting",
-    features: ["Pitch Deck Creation", "Business Modeling", "MVP Rapid Sprints"],
+    id: "cloud",
+    title: "Cloud Infrastructure & DevOps",
+    desc: "Dockerized container clusters, Cloudflare enterprise caching, automated CI/CD, and server hardening.",
+    icon: Cloud,
+    href: "/services/cloud-devops",
+    badge: "DevOps",
+    features: ["Zero-Downtime CI/CD", "PostgreSQL Replication", "DDoS Edge Mitigation"],
   },
   {
-    id: "advanced",
-    title: "Advanced AI & EdTech",
-    desc: "Smart campus computer labs, e-governance solutions (NyayaSetu), IoT, and robotics.",
-    icon: GraduationCap,
-    href: "/services",
-    badge: "Innovation",
-    features: ["NyayaSetu AI Platform", "Smart Lab Deployments", "Institutional Training"],
+    id: "whatsapp",
+    title: "WhatsApp Automation Suite",
+    desc: "Official Meta Cloud API conversational desk, dynamic catalog browsing, and automated transactional receipts.",
+    icon: MessageSquare,
+    href: "/services/whatsapp-automation",
+    badge: "Conversational",
+    features: ["Official Meta Cloud API", "Interactive Catalog Bot", "Lead Capture Webhooks"],
+  },
+  {
+    id: "sms",
+    title: "Bulk SMS, RCS & Voice OBD",
+    desc: "DLT-registered promotional & transactional SMS gateways, automated voice broadcasts, and OTP pipelines.",
+    icon: Radio,
+    href: "/services/sms-rcs",
+    badge: "CPaaS Infrastructure",
+    features: ["DLT Template Registration", "High-Priority OTP Routing", "Automated Voice OBD"],
+  },
+  {
+    id: "analytics",
+    title: "Data Analytics & BI",
+    desc: "Executive BI dashboards, revenue forecasting models, and multi-branch operational telemetry.",
+    icon: BarChart3,
+    href: "/services/data-analytics",
+    badge: "Intelligence",
+    features: ["Executive BI Dashboards", "Inventory Forecasting", "Cross-Branch Margin Audits"],
+  },
+  {
+    id: "testing",
+    title: "Software QA & Security Testing",
+    desc: "End-to-end automated test suites, OWASP Top 10 vulnerability assessments, and anti-leak watermarking.",
+    icon: ShieldCheck,
+    href: "/services/software-testing",
+    badge: "Security & QA",
+    features: ["Automated End-to-End Tests", "OWASP Security Audits", "Anti-Leak Steganography"],
   },
 ];
 
@@ -104,46 +144,46 @@ export function ServicesPreview() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
-          badge="What We Deliver"
-          title="Integrated Business Infrastructure"
-          subtitle="Explore our comprehensive suite of digital technology, creative strategy, institutional execution, and physical infrastructure services."
+          badge="Enterprise Capabilities"
+          title="12 Core Service Divisions"
+          subtitle="From mission-critical software engineering to cloud architecture and conversational CPaaS, explore our comprehensive enterprise delivery matrix."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {previewServices.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {previewDivisions.map((service, index) => (
             <motion.div
               key={service.id}
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, delay: index * 0.06 }}
+              transition={{ duration: 0.5, delay: index * 0.04 }}
               className="h-full"
             >
-              <TiltCard maxTilt={6} className="h-full">
-                <div className="group relative h-full rounded-2xl bg-white dark:bg-charcoal border border-border p-7 flex flex-col justify-between hover:border-gold/60 hover:shadow-2xl transition-all duration-300">
+              <TiltCard maxTilt={5} className="h-full">
+                <div className="group relative h-full rounded-2xl bg-white dark:bg-charcoal border border-border p-6 sm:p-7 flex flex-col justify-between hover:border-gold/60 hover:shadow-2xl transition-all duration-300">
                   <div>
-                    <div className="flex items-center justify-between mb-5">
-                      <div className="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-white group-hover:scale-110 group-hover:rotate-2 transition-all duration-300">
-                        <service.icon className="w-6 h-6" />
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-11 h-11 rounded-xl bg-gold/10 text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-navy group-hover:scale-105 transition-all duration-300">
+                        <service.icon className="w-5 h-5" />
                       </div>
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-slate-muted bg-warm-white dark:bg-graphite px-2.5 py-1 rounded-full border border-border group-hover:border-gold/30 transition-colors">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-graphite px-2.5 py-0.5 rounded-full border border-border group-hover:border-gold/30 transition-colors">
                         {service.badge}
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-charcoal dark:text-warm-white mb-2 group-hover:text-gold transition-colors font-heading">
+                    <h3 className="text-lg font-bold text-navy dark:text-white mb-2 group-hover:text-gold transition-colors font-serif">
                       {service.title}
                     </h3>
 
-                    <p className="text-xs text-slate-muted leading-relaxed mb-6 font-normal">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-5 font-normal">
                       {service.desc}
                     </p>
 
-                    <ul className="space-y-2 mb-6 border-t border-border/60 pt-4">
+                    <ul className="space-y-1.5 mb-5 border-t border-border/60 pt-3">
                       {service.features.map((feat, idx) => (
                         <li
                           key={idx}
-                          className="text-xs text-charcoal/80 dark:text-warm-white/80 flex items-center gap-2"
+                          className="text-xs text-slate-700 dark:text-slate-300 flex items-center gap-2"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 group-hover:scale-125 transition-transform" />
                           <span>{feat}</span>
@@ -154,9 +194,9 @@ export function ServicesPreview() {
 
                   <Link
                     href={service.href}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-dark transition-colors pt-2 group-hover:translate-x-1.5 transition-transform"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-gold hover:text-gold-light transition-colors pt-3 border-t border-border/40 group-hover:translate-x-1.5 transition-transform"
                   >
-                    <span>Learn Details</span>
+                    <span>View Division Details</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -165,13 +205,20 @@ export function ServicesPreview() {
           ))}
         </div>
 
-        <div className="mt-14 text-center">
+        <div className="mt-14 text-center flex flex-wrap justify-center gap-4">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white dark:bg-graphite border border-border text-charcoal dark:text-warm-white hover:border-gold hover:text-gold text-sm font-semibold transition-all shadow-sm hover:shadow-md group"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-navy dark:bg-gold text-white dark:text-navy font-bold text-xs uppercase tracking-wider hover:opacity-95 transition-all shadow-md group"
           >
-            <span>View All 8 Categories & 40+ Sub-Services</span>
+            <span>Explore All 12 Divisions & 17 Dedicated Pages</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white dark:bg-graphite border border-border text-navy dark:text-white hover:border-gold hover:text-gold text-xs uppercase tracking-wider font-semibold transition-all shadow-sm"
+          >
+            <span>View 12 Software Products</span>
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

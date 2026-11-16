@@ -8,6 +8,7 @@ import {
   Home,
   Info,
   Server,
+  Cpu,
   FolderGit2,
   Image as ImageIcon,
   Inbox,
@@ -34,6 +35,7 @@ export type AdminTab =
   | "homepage"
   | "about"
   | "services"
+  | "products"
   | "portfolio"
   | "media"
   | "inquiries"
@@ -83,6 +85,7 @@ export function AdminSidebar({
         { id: "homepage" as AdminTab, label: "Homepage Editor", icon: Home },
         { id: "about" as AdminTab, label: "About Page Editor", icon: Info },
         { id: "services" as AdminTab, label: "Services Manager", icon: Server },
+        { id: "products" as AdminTab, label: "Products Marketplace", icon: Cpu },
         { id: "portfolio" as AdminTab, label: "Portfolio & Projects", icon: FolderGit2 },
         { id: "blog" as AdminTab, label: "Blog & Articles", icon: Newspaper },
         { id: "clients" as AdminTab, label: "Clients & Testimonials", icon: MessageSquareQuote },
